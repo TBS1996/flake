@@ -1,5 +1,5 @@
 {
-  description = "A simplified flake for NixOS configuration";
+  description = "a flakey flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -10,6 +10,14 @@
       system = "x86_64-linux";
       modules = [
         ./nixos/configuration.nix
+        ({ pkgs, ... }: {
+          environment.systemPackages = with pkgs; [
+            (pkgs.writeShellScriptBin "rebuild-flake" ''
+              #!/usr/bin/env bash
+              sudo nixos-rebuild switch --flake './flake#mySystem'
+            '')
+          ];
+        })
       ];
     };
   };

@@ -16,8 +16,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.supportedFilesystems = [ "ntfs" ];
-  
-  
+
+
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -64,7 +64,7 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-  
+
     # Enable Bluetooth
   hardware.bluetooth.enable = true;
 
@@ -131,7 +131,7 @@
 
 
 
-  
+
 
  nixpkgs.overlays = [
    (self: super: {
@@ -191,8 +191,3 @@
 
 
 }
-
-
-
-
-
