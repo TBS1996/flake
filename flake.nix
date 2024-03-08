@@ -14,6 +14,7 @@
             # Include Newsboat configuration files
             home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;
             home.file.".config/newsboat/urls".source = ./dotfiles/newsboat/urls;
+            home.file.".config/sway/config".source = ./dotfiles/sway/config;
 
             # Other configurations...
           };
