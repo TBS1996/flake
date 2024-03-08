@@ -51,6 +51,12 @@
 	            shiftwidth = 2;     
 	      };
 
+
+	        extraConfigVim = ''
+    autocmd BufEnter,WinEnter * set signcolumn=yes
+    " Any additional custom Vimscript
+  '';
+
 	      extraConfigLua = ''
 		require('rust-tools').setup({})
 		require('lspconfig').rust_analyzer.setup({
