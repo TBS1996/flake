@@ -204,13 +204,19 @@ bindsym $mod+r mode "resize"
 
 # Increase volume
 bindsym XF86AudioRaiseVolume exec pamixer -i 5
-bindsym $mod+p exec pamixer -t
 
 # Decrease volume
 bindsym XF86AudioLowerVolume exec pamixer -d 5
 
 # Toggle mute
 bindsym XF86AudioMute exec pamixer -t
+
+# Increase screen brightness
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+
+# Decrease screen brightness
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+
 
 
 #
