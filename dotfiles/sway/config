@@ -204,6 +204,7 @@ bindsym $mod+r mode "resize"
 
 # Increase volume
 bindsym XF86AudioRaiseVolume exec pamixer -i 5
+bindsym $mod+p exec pamixer -t
 
 # Decrease volume
 bindsym XF86AudioLowerVolume exec pamixer -d 5
