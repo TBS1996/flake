@@ -51,19 +51,27 @@
 
              extraConfigVim = ''
 	       set autoindent
-  set smartindent
-  filetype plugin indent on
-    autocmd BufEnter,WinEnter * set signcolumn=yes
-    " Any additional custom Vimscript
-  '';
+	       set smartindent
+	       filetype plugin indent on
+	 	autocmd BufEnter,WinEnter * set signcolumn=yes
+	 	" Any additional custom Vimscript
+	       '';
+
 
 	    extraConfigLua = ''
-		require('rust-tools').setup({})
-		require('lspconfig').rust_analyzer.setup({
-		  capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-		})
-		-- Additional Lua configuration for LSP, cmp, treesitter, etc.
-	      '';
+	      require('rust-tools').setup({})
+	      require('lspconfig').rust_analyzer.setup({
+		capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+	      })
+	      -- Additional Lua configuration for LSP, cmp, treesitter, etc.
+	      vim.api.nvim_create_autocmd("BufWritePre", {
+		pattern = {"*.rs"},
+		callback = function()
+		  vim.lsp.buf.formatting_sync(nil, 1000)
+		end,
+	      })
+	    '';
+
 
 
             };
