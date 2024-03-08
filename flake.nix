@@ -26,11 +26,6 @@
 		enable = true;
 		userName = "tor";
 		userEmail = "torberge@outlook.com";
-		extraConfig = {
-		  core = {
-		    editor = pkgs.vim;
-		  };
-		};
 	      };
 
             programs.nixvim = {
