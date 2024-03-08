@@ -50,6 +50,9 @@
 
 
              extraConfigVim = ''
+	       set autoindent
+  set smartindent
+  filetype plugin indent on
     autocmd BufEnter,WinEnter * set signcolumn=yes
     " Any additional custom Vimscript
   '';
