@@ -25,7 +25,7 @@
             programs.nixvim = {
               enable = true;
               plugins.lightline.enable = true;
-	        colorschemes.solarized.enable = true;
+	        colorschemes.dracula.enable = true;
 	      options = {
 	      number = true;
 	      relativenumber = true;
