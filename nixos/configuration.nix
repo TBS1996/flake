@@ -10,7 +10,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.loader.efi.efiSysMountPoint = "/boot";
   boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "nixos";
@@ -46,15 +46,15 @@
     description = "Tor";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-	tdesktop
 	librewolf
-	whatsapp-for-linux
-	blueman
-	discord
-	thunderbird
-	obsidian
-	vscode
-	tor-browser
+	#tdesktop
+	#whatsapp-for-linux
+	#blueman
+	#discord
+	#thunderbird
+	#obsidian
+	#vscode
+	#tor-browser
 
 	#cli
 	tree
