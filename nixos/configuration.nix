@@ -90,6 +90,7 @@
 
 	#bg
 	rust-analyzer
+	rustfmt
 	lldb
 	swaylock
 	xdg-utils
