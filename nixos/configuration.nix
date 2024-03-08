@@ -7,6 +7,10 @@
       #<home-manager/nixos>
     ];
 
+  environment.systemPackages = with pkgs; [
+  ] ++ (import ./packages.nix { inherit pkgs; });
+
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -45,79 +49,13 @@
     isNormalUser = true;
     description = "Tor";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-	librewolf
-	#tdesktop
-	#whatsapp-for-linux
-	#blueman
-	#discord
-	#thunderbird
-	#obsidian
-	#vscode
-	#tor-browser
-
-	#cli
-	cowsay
-	tree
-	mpd
-	ncmpcpp
-	python3
-	feh
-	cron
-	wdisplays
-	youtube-dl
-	mpv
-	neofetch
-	htop
-	bat
-	bashmount
-	ncdu
-	fzf
-	newsboat
-	gcc
-	cmake
-	github-cli
-	dmenu
-	git
-	wlsunset
-	brightnessctl
-	acpi
-	cargo
-
-	#terminal stuff
-	alacritty
-	tmux
-	fish
-
-	#bg
-	rust-analyzer
-	rustfmt
-	lldb
-	swaylock
-	xdg-utils
-	go
-
-    ];
-
   };
-
-
-  nixpkgs.overlays = [
-    (self: super: {
-      neovim = super.neovim.override {
-        viAlias = true;
-        vimAlias = true;
-      };
-    })
-  ];
-
 
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
