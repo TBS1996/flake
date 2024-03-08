@@ -1,5 +1,4 @@
 {
-  # Your existing flake.nix content
   outputs = { self, nixpkgs, home-manager, ... }: {
 
     nixosConfigurations.mySystem = nixpkgs.lib.nixosSystem {
@@ -8,27 +7,18 @@
         ./nixos/configuration.nix
         home-manager.nixosModules.home-manager
         ({ pkgs, ... }: {
-          environment.systemPackages = with pkgs; [
-            # Your existing packages
-          ];
 
-          # Modified Home Manager users configuration
           home-manager.users.tor = { pkgs, ... }: {
-            home.stateVersion = "22.05"; # Ensure this matches your NixOS state version
+            home.stateVersion = "22.05";
 
-            home.file.".config" = {
-              source = builtins.path { 
-                path = ./dotfiles/.config;
-                name = "dotfiles-config";
-              };
-              recursive = true;
-            };
+            # Include Newsboat configuration files
+            home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;
+            home.file.".config/newsboat/urls".source = ./dotfiles/newsboat/urls;
 
-            # Your existing home-manager configurations
+            # Other configurations...
           };
         })
       ];
     };
   };
 }
-
