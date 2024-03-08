@@ -25,7 +25,6 @@
             programs.nixvim = {
               enable = true;
               plugins.lightline.enable = true;
-	        colorschemes.gruvbox.enable = true;
             };
 
             home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;
