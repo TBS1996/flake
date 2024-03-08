@@ -2,7 +2,7 @@
 
 {
   imports =
-    [ 
+    [
       ./hardware-configuration.nix
       #<home-manager/nixos>
     ];
@@ -13,7 +13,7 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.supportedFilesystems = [ "ntfs" ];
 
-  networking.hostName = "nixos"; 
+  networking.hostName = "nixos";
 
 
   networking.networkmanager.enable = true;
@@ -78,7 +78,6 @@
 	cmake
 	github-cli
 	dmenu
-	neovim
 	git
 	wlsunset
 	brightnessctl
