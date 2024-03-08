@@ -50,6 +50,16 @@
 	      relativenumber = true;
 	            shiftwidth = 2;     
 	      };
+
+	      extraConfigLua = ''
+		require('rust-tools').setup({})
+		require('lspconfig').rust_analyzer.setup({
+		  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+		})
+		-- Additional Lua configuration for LSP, cmp, treesitter, etc.
+	      '';
+
+
             };
 
             home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;
