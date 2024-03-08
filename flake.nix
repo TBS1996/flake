@@ -41,9 +41,6 @@
 		cmp-cmdline.enable = true;
 	      };
 
-
-
-
 	      colorschemes.dracula.enable = true;
 	      options = {
 	      number = true;
@@ -52,12 +49,12 @@
 	      };
 
 
-	        extraConfigVim = ''
+             extraConfigVim = ''
     autocmd BufEnter,WinEnter * set signcolumn=yes
     " Any additional custom Vimscript
   '';
 
-	      extraConfigLua = ''
+	    extraConfigLua = ''
 		require('rust-tools').setup({})
 		require('lspconfig').rust_analyzer.setup({
 		  capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
