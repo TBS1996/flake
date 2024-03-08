@@ -57,6 +57,7 @@
 	#tor-browser
 
 	#cli
+	cowsay
 	tree
 	mpd
 	ncmpcpp
