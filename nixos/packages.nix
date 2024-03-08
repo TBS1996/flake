@@ -38,6 +38,7 @@ with pkgs; [
   brightnessctl
   acpi
   cargo
+  pamixer
 
   #terminal stuff
   alacritty

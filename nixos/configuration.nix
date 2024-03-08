@@ -17,9 +17,13 @@
   boot.loader.efi.efiSysMountPoint = "/boot";
   boot.supportedFilesystems = [ "ntfs" ];
 
+  users.users.tor = {
+    isNormalUser = true;
+    description = "Tor";
+    extraGroups = [ "networkmanager" "wheel" ];
+  };
+
   networking.hostName = "nixos";
-
-
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Oslo";
   i18n.defaultLocale = "en_US.utf8";
@@ -27,8 +31,10 @@
   programs.sway.enable = true;
   services.xserver.enable = false;
 
-
+  hardware.bluetooth.enable = true;
   services.printing.enable = true;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -40,22 +46,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-  hardware.bluetooth.enable = true;
-
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.tor = {
-    isNormalUser = true;
-    description = "Tor";
-    extraGroups = [ "networkmanager" "wheel" ];
-  };
-
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  nixpkgs.config.allowUnfree = true;
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

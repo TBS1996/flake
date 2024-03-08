@@ -202,6 +202,16 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# Increase volume
+bindsym XF86AudioRaiseVolume exec pamixer -i 5
+
+# Decrease volume
+bindsym XF86AudioLowerVolume exec pamixer -d 5
+
+# Toggle mute
+bindsym XF86AudioMute exec pamixer -t
+
+
 #
 # Status Bar:
 #
