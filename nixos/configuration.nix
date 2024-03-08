@@ -57,7 +57,6 @@
 	tor-browser
 
 	#cli
-	helix
 	tree
 	mpd
 	ncmpcpp

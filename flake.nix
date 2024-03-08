@@ -24,8 +24,27 @@
 
             programs.nixvim = {
               enable = true;
-              plugins.lightline.enable = true;
-	        colorschemes.dracula.enable = true;
+
+	      plugins = {
+		rust-tools.enable = true;
+		lsp.enable = true;
+		cmp.enable = true;
+		cmp-nvim-lsp.enable = true;
+		treesitter.enable = true;
+		treesitter-refactor.enable = true;
+		gitsigns.enable = true;
+		telescope.enable = true;
+		lightline.enable = true;
+
+		cmp-buffer.enable = true;
+		cmp-path.enable = true;
+		cmp-cmdline.enable = true;
+	      };
+
+
+
+
+	      colorschemes.dracula.enable = true;
 	      options = {
 	      number = true;
 	      relativenumber = true;
