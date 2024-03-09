@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Assuming this script is run from the flake's directory
 FLAKE_DIR=$(pwd)
