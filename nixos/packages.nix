@@ -6,6 +6,7 @@ with pkgs; [
   whatsapp-for-linux
   obsidian
   tor-browser
+  gurk-rs
 
   #cli
   cowsay
