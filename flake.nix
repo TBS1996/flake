@@ -81,7 +81,7 @@
               ohMyZsh = {
                 enable = true;
                 theme = "agnoster";
-                plugins = [ "git", "zsh-autosuggestions", "zsh-syntax-highlighting" ];
+                plugins = [ "git" "zsh-autosuggestions" "zsh-syntax-highlighting" ];
                 custom = "${self.ohmyzsh}/";
               };
             };
