@@ -6,7 +6,7 @@ with pkgs; [
   #whatsapp-for-linux
   #blueman
   #discord
-  #thunderbird
+  thunderbird
   #obsidian
   #vscode
   #tor-browser
