@@ -20,6 +20,7 @@
   users.users.tor = {
     isNormalUser = true;
     description = "Tor";
+    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
