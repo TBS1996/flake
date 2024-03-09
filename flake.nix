@@ -3,10 +3,11 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     nixvim.url = "github:nix-community/nixvim";
+    ohmyzsh.url = "github:ohmyzsh/ohmyzsh/master";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, ... }: {
+  outputs = { self, nixpkgs, home-manager, nixvim, ohmyzsh, ... }: {
 
     nixosConfigurations.sys = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -22,45 +23,45 @@
               nixvim.homeManagerModules.nixvim
             ];
 
-	      programs.git = {
-		enable = true;
-		userName = "tor";
-		userEmail = "torberge@outlook.com";
-	      };
+            programs.git = {
+              enable = true;
+              userName = "tor";
+              userEmail = "torberge@outlook.com";
+            };
 
             programs.nixvim = {
               enable = true;
 
-	      plugins = {
-		rust-tools.enable = true;
-		lsp.enable = true;
-		cmp.enable = true;
-		cmp-nvim-lsp.enable = true;
-		treesitter.enable = true;
-		treesitter-refactor.enable = true;
-		gitsigns.enable = true;
-		telescope.enable = true;
-		lightline.enable = true;
+              plugins = {
+                rust-tools.enable = true;
+                lsp.enable = true;
+                cmp.enable = true;
+                cmp-nvim-lsp.enable = true;
+                treesitter.enable = true;
+                treesitter-refactor.enable = true;
+                gitsigns.enable = true;
+                telescope.enable = true;
+                lightline.enable = true;
 
-		cmp-buffer.enable = true;
-		cmp-path.enable = true;
-		cmp-cmdline.enable = true;
-	      };
+                cmp-buffer.enable = true;
+                cmp-path.enable = true;
+                cmp-cmdline.enable = true;
+              };
 
-	      colorschemes.dracula.enable = true;
+              colorschemes.dracula.enable = true;
 
-	      options = {
-	        number = true;
-	        relativenumber = true;
+              options = {
+                number = true;
+                relativenumber = true;
                 shiftwidth = 2;
-	      };
+              };
 
               extraConfigVim = ''
                 autocmd BufEnter,WinEnter * set signcolumn=yes
                 " Any additional custom Vimscript
               '';
 
-	      extraConfigLua = ''
+              extraConfigLua = ''
                 require('rust-tools').setup({})
                 require('lspconfig').rust_analyzer.setup({
                   capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -73,8 +74,22 @@
                 })
                 -- Additional Lua configuration for LSP, cmp, treesitter, etc.
               '';
-
             };
+
+            programs.zsh = {
+              enable = true;
+              ohMyZsh = {
+                enable = true;
+                theme = "agnoster";
+                plugins = [ "git", "zsh-autosuggestions", "zsh-syntax-highlighting" ];
+                custom = "${self.ohmyzsh}/";
+              };
+            };
+
+            home.packages = with pkgs; [
+              zsh-autosuggestions
+              zsh-syntax-highlighting
+            ];
 
             home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;
             home.file.".config/newsboat/urls".source = ./dotfiles/newsboat/urls;
