@@ -20,7 +20,7 @@
   users.users.tor = {
     isNormalUser = true;
     description = "Tor";
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
@@ -29,7 +29,7 @@
   time.timeZone = "Europe/Oslo";
   i18n.defaultLocale = "en_US.utf8";
 
-  programs.fish.enable = true;
+  programs.zsh.enable = true;
   programs.sway.enable = true;
   services.xserver.enable = false;
 
