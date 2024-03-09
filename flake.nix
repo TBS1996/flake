@@ -14,6 +14,9 @@
         ./nixos/configuration.nix
         home-manager.nixosModules.home-manager
         ({ pkgs, ... }: {
+	  environment.etc."profile.d/zdotdir.sh".text = ''
+	      export ZDOTDIR="$HOME/.config/zsh"
+	    '';
 
           home-manager.users.tor = { pkgs, ... }: {
             home.stateVersion = "22.05";
