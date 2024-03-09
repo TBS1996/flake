@@ -6,7 +6,7 @@ with pkgs; [
   #whatsapp-for-linux
   #blueman
   #discord
-  thunderbird
+  #thunderbird
   #obsidian
   #vscode
   #tor-browser
@@ -39,6 +39,8 @@ with pkgs; [
   acpi
   cargo
   pamixer
+  aerc
+  bitwarden-cli
 
   #terminal stuff
   alacritty
