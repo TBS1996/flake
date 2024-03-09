@@ -83,8 +83,10 @@
             home.file.".config/zsh/.zshrc".source = ./dotfiles/zsh/.zshrc;
 
 	    home.sessionVariables = {
-              ZDOTDIR = "${pkgs.home-manager.lib.homeDirectory "tor"}/.config/zsh";
+              ZDOTDIR = "/home/tor/.config/zsh";
             };
+
+
           };
         })
       ];
