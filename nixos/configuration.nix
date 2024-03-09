@@ -11,7 +11,14 @@
   ] ++ (import ./packages.nix { inherit pkgs; });
 
 
-  # Workaround until this hits unstable:
+
+
+
+hardware.bluetooth = {
+  enable = true;
+};
+
+# Workaround until this hits unstable:
 # https://github.com/NixOS/nixpkgs/issues/113628
 systemd.services.bluetooth.serviceConfig.ExecStart = [
   ""
@@ -19,7 +26,6 @@ systemd.services.bluetooth.serviceConfig.ExecStart = [
 ];
 
 services.blueman.enable = true;
-
 
 
   # Bootloader.
@@ -45,7 +51,6 @@ services.blueman.enable = true;
   programs.sway.enable = true;
   services.xserver.enable = false;
 
-  hardware.bluetooth.enable = true;
   services.printing.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
