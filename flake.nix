@@ -3,11 +3,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     nixvim.url = "github:nix-community/nixvim";
-    ohmyzsh.url = "github:ohmyzsh/ohmyzsh/master";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, ohmyzsh, ... }: {
+  outputs = { self, nixpkgs, home-manager, nixvim,  ... }: {
 
     nixosConfigurations.sys = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -76,15 +75,16 @@
               '';
             };
 
-            programs.zsh = {
-              enable = true;
-              ohMyZsh = {
-                enable = true;
-                theme = "agnoster";
-                plugins = [ "git" "zsh-autosuggestions" "zsh-syntax-highlighting" ];
-                custom = "${self.ohmyzsh}/";
-              };
-            };
+	    programs.zsh = {
+	      enable = true;
+	      enableCompletion = true;
+	      autosuggestions.enable = true;
+
+	      ohMyZsh = {
+		enable = true;
+		plugins = [ "git" ];
+	      };
+	    };
 
             home.packages = with pkgs; [
               zsh-autosuggestions
