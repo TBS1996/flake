@@ -10,7 +10,8 @@
   environment.systemPackages = with pkgs; [
   ] ++ (import ./packages.nix { inherit pkgs; });
 
-  environment.variables.ZDOTDIR = "${config.home.homeDirectory}/.config/zsh";
+#  environment.variables.ZDOTDIR = "${config.home.homeDirectory}/.config/zsh";
+    environment.variables.ZDOTDIR = "/home/tor/.config/zsh";
 
 
   # Bootloader.
