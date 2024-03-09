@@ -10,7 +10,6 @@
   environment.systemPackages = with pkgs; [
   ] ++ (import ./packages.nix { inherit pkgs; });
 
-  environment.variables.ZDOTDIR = "/home/tor/.config/zsh";
 
 
   # Bootloader.
@@ -25,6 +24,7 @@
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
   };
+  environment.variables.ZDOTDIR = "/home/tor/.config/zsh";
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;

@@ -70,3 +70,5 @@ bindkey '^e' edit-command-line
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
+alias rebuild-nix='git add . && git commit -m "wip" && nixos-rebuild switch --flake .#sys'
