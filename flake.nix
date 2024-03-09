@@ -91,6 +91,7 @@
    setopt NO_CASE_GLOB
    zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=*      r:|=*' 'l:|=* r:|=*'
    '';
+   };
 
             home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;
             home.file.".config/newsboat/urls".source = ./dotfiles/newsboat/urls;
