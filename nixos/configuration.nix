@@ -29,6 +29,7 @@
   time.timeZone = "Europe/Oslo";
   i18n.defaultLocale = "en_US.utf8";
 
+  programs.zsh.enable = true;
   programs.sway.enable = true;
   services.xserver.enable = false;
 

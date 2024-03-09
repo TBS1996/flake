@@ -39,7 +39,6 @@ with pkgs; [
   acpi
   cargo
   pamixer
-  zsh
 
   #terminal stuff
   alacritty
