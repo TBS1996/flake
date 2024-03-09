@@ -2,14 +2,10 @@
 
 with pkgs; [
   librewolf
-  #tdesktop
-  #whatsapp-for-linux
-  #blueman
-  #discord
-  #thunderbird
-  #obsidian
-  #vscode
-  #tor-browser
+  tdesktop
+  whatsapp-for-linux
+  obsidian
+  tor-browser
 
   #cli
   cowsay
