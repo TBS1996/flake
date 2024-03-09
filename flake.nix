@@ -75,16 +75,22 @@
               '';
             };
 
-	    programs.zsh = {
-	      enable = true;
-	      enableCompletion = true;
-	      autosuggestions.enable = true;
 
-	      ohMyZsh = {
-		enable = true;
-		plugins = [ "git" ];
-	      };
-	    };
+  programs.zsh = {
+   enable = true;
+   defaultKeymap = "emacs";
+   enableAutosuggestions = true;
+   syntaxHighlighting.enable = true;
+   historySubstringSearch = {
+    enable = true;
+    searchUpKey = ["\\eOA"];
+    searchDownKey = ["\\eOB"];
+   };
+   enableCompletion = true;
+   initExtra = ''
+   setopt NO_CASE_GLOB
+   zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=*      r:|=*' 'l:|=* r:|=*'
+   '';
 
             home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;
             home.file.".config/newsboat/urls".source = ./dotfiles/newsboat/urls;
