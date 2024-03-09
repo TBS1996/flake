@@ -10,6 +10,8 @@
   environment.systemPackages = with pkgs; [
   ] ++ (import ./packages.nix { inherit pkgs; });
 
+  environment.variables.ZDOTDIR = "${config.home.homeDirectory}/.config/zsh";
+
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

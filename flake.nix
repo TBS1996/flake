@@ -14,9 +14,6 @@
         ./nixos/configuration.nix
         home-manager.nixosModules.home-manager
         ({ pkgs, ... }: {
-	  environment.etc."profile.d/zdotdir.sh".text = ''
-	      export ZDOTDIR="$HOME/.config/zsh"
-	    '';
 
           home-manager.users.tor = { pkgs, ... }: {
             home.stateVersion = "22.05";
@@ -84,12 +81,6 @@
             home.file.".config/newsboat/urls".source = ./dotfiles/newsboat/urls;
             home.file.".config/sway/config".source = ./dotfiles/sway/config;
             home.file.".config/zsh/.zshrc".source = ./dotfiles/zsh/.zshrc;
-
-	    home.sessionVariables = {
-	      ZDOTDIR = "$HOME/.config/zsh";
-	    };
-
-
           };
         })
       ];
