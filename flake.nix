@@ -81,12 +81,6 @@
             home.file.".config/newsboat/urls".source = ./dotfiles/newsboat/urls;
             home.file.".config/sway/config".source = ./dotfiles/sway/config;
             home.file.".config/zsh/.zshrc".source = ./dotfiles/zsh/.zshrc;
-
-	    home.sessionVariables = {
-              ZDOTDIR = "/home/tor/.config/zsh";
-            };
-
-
           };
         })
       ];
