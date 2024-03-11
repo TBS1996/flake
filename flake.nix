@@ -75,9 +75,12 @@
               '';
             };
 
+
+	    xdg.cacheHome = "${config.home.homeDirectory}/.cache";
 	    home.sessionVariables = {
 	      CARGO_HOME = "${config.xdg.cacheHome}/cargo";
 	    };
+
 
 
             home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;
