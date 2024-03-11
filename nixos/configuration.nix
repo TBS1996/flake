@@ -40,7 +40,9 @@ services.blueman.enable = true;
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
   };
+
   environment.variables.ZDOTDIR = "/home/tor/.config/zsh";
+  environment.variables.CARGO_HOME = "${config.home.homeDirectory}/.cache/cargo";
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
