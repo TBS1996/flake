@@ -1,7 +1,7 @@
 { pkgs }:
 
 with pkgs; [
-  librewolf
+  firefox
   tdesktop
   whatsapp-for-linux
   obsidian
