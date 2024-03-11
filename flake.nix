@@ -28,6 +28,10 @@
               userEmail = "torberge@outlook.com";
             };
 
+	    programs.neomutt = {
+	      enable = true;
+	    };
+
 	    programs.firefox = {
 	      enable = true;
 	      policies = {
