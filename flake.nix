@@ -46,9 +46,16 @@
 		  installation_mode = "force_installed";
 	  	  };
 
-		# Privacy Badger:
+		# bitwarden
 		"446900e4-71c2-419f-a6a7-df9c091e268b" = {
 		  install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
+		  installation_mode = "force_installed";
+	  	  };
+
+
+		# df youtube
+		"dfyoutube@example.com" = {
+		  install_url = "https://addons.mozilla.org/firefox/downloads/latest/df-youtube/latest.xpi";
 		  installation_mode = "force_installed";
 	  	  };
 		
