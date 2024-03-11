@@ -76,15 +76,6 @@
             };
 
 
-
-	    # Directly set CARGO_HOME
-	    home.sessionVariables = {
-	      CARGO_HOME = "/home/tor/.cache/cargo";
-	    };
-
-
-
-
             home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;
             home.file.".config/newsboat/urls".source = ./dotfiles/newsboat/urls;
             home.file.".config/sway/config".source = ./dotfiles/sway/config;
