@@ -38,6 +38,7 @@ with pkgs; [
   pamixer
   aerc
   bitwarden-cli
+  neomutt
 
   #terminal stuff
   alacritty
