@@ -76,13 +76,12 @@
             };
 
 
-	  # Assuming `home` is your home directory's path
-	    xdg.cacheHome = "${pkgs.lib.home.homeDirectory}/.cache";
 
+	    # Directly set CARGO_HOME
 	    home.sessionVariables = {
-	      # Directly reference the path without using `config`
 	      CARGO_HOME = "/home/tor/.cache/cargo";
 	    };
+
 
 
 
