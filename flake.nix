@@ -30,6 +30,7 @@
 
 	    programs.firefox = {
 	      enable = true;
+	      policies = {
 	      ExtensionSettings = {
 		"*".installation_mode = "blocked"; # blocks all addons except the ones specified below
 
@@ -39,6 +40,8 @@
 		  installation_mode = "force_installed";
 		};
 		
+	      };
+
 	      };
 
 	    };
