@@ -71,5 +71,5 @@ bindkey '^e' edit-command-line
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
-alias grn='git add . && git commit -m "wip" && sudo nixos-rebuild switch --flake .#sys'
+alias grn='git add . && git commit -m "rebuilding"; sudo nixos-rebuild switch --flake .#sys'
 alias pg='ping google.com'
