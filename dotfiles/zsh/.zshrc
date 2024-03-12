@@ -73,3 +73,4 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 alias grn='git add . && git commit -m "rebuilding"; sudo nixos-rebuild switch --flake .#sys'
 alias pg='ping google.com'
+alias cpy='wl-copy <'

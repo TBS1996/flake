@@ -39,6 +39,7 @@ with pkgs; [
   aerc
   bitwarden-cli
   yazi
+  wl-clipboard
 
   #terminal stuff
   alacritty

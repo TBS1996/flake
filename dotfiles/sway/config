@@ -146,7 +146,7 @@ input type:keyboard {
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
+    #bindsym $mod+b splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
@@ -216,6 +216,9 @@ bindsym XF86MonBrightnessUp exec brightnessctl s +10%
 
 # Decrease screen brightness
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+
+
+bindsym $mod+b exec firefox
 
 
 
