@@ -43,7 +43,7 @@ services.blueman.enable = true;
 
   environment.variables.ZDOTDIR = "/home/tor/.config/zsh";
   environment.variables.CARGO_HOME = "/home/tor/.cache/cargo/";
-  environment.variables.EDITOR = "neovim";
+  environment.variables.EDITOR = "nvim";
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
