@@ -219,7 +219,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 
 
 bindsym $mod+b exec firefox
-bindsym Mod4+l exec swaylock
+bindsym $mod+shift+l exec firefox
 
 
 
