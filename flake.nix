@@ -83,6 +83,7 @@
                 gitsigns.enable = true;
                 telescope.enable = true;
                 lightline.enable = true;
+		chadtree.enable = true;
 
                 cmp-buffer.enable = true;
                 cmp-path.enable = true;
