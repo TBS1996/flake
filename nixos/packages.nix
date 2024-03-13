@@ -7,6 +7,7 @@ with pkgs; [
   obsidian
   tor-browser
   gurk-rs
+  zathura
 
   #cli
   cowsay
