@@ -70,6 +70,8 @@
 
 	    };
 
+	    programs.waybar.enable = true;
+
             programs.nixvim = {
               enable = true;
 
