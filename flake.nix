@@ -37,7 +37,7 @@
 	      policies = {
 	      ExtensionSettings = {
 		# blocks all addons except the ones specified below
-		"*".installation_mode = "blocked"; 
+		#"*".installation_mode = "blocked"; 
 
 		# uBlock Origin:
 		"uBlock0@raymondhill.net" = {
