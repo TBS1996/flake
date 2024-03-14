@@ -10,6 +10,7 @@ with pkgs; [
   zathura
 
   #cli
+  hello
   cowsay
   tree
   mpd
