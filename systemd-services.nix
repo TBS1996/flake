@@ -4,8 +4,8 @@
   systemd.services.commitNotes = {
     description = "Write current date and time to a file";
     serviceConfig = {
-      #ExecStart = "/home/tor/flake/scripts/commit_notes.sh";
-      ExecStart = "././scripts/commit_notes.sh";
+      ExecStart = "/home/tor/flake/scripts/commit_notes.sh";
+#      ExecStart = "././scripts/commit_notes.sh";
       Type = "oneshot";
       User = "tor"; # Ensure this is the correct user
       Environment = "PATH=${pkgs.lib.makeBinPath [ pkgs.git pkgs.coreutils ]}";
