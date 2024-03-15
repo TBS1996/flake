@@ -12,12 +12,9 @@
       system = "x86_64-linux";
       modules = [
         ./nixos/configuration.nix
+	./systemd-services.nix
         home-manager.nixosModules.home-manager
         ({ pkgs, ... }: {
-
-	environment.systemPackages = with pkgs; [
-          (writeShellScriptBin "commit_notes" (builtins.readFile ./scripts/commit_notes.sh))
-        ];
 
           home-manager.users.tor = { pkgs, ... }: {
             home.stateVersion = "22.05";
