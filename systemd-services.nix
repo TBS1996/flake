@@ -18,7 +18,7 @@ in
     };
   };
 
-  systemd.timers.writeDateTimer = {
+  systemd.timers.writedate = {
     description = "Timer for Write Date service";
     wantedBy = [ "timers.target" ];
     timerConfig = {
