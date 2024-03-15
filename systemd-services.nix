@@ -9,8 +9,7 @@ in
     wantedBy = [ "multi-user.target" ];
     after = [ "network.target" ];
     serviceConfig = {
-#      ExecStart = "nix-shell -p git --run ${commitNotesScript}/bin/commit_notes";
-      ExecStart=nix-shell -p git --run "/nix/store/lw7azlih86hxs1smx8ywi1v7462cfv0i-commit_notes/bin/commit_notes"
+      ExecStart=nix-shell -p git --run "/nix/store/lw7azlih86hxs1smx8ywi1v7462cfv0i-commit_notes/bin/commit_notes";
       Type = "oneshot";
       RemainAfterExit = true;
     };
