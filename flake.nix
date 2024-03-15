@@ -15,6 +15,8 @@
         home-manager.nixosModules.home-manager
         ({ pkgs, ... }: {
 
+	  myScript = pkgs.writeShellScriptBin "commit_notes" (builtins.readFile ./scripts/commit_notes.sh);
+
           home-manager.users.tor = { pkgs, ... }: {
             home.stateVersion = "22.05";
 
