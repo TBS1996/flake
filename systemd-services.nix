@@ -9,7 +9,12 @@ in
     wantedBy = [ "multi-user.target" ];
     after = [ "network.target" ];
     serviceConfig = {
-      ExecStart=nix-shell -p git --run "/nix/store/lw7azlih86hxs1smx8ywi1v7462cfv0i-commit_notes/bin/commit_notes";
+      # Correctly quote the ExecStart command as a literal string
+      ExecStart = "${pkgs.writeScriptBin "run-commit-notes" ''
+        #!/usr/bin/env sh
+        ${pkgs.git}/bin/git --version
+        exec ${pkgs.bash}/bin/bash ${commitNotesScript}/bin/commit_notes
+      ''}/bin/run-commit-notes";
       Type = "oneshot";
       RemainAfterExit = true;
     };
