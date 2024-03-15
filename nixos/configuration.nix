@@ -54,11 +54,6 @@
 
   programs.sway.enable = true;
 
-    # Enable the X server
-  services.xserver.enable = true;
-  services.xserver.windowManager.xmonad.enable = true;
-  services.xserver.windowManager.default = "xmonad";
-
   services.printing.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
