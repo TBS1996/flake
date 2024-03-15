@@ -1,5 +1,5 @@
 #!/bin/sh
-echo "yoo the current date and time: $(date)" >> /home/tor/date_log.txt
+echo "wtf the current date and time: $(date)" >> /home/tor/date_log.txt
 
 cd /home/tor/velv
 git add .
