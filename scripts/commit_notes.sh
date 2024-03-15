@@ -10,5 +10,8 @@ cd /home/tor/velv/
 
 git add .
 git commit -m "auto-commit"
-git push
 
+# Attempt to push up to 5 times with a delay
+for i in {1..3}; do
+    git push && break || sleep 1
+done
