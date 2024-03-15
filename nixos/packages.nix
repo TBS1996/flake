@@ -9,6 +9,7 @@ with pkgs; [
   zathura
 
   #cli
+  zellij
   dropbox-cli
   cowsay
   tree
