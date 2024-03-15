@@ -4,10 +4,10 @@ with pkgs; [
   firefox
   tdesktop
   whatsapp-for-linux
-  obsidian
   tor-browser
   gurk-rs
   zathura
+  dropbox
 
   #cli
   hello
