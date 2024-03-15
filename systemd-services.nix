@@ -2,21 +2,20 @@
 
 {
   systemd.services.commitNotes = {
-    description = "Write current date and time to a file";
+    description = "Regular backup of notes";
     serviceConfig = {
       ExecStart = "/home/tor/flake/scripts/commit_notes.sh";
-#      ExecStart = "././scripts/commit_notes.sh";
       Type = "oneshot";
-      User = "tor"; # Ensure this is the correct user
+      User = "tor"; 
       Environment = "PATH=${pkgs.lib.makeBinPath [ pkgs.git pkgs.coreutils ]}";
     };
   };
 
   systemd.timers.commitNotes = { 
-    description = "Timer for Write Date service";
+    description = "Timer for notes backup";
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnCalendar = "*:0/1"; # Trigger every minute
+      OnCalendar = "hourly";
       Persistent = true;
     };
   };
