@@ -1,6 +1,4 @@
-#!/usr/bin/env nix-shell
-#!nix-shell -i bash -p git
-
+#!/usr/bin/env bash
 
 # Navigate to your notes directory
 cd /home/tor/velv/
