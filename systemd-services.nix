@@ -22,7 +22,7 @@ in
     partOf = [ "commitNotes.service" ];
     timerConfig = { # Ensure timerConfig is nested within commitNotesTimer
       OnCalendar = "*:0/1";
-      Persistent = true;
+#      Persistent = true;
       Unit = "commitNotes.service"; # Explicitly specify the service unit to trigger
     };
   };
