@@ -53,8 +53,15 @@
   programs.zsh.enable = true;
 
   programs.sway.enable = true;
+
+    # Enable the X server
   services.xserver.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.windowManager.xmonad.enable = true;
+  services.xserver.windowManager.default = "xmonad";
+
+  # Disable desktop and display managers to avoid graphical login
+  services.xserver.displayManager.auto.enable = false;
+  services.xserver.desktopManager.xfce.enable = false; # Make sure this is disabled if previously enabled
 
 
   services.printing.enable = true;
