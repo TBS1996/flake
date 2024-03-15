@@ -13,7 +13,6 @@ in
       Type = "oneshot";
       RemainAfterExit = true;
       User = "tor"; # Run the service as user 'tor'
-#      Group = "tor"; # Run the service with the group 'tor'
     };
   };
 
@@ -21,9 +20,10 @@ in
     description = "Timer for commitNotes service";
     wantedBy = [ "timers.target" ];
     partOf = [ "commitNotes.service" ];
-    timerConfig = {
+    timerConfig = { # Ensure timerConfig is nested within commitNotesTimer
       OnCalendar = "*:0/1";
       Persistent = true;
+      Unit = "commitNotes.service"; # Explicitly specify the service unit to trigger
     };
   };
 }
