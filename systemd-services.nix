@@ -1,17 +1,17 @@
 { pkgs, ... }:
 
 {
-  systemd.services.writeDate = {
+  systemd.services.commitNotes = {
     description = "Write current date and time to a file";
     serviceConfig = {
-      ExecStart = "/home/tor/flake/scripts/write_date.sh";
+      ExecStart = "/home/tor/flake/scripts/commit_notes.sh";
       Type = "oneshot";
       User = "tor"; # Ensure this is the correct user
       Environment = "PATH=${pkgs.lib.makeBinPath [ pkgs.git pkgs.coreutils ]}";
     };
   };
 
-  systemd.timers.writeDate = { 
+  systemd.timers.commitNotes = { 
     description = "Timer for Write Date service";
     wantedBy = [ "timers.target" ];
     timerConfig = {
