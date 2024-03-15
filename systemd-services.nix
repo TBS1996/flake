@@ -9,7 +9,7 @@ in
     wantedBy = [ "multi-user.target" ];
     after = [ "network.target" ];
     serviceConfig = {
-      ExecStart = "${commitNotesScript}/bin/commit_notes";
+      ExecStart = "nix-shell -p git --run ${commitNotesScript}/bin/commit_notes";
       Type = "oneshot";
       RemainAfterExit = true;
     };
