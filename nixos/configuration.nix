@@ -59,11 +59,6 @@
   services.xserver.windowManager.xmonad.enable = true;
   services.xserver.windowManager.default = "xmonad";
 
-  # Disable desktop and display managers to avoid graphical login
-  services.xserver.displayManager.auto.enable = false;
-  services.xserver.desktopManager.xfce.enable = false; # Make sure this is disabled if previously enabled
-
-
   services.printing.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
