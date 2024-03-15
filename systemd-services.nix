@@ -1,7 +1,6 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 let
-  # Define a simple script that writes the current date and time to a file.
   writeDateScript = pkgs.writeShellScriptBin "write_date" ''
     #!/bin/sh
     echo "The current date and time: $(date)" >> /home/tor/date_log.txt
@@ -10,15 +9,14 @@ in
 {
   systemd.services.writeDate = {
     description = "Write current date and time to a file";
-    script = "${writeDateScript}/bin/write_date";
     serviceConfig = {
+      ExecStart = "${writeDateScript}/bin/write_date";
       Type = "oneshot";
-      User = "tor"; # Replace 'user' with your actual username
-      # No need for RemainAfterExit for a script that just writes the date
+      User = "tor"; # Ensure this is the correct user
     };
   };
 
-  systemd.timers.writedate = {
+  systemd.timers.writeDate = { # Ensure this matches the service's name with 'Timer' postfix removed
     description = "Timer for Write Date service";
     wantedBy = [ "timers.target" ];
     timerConfig = {
