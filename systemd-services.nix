@@ -13,7 +13,7 @@ in
       Type = "oneshot";
       RemainAfterExit = true;
       User = "tor"; # Run the service as user 'tor'
-      Group = "tor"; # Run the service with the group 'tor'
+#      Group = "tor"; # Run the service with the group 'tor'
     };
   };
 
