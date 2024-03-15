@@ -7,10 +7,9 @@ with pkgs; [
   tor-browser
   gurk-rs
   zathura
-  dropbox
 
   #cli
-  hello
+  dropbox-cli
   cowsay
   tree
   mpd
