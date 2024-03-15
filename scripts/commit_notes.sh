@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Navigate to your notes directory
-cd ~/velv/
+cd /home/tor/velv/
 
 nix-shell -p git
 git add .
