@@ -1,6 +1,0 @@
-[Unit]
-Description=Commit and push notes to upstream
-
-[Service]
-Type=oneshot
-ExecStart=/usr/local/bin/commit-and-push-notes.sh
