@@ -8,6 +8,7 @@
       ExecStart = "/home/tor/flake/scripts/write_date.sh";
       Type = "oneshot";
       User = "tor"; # Ensure this is the correct user
+      Environment = "PATH=${lib.makeBinPath [ pkgs.git pkgs.coreutils ]}";
     };
   };
 
