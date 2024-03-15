@@ -51,8 +51,13 @@
   i18n.defaultLocale = "en_US.utf8";
 
   programs.zsh.enable = true;
-  programs.sway.enable = true;
   services.xserver.enable = false;
+
+
+  programs.sway.enable = true;
+  services.xserver.enable = true;
+  services.xserver.desktopManager.xfce.enable = true;
+
 
   services.printing.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
