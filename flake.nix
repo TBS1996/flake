@@ -46,7 +46,7 @@
             home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;
             home.file.".config/newsboat/urls".source = ./dotfiles/newsboat/urls;
             home.file.".config/sway/config".source = ./dotfiles/sway/config;
-            home.file.".config/zsh/.zshrc".source = ./dotfiles/zsh/.zshrc;
+            home.file.".config/zsh/config".source = ./dotfiles/zsh/.zshrc;
             home.file.".config/aerc/binds.conf".source = ./dotfiles/aerc/binds.conf;
             home.file.".config/aerc/aerc.conf".source = ./dotfiles/aerc/aerc.conf;
           };
