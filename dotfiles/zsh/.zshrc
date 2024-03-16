@@ -78,7 +78,7 @@ alias gap='git add . && git commit -m "wip" && git push'
 alias scl='systemctl'
 alias z="zellij"
 alias v="nvim"
-alias nb="newsboat"
+alias nb="newsboat -r"
 alias y="yazi"
 alias f="cd /home/tor/flake"
 
