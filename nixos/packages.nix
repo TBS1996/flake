@@ -9,6 +9,7 @@ with pkgs; [
   zathura
 
   #cli
+  ripgrep
   zellij
   dropbox-cli
   cowsay
