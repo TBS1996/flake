@@ -79,3 +79,4 @@ alias scl='systemctl'
 alias z="zellij"
 alias v="nvim"
 alias nb="newsboat"
+alias y="yazi"

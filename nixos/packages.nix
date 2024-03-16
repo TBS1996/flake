@@ -45,7 +45,6 @@ with pkgs; [
 
   #terminal stuff
   alacritty
-  tmux
   fish
 
   #bg
