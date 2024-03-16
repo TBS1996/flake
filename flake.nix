@@ -19,6 +19,10 @@
           home-manager.users.tor = { pkgs, ... }: {
             home.stateVersion = "22.05";
 
+	    home.sessionVariables = {
+              PATH = "${pkgs.lib.makeBinPath [ "/home/tor/.cache/cargo/bin" ]}";
+            };
+
             imports = [
               nixvim.homeManagerModules.nixvim
             ];
