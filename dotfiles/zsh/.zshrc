@@ -77,4 +77,5 @@ alias cpy='wl-copy <'
 alias gap='git add . && git commit -m "wip" && git push'
 alias scl='systemctl'
 alias z="zellij"
-alias v="neovim"
+alias v="nvim"
+alias nb="newsboat"
