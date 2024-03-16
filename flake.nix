@@ -111,6 +111,9 @@
               extraConfigLua = ''
 		vim.g.mapleader = " "
 		vim.api.nvim_set_keymap('n', '<leader>l', ':Telescope current_buffer_fuzzy_find<CR>', { noremap = true, silent = true })
+		vim.api.nvim_set_keymap('n', '<leader>lg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
+		vim.api.nvim_set_keymap('n', '<leader>gs', ':Telescope grep_string<CR>', { noremap = true, silent = true })
+
                 require('rust-tools').setup({})
                 require('lspconfig').rust_analyzer.setup({
                   capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
