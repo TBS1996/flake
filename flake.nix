@@ -13,7 +13,7 @@
       modules = [
         ./nixos/configuration.nix
 	./systemd-services.nix
-	({ nixvim, ... }: ./nixvim-config.nix { inherit nixvim; })
+	./nixvim-config.nix 
         home-manager.nixosModules.home-manager
         ({ pkgs, ... }: {
 
