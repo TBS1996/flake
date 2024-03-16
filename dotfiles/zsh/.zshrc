@@ -80,3 +80,7 @@ alias z="zellij"
 alias v="nvim"
 alias nb="newsboat"
 alias y="yazi"
+alias f="cd /home/tor/flake"
+
+
+export PATH=$PATH:/home/tor/.cache/cargo/bin

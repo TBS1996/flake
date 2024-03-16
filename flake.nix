@@ -41,9 +41,6 @@
 	      enable = true;
 	      policies = {
 	      ExtensionSettings = {
-		# blocks all addons except the ones specified below
-		#"*".installation_mode = "blocked"; 
-
 		# uBlock Origin:
 		"uBlock0@raymondhill.net" = {
 		  install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
