@@ -42,10 +42,8 @@ with pkgs; [
   bitwarden-cli
   yazi
   wl-clipboard
-
-  #terminal stuff
-  alacritty
   fish
+
 
   #bg
   rust-analyzer
