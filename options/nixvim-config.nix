@@ -35,10 +35,17 @@
       vim.api.nvim_set_keymap('n', '<leader>lg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>gs', ':Telescope grep_string<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>o', ':Neotree<CR>', { noremap = true, silent = true })
+
       vim.api.nvim_set_keymap('n', '<leader>a', ':vertical resize -3<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>d', ':vertical resize +3<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>w', ':horizontal resize -3<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>s', ':horizontal resize +3<CR>', { noremap = true, silent = true })
+
+
+      vim.api.nvim_set_keymap('n', '<leader>A', ':vertical resize -6<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>D', ':vertical resize +6<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>W', ':horizontal resize -6<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>S', ':horizontal resize +6<CR>', { noremap = true, silent = true })
 
       -- Define an 'on_attach' function to set up key mappings when an LSP client attaches to a buffer
       local on_attach = function(client, bufnr)
