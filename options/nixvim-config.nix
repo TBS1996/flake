@@ -68,6 +68,33 @@
           vim.lsp.buf.format({ timeout_ms = 1000, async = false })
         end,
       })
+
+
+
+      -- Set up nvim-cmp
+      local cmp = require('cmp')
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+      cmp.setup({
+        snippet = {
+          expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body)
+          end,
+        },
+        mapping = {
+          ['<C-Space>'] = cmp.mapping.complete(),
+          ['<CR>'] = cmp.mapping.confirm({ select = true }),
+          ['<C-n>'] = cmp.mapping.select_next_item(),
+          ['<C-p>'] = cmp.mapping.select_prev_item(),
+        },
+        sources = cmp.config.sources({
+          { name = 'nvim_lsp' },
+          { name = 'vsnip' },
+        }, {
+          { name = 'buffer' },
+          { name = 'path' },
+        }),
+      })
     '';
   };
 }
