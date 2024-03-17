@@ -1,3 +1,4 @@
+
 { pkgs, ... }:
 {
   programs.nixvim = {
@@ -17,8 +18,6 @@
       cmp-buffer.enable = true;
       cmp-path.enable = true;
       cmp-cmdline.enable = true;
-      vim-vsnip.enable = true;
-      cmp-vsnip.enable = true;
     };
     colorschemes.dracula.enable = true;
     options = {
@@ -78,15 +77,23 @@
 
       require('lspconfig').rust_analyzer.setup({
         on_attach = on_attach,
-	capabilities = capabilities,
+        capabilities = capabilities,
       })
 
       vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = {"*.rs"},
+      pattern = {"*.rs"},
         callback = function()
           vim.lsp.buf.format({ timeout_ms = 1000, async = false })
         end,
       })
-    ''; 
+    '';
+  };
+
+  programs.neovim = {
+    enable = true;
+    plugins = with pkgs.vimPlugins; [
+      vim-vsnip
+      cmp-vsnip
+    ];
   };
 }
