@@ -48,7 +48,7 @@
       vim.api.nvim_set_keymap('n', '<leader>S', ':horizontal resize +8<CR>', { noremap = true, silent = true })
 
       -- Define an 'on_attach' function to set up key mappings when an LSP client attaches to a buffer
-      local on_attach = function(client, bufnr)
+lcal on_attach = function(client, bufnr)
         local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
         local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -59,6 +59,25 @@
         buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
         -- Add more mappings as needed
       end
+
+
+      -- Custom function to execute UP, ESC, o sequence when Enter is pressed between empty curly brackets
+      vim.api.nvim_create_autocmd("FileType", {
+	pattern = "*",
+	callback = function()
+	  local function check_and_execute()
+	    local line = vim.api.nvim_get_current_line()
+	    local col = vim.api.nvim_win_get_cursor(0)[2] + 1
+	    if line:sub(col, col + 1) == "{}" then
+	      vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>ko", true, false, true), 'n', false)
+	    else
+	      vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<CR>", true, false, true), 'n', false)
+	    end
+	  end
+	  vim.keymap.set('i', '<CR>', check_and_execute, {silent = true, buffer = true})
+	end,
+      })
+
 
       -- Setup 'rust-tools'
       require('rust-tools').setup({
@@ -79,8 +98,6 @@
           vim.lsp.buf.format({ timeout_ms = 1000, async = false })
         end,
       })
-
-
 
       -- Set up nvim-cmp
       local cmp = require('cmp')
