@@ -31,25 +31,95 @@
       shiftwidth = 2;
     };
 
+    keymaps = [
+      {
+	action = ":Telescope live_grep<CR>";
+	key = "<leader>lg";
+	options = {
+	  silent = true;
+	};
+      }
+      {
+	action = ":Telescope grep_string<CR>";
+	key = "<leader>gs";
+	options = {
+	  silent = true;
+	};
+      }
+      {
+	action = ":Neotree<CR>";
+	key = "<leader>o";
+	options = {
+	  silent = true;
+	};
+      }
+      {
+	action = ":vertical resize -4<CR>";
+	key = "<leader>a";
+	options = {
+	  silent = true;
+	};
+      }
+      {
+	action = ":vertical resize +4<CR>";
+	key = "<leader>d";
+	options = {
+	  silent = true;
+	};
+      }
+      {
+	action = ":horizontal resize -4<CR>";
+	key = "<leader>w";
+	options = {
+	  silent = true;
+	};
+      }
+      {
+	action = ":horizontal resize +4<CR>";
+	key = "<leader>s";
+	options = {
+	  silent = true;
+	};
+      }
+      {
+	action = ":vertical resize -8<CR>";
+	key = "<leader>A";
+	options = {
+	  silent = true;
+	};
+      }
+      {
+	action = ":vertical resize +8<CR>";
+	key = "<leader>D";
+	options = {
+	  silent = true;
+	};
+      }
+      {
+	action = ":horizontal resize -8<CR>";
+	key = "<leader>W";
+	options = {
+	  silent = true;
+	};
+      }
+      {
+	action = ":horizontal resize +8<CR>";
+	key = "<leader>S";
+	options = {
+	  silent = true;
+	};
+      }
+    ];
+
+
+
+
+
     extraConfigLua = ''
       vim.g.mapleader = " "
-      vim.api.nvim_set_keymap('n', '<leader>lg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>gs', ':Telescope grep_string<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>o', ':Neotree<CR>', { noremap = true, silent = true })
-
-      vim.api.nvim_set_keymap('n', '<leader>a', ':vertical resize -4<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>d', ':vertical resize +4<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>w', ':horizontal resize -4<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>s', ':horizontal resize +4<CR>', { noremap = true, silent = true })
 
 
-      vim.api.nvim_set_keymap('n', '<leader>A', ':vertical resize -8<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>D', ':vertical resize +8<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>W', ':horizontal resize -8<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>S', ':horizontal resize +8<CR>', { noremap = true, silent = true })
-
-
-      -- Custom function to execute UP, ESC, o sequence when Enter is pressed between empty curly brackets
+      -- Orients the cursor correctly after pressing enter within curly braces.
       vim.api.nvim_create_autocmd("FileType", {
 	pattern = "*",
 	callback = function()
