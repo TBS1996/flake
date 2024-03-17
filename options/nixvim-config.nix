@@ -14,7 +14,7 @@
       gitsigns.enable = true;
       telescope.enable = true;
       lightline.enable = true;
-      #chadtree.enable = true;
+      chadtree.enable = true;
       barbar.enable = true;
 
       cmp-buffer.enable = true;
