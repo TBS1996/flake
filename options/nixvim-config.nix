@@ -47,19 +47,6 @@
       vim.api.nvim_set_keymap('n', '<leader>W', ':horizontal resize -8<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>S', ':horizontal resize +8<CR>', { noremap = true, silent = true })
 
-      -- Define an 'on_attach' function to set up key mappings when an LSP client attaches to a buffer
-lcal on_attach = function(client, bufnr)
-        local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-        local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-        buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-        -- Key mappings
-        local opts = { noremap=true, silent=true }
-        buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-        -- Add more mappings as needed
-      end
-
 
       -- Custom function to execute UP, ESC, o sequence when Enter is pressed between empty curly brackets
       vim.api.nvim_create_autocmd("FileType", {
@@ -77,6 +64,21 @@ lcal on_attach = function(client, bufnr)
 	  vim.keymap.set('i', '<CR>', check_and_execute, {silent = true, buffer = true})
 	end,
       })
+
+
+      -- Define an 'on_attach' function to set up key mappings when an LSP client attaches to a buffer
+lcal on_attach = function(client, bufnr)
+        local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+        local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+        buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+        -- Key mappings
+        local opts = { noremap=true, silent=true }
+        buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+        -- Add more mappings as needed
+      end
+
 
 
       -- Setup 'rust-tools'
