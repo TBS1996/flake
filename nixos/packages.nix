@@ -47,6 +47,7 @@ with pkgs; [
 
 
   #bg
+  rustup
   rust-analyzer
   rustfmt
   lldb
