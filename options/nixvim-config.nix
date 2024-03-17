@@ -59,7 +59,7 @@
 	options = {
 	  silent = true;
 	  noremap = true;
-	};
+	}n
       }
       {
 	action = ":vertical resize +4<CR>";
@@ -118,20 +118,6 @@
 
     extraConfigLua = ''
       vim.g.mapleader = " "
-      vim.api.nvim_set_keymap('n', '<leader>lg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>gs', ':Telescope grep_string<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>o', ':Neotree<CR>', { noremap = true, silent = true })
-
-      vim.api.nvim_set_keymap('n', '<leader>a', ':vertical resize -4<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>d', ':vertical resize +4<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>w', ':horizontal resize -4<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>s', ':horizontal resize +4<CR>', { noremap = true, silent = true })
-
-
-      vim.api.nvim_set_keymap('n', '<leader>A', ':vertical resize -8<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>D', ':vertical resize +8<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>W', ':horizontal resize -8<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>S', ':horizontal resize +8<CR>', { noremap = true, silent = true })
 
 
       -- Orients the cursor correctly after pressing enter within curly braces.
