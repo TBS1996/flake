@@ -9,6 +9,7 @@ with pkgs; [
   zathura
 
   #cli
+  cool-retro-term
   ripgrep
   zellij
   dropbox-cli
