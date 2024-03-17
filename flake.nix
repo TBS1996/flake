@@ -13,7 +13,7 @@
       modules = [
         ./nixos/configuration.nix
 	./systemd-services.nix
-	./nixvim-config.nix
+	#./nixvim-config.nix
         home-manager.nixosModules.home-manager
         ({ pkgs, ... }: {
 
@@ -26,8 +26,8 @@
 
             imports = [
               nixvim.homeManagerModules.nixvim
-	      #./options/nixvim-config.nix
-	      ./options/foo.nix
+	      ./options/nixvim-config.nix
+	      #./options/foo.nix
 	      #./options/bar.nix
 	      ./options/firefox-config.nix
             ];
