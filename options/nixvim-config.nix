@@ -34,7 +34,7 @@
       vim.g.mapleader = " "
       vim.api.nvim_set_keymap('n', '<leader>lg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>gs', ':Telescope grep_string<CR>', { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>o', ':CHADopen<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>o', ':Neotree<CR>', { noremap = true, silent = true })
 
       -- Define an 'on_attach' function to set up key mappings when an LSP client attaches to a buffer
       local on_attach = function(client, bufnr)
