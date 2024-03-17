@@ -11,38 +11,34 @@
       cmp-cmdline
       rust-tools-nvim
       vim-vsnip
+      cmp-vsnip
     ];
     extraConfig = ''
       lua << EOF
       -- Set up nvim-cmp
       local cmp = require('cmp')
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
       cmp.setup({
-
-    snippet = {
-      expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-      end,
-    },
-
-
+        snippet = {
+          expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body)
+          end,
+        },
         mapping = {
           ['<C-Space>'] = cmp.mapping.complete(),
           ['<CR>'] = cmp.mapping.confirm({ select = true }),
           ['<C-n>'] = cmp.mapping.select_next_item(),
           ['<C-p>'] = cmp.mapping.select_prev_item(),
         },
-        sources = {
+        sources = cmp.config.sources({
           { name = 'nvim_lsp' },
+          { name = 'vsnip' },
+        }, {
           { name = 'buffer' },
           { name = 'path' },
-        },
+        }),
       })
-
-      -- Set up LSP client capabilities
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       -- Set up Rust tools
       require('rust-tools').setup({
