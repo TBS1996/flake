@@ -27,7 +27,8 @@
             imports = [
               nixvim.homeManagerModules.nixvim
 	      #./options/nixvim-config.nix
-	      ./options/foo.nix
+	      #./options/foo.nix
+	      ./options/bar.nix
 	      ./options/firefox-config.nix
             ];
 
