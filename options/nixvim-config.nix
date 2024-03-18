@@ -51,7 +51,8 @@
       vim.api.nvim_set_keymap('n', '<leader>S', ':horizontal resize +8<CR>', { noremap = true, silent = true })
 
 
-      vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>lua RunCargoInFloatingTerminal()<CR>', {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>lua RunCargoInFloatingTerminal("cargo run")<CR>', {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>lua RunCargoInFloatingTerminal("cargo build")<CR>', {noremap = true, silent = true})
 
 
 
@@ -74,7 +75,7 @@
 
 
 
-      function RunCargoInFloatingTerminal()
+      function RunCargoInFloatingTerminal(cmd)
 	local current_file = vim.fn.expand('%:p:h') -- Get the directory of the current file
 	local cargo_toml_path = vim.fn.findfile("Cargo.toml", current_file .. ";") -- Search upwards for Cargo.toml
 
@@ -108,7 +109,7 @@
 	local win = vim.api.nvim_open_win(buf, true, opts)
 
 	-- Run 'cargo run' in the terminal within the project root and save the job ID
-	local job_id = vim.fn.termopen("cargo run", {cwd = project_root})
+	local job_id = vim.fn.termopen(cmd, {cwd = project_root})
 
 	-- Key mapping to close the terminal window and kill the process
 	vim.api.nvim_buf_set_keymap(buf, 't', 'q', '<C-\\><C-n><cmd>call nvim_win_close('..win..', v:true) | call jobstop('..job_id..')<CR>', {noremap = true, silent = true})
@@ -131,12 +132,6 @@
 	},
       }
     }
-
-
-
-
-
-
 
 
       -- Define an 'on_attach' function to set up key mappings when an LSP client attaches to a buffer
