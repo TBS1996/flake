@@ -13,7 +13,8 @@
       treesitter.enable = true;
       treesitter-refactor.enable = true;
       gitsigns.enable = true;
-      telescope.enable = true;
+      #telescope.enable = true;
+      fzf-lua.enable = true;
       lightline.enable = true;
       neo-tree.enable = true;
       barbar.enable = true;
@@ -33,7 +34,7 @@
 
     extraConfigLua = ''
       vim.g.mapleader = " "
-      vim.api.nvim_set_keymap('n', '<leader>lg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
+      --vim.api.nvim_set_keymap('n', '<leader>lg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>gs', ':Telescope grep_string<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>o', ':Neotree<CR>', { noremap = true, silent = true })
 
