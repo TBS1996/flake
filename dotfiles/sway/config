@@ -225,6 +225,13 @@ bindsym $mod+w exec whatsapp-for-linux
 bindsym $mod+t exec telegram-desktop
 
 
+input * {
+    repeat_rate 100
+    repeat_delay 200
+}
+
+
+
 
 #
 # Status Bar:
