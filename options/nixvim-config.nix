@@ -48,7 +48,6 @@
       vim.api.nvim_set_keymap('n', '<leader>W', ':horizontal resize -8<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>S', ':horizontal resize +8<CR>', { noremap = true, silent = true })
 
-	vim.api.nvim_set_keymap('n', '<leader>cf', '<cmd>lua RunInFloatingTerminal("cargo run")<CR>', {noremap = true, silent = true})
 
 
       -- Orients the cursor correctly after pressing enter within curly braces.
@@ -69,43 +68,49 @@
       })
 
 
-	function RunInFloatingTerminal(cmd)
-	  local buf = vim.api.nvim_create_buf(false, true) -- create a new buffer for the terminal
-	  local width = vim.api.nvim_get_option("columns")
-	  local height = vim.api.nvim_get_option("lines")
+      function RunCargoInFloatingTerminal()
+	local current_file = vim.fn.expand('%:p:h') -- Get the directory of the current file
+	local cargo_toml_path = vim.fn.findfile("Cargo.toml", current_file .. ";") -- Search upwards for Cargo.toml
 
-	  -- Calculate floating window size
-	  local win_height = math.ceil(height * 0.9) -- adjust to your liking
-	  local win_width = math.ceil(width * 0.9) -- adjust to your liking
-	  local row = math.ceil((height - win_height) / 2)
-	  local col = math.ceil((width - win_width) / 2)
-
-	  local opts = {
-	    style = "minimal",
-	    relative = "editor",
-	    width = win_width,
-	    height = win_height,
-	    row = row,
-	    col = col,
-	    border = "rounded",
-	  }
-
-	  local win = vim.api.nvim_open_win(buf, true, opts)
-	  vim.api.nvim_command('term ' .. cmd) -- run your command in the terminal
-
-	  -- Automatically enter insert mode (optional)
-	  vim.api.nvim_command('startinsert')
-
-	  -- Key mapping to close the terminal window
-	  vim.api.nvim_buf_set_keymap(buf, 't', 'q', '<C-\\><C-n>:q!<CR>', {noremap = true, silent = true})
+	if cargo_toml_path == "" then
+	  print("Cargo.toml not found. Are you inside a Rust project?")
+	  return
 	end
 
-	-- Bind to a key
+	local project_root = vim.fn.fnamemodify(cargo_toml_path, ':h') -- Get the directory of Cargo.toml
 
-    
+	local buf = vim.api.nvim_create_buf(false, true) -- create a new buffer for the terminal
+	local width = vim.api.nvim_get_option("columns")
+	local height = vim.api.nvim_get_option("lines")
 
+	-- Calculate floating window size
+	local win_height = math.ceil(height * 0.9) -- adjust to your liking
+	local win_width = math.ceil(width * 0.9) -- adjust to your liking
+	local row = math.ceil((height - win_height) / 2)
+	local col = math.ceil((width - win_width) / 2)
 
+	local opts = {
+	  style = "minimal",
+	  relative = "editor",
+	  width = win_width,
+	  height = win_height,
+	  row = row,
+	  col = col,
+	  border = "rounded",
+	}
 
+	local win = vim.api.nvim_open_win(buf, true, opts)
+	vim.fn.termopen("cargo run", {cwd = project_root}) -- run 'cargo run' in the terminal within the project root
+
+	-- Automatically enter insert mode (optional)
+	vim.api.nvim_command('startinsert')
+
+	-- Key mapping to close the terminal window
+	vim.api.nvim_buf_set_keymap(buf, 't', 'q', '<C-\\><C-n>:q!<CR>', {noremap = true, silent = true})
+      end
+
+      -- Bind to a key
+      vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>lua RunCargoInFloatingTerminal()<CR>', {noremap = true, silent = true})
 
 
       -- Define an 'on_attach' function to set up key mappings when an LSP client attaches to a buffer
