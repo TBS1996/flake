@@ -31,93 +31,24 @@
       shiftwidth = 2;
     };
 
-    keymaps = [
-      {
-	action = ":Telescope live_grep<CR>";
-	key = "<leader>lg";
-	options = {
-	  silent = true;
-	};
-      }
-      {
-	action = ":Telescope grep_string<CR>";
-	key = "<leader>gs";
-	options = {
-	  silent = true;
-	};
-      }
-      {
-	action = ":Neotree<CR>";
-	key = "<leader>o";
-	options = {
-	  silent = true;
-	};
-      }
-      {
-	action = ":vertical resize -4<CR>";
-	key = "<leader>a";
-	options = {
-	  silent = true;
-	  noremap = true;
-	}n
-      }
-      {
-	action = ":vertical resize +4<CR>";
-	key = "<leader>d";
-	options = {
-	  silent = true;
-	};
-      }
-      {
-	action = ":horizontal resize -4<CR>";
-	key = "<leader>w";
-	options = {
-	  silent = true;
-	};
-      }
-      {
-	action = ":horizontal resize +4<CR>";
-	key = "<leader>s";
-	options = {
-	  silent = true;
-	};
-      }
-      {
-	action = ":vertical resize -8<CR>";
-	key = "<leader>A";
-	options = {
-	  silent = true;
-	};
-      }
-      {
-	action = ":vertical resize +8<CR>";
-	key = "<leader>D";
-	options = {
-	  silent = true;
-	};
-      }
-      {
-	action = ":horizontal resize -8<CR>";
-	key = "<leader>W";
-	options = {
-	  silent = true;
-	};
-      }
-      {
-	action = ":horizontal resize +8<CR>";
-	key = "<leader>S";
-	options = {
-	  silent = true;
-	};
-      }
-    ];
-
-
-
-
-
     extraConfigLua = ''
       vim.g.mapleader = " "
+      vim.api.nvim_set_keymap('n', '<leader>lg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>gs', ':Telescope grep_string<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>o', ':Neotree<CR>', { noremap = true, silent = true })
+
+      vim.api.nvim_set_keymap('n', '<leader>a', ':vertical resize -4<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>d', ':vertical resize +4<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>w', ':horizontal resize -4<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>s', ':horizontal resize +4<CR>', { noremap = true, silent = true })
+
+
+      vim.api.nvim_set_keymap('n', '<leader>A', ':vertical resize -8<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>D', ':vertical resize +8<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>W', ':horizontal resize -8<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>S', ':horizontal resize +8<CR>', { noremap = true, silent = true })
+
+      vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>lua RunAndShowOutput("cargo run")<CR>', {noremap = true, silent = true})
 
 
       -- Orients the cursor correctly after pressing enter within curly braces.
@@ -136,6 +67,41 @@
 	  vim.keymap.set('i', '<CR>', check_and_execute, {silent = true, buffer = true})
 	end,
       })
+
+
+    function RunAndShowOutput(cmd)
+      local buf = vim.api.nvim_create_buf(false, true) -- creates a new empty buffer
+      local output = vim.fn.systemlist(cmd) -- runs the command and captures the output as a list of lines
+
+      -- Fill the buffer with the command output
+      vim.api.nvim_buf_set_lines(buf, 0, -1, false, output)
+
+      -- Calculate the floating window size
+      local width = vim.api.nvim_get_option("columns")
+      local height = vim.api.nvim_get_option("lines")
+      local win_height = math.ceil(height * 0.8 - 4)
+      local win_width = math.ceil(width * 0.8)
+      local row = math.ceil((height - win_height) / 2 - 1)
+      local col = math.ceil((width - win_width) / 2)
+
+      -- Define the floating window options
+      local opts = {
+	relative = "editor",
+	width = win_width,
+	height = win_height,
+	row = row,
+	col = col,
+	style = "minimal",
+	border = "rounded",
+      }
+
+      -- Create the floating window with the buffer
+      local win = vim.api.nvim_open_win(buf, true, opts)
+
+      -- Set mappings to close the floating window easily
+      vim.api.nvim_buf_set_keymap(buf, 'n', 'q', '<cmd>close<CR>', {noremap = true, silent = true})
+    end
+
 
 
       -- Define an 'on_attach' function to set up key mappings when an LSP client attaches to a buffer
