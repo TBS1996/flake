@@ -14,10 +14,10 @@
       treesitter-refactor.enable = true;
       gitsigns.enable = true;
       telescope.enable = true;
-      #fzf-lua.enable = true;
       lightline.enable = true;
       neo-tree.enable = true;
       barbar.enable = true;
+      leap.enable = true;
 
       cmp-buffer.enable = true;
       cmp-path.enable = true;
@@ -25,10 +25,14 @@
     };
 
 
-  colorschemes.rose-pine = {
-    enable = true; # Make sure the rose-pine theme is enabled
-    style = "dawn"; # Set the theme style to Dawn
+colorschemes.gruvbox = {
+  enable = true;
+  settings = {
+    background = "light"; # Set Gruvbox to light mode
+    # Add any additional settings or overrides here
   };
+};
+
 
 
     options = {
