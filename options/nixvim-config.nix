@@ -13,8 +13,8 @@
       treesitter.enable = true;
       treesitter-refactor.enable = true;
       gitsigns.enable = true;
-      #telescope.enable = true;
-      fzf-lua.enable = true;
+      telescope.enable = true;
+      #fzf-lua.enable = true;
       lightline.enable = true;
       neo-tree.enable = true;
       barbar.enable = true;
@@ -115,6 +115,22 @@
 	-- Automatically enter insert mode (optional)
 	vim.api.nvim_command('startinsert')
       end
+
+
+local actions = require('telescope.actions')
+require('telescope').setup{
+  defaults = {
+    mappings = {
+      i = {
+        ["<Tab>"] = actions.select_default + actions.center
+      },
+      n = {
+        ["<Tab>"] = actions.select_default + actions.center
+      },
+    },
+  }
+}
+
 
 
 
