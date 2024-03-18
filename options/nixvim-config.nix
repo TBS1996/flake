@@ -26,7 +26,7 @@
 
 
 colorschemes.gruvbox = {
-  enable = true;
+  enable = false;
   settings = {
     #background = "light"; # Set Gruvbox to light mode
     # Add any additional settings or overrides here
