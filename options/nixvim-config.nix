@@ -24,8 +24,12 @@
       cmp-cmdline.enable = true;
     };
 
-    #colorschemes.dracula.enable = true;
-    colorschemes.catppuccin.enable = true;
+
+  colorschemes.rose-pine = {
+    enable = true; # Make sure the rose-pine theme is enabled
+    style = "dawn"; # Set the theme style to Dawn
+  };
+
 
     options = {
       number = true;
