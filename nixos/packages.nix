@@ -55,6 +55,9 @@ with pkgs; [
   swaylock
   xdg-utils
   go
+  openssl
+
+
 ]
 
 
