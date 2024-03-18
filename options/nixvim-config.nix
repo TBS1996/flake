@@ -105,22 +105,15 @@ function RunCargoInFloatingTerminal()
   -- Run 'cargo run' in the terminal within the project root and save the job ID
   local job_id = vim.fn.termopen("cargo run", {cwd = project_root})
 
-  -- Function to close the window and kill the process
-  local function close_and_kill()
-    vim.api.nvim_win_close(win, true)
-    -- Send SIGTERM to the job process
-    vim.fn.jobstop(job_id)
-  end
-
   -- Key mapping to close the terminal window and kill the process
-  vim.api.nvim_buf_set_keymap(buf, 't', 'q', '<cmd>lua close_and_kill()<CR>', {noremap = true, silent = true})
+  vim.api.nvim_buf_set_keymap(buf, 't', 'q', '<C-\\><C-n><cmd>call nvim_win_close('..win..', v:true) | call jobstop('..job_id..')<CR>', {noremap = true, silent = true})
 
   -- Automatically enter insert mode (optional)
   vim.api.nvim_command('startinsert')
 end
 
 -- Bind to a key
-vim.api.nvim_set_keymap('n', '<leader>cf', '<cmd>lua RunCargoInFloatingTerminal()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>lua RunCargoInFloatingTerminal()<CR>', {noremap = true, silent = true})
 
 
 
