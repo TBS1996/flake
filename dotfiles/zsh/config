@@ -82,6 +82,7 @@ alias nb="newsboat -r"
 alias y="yazi"
 alias f="cd /home/tor/flake"
 alias nt="nmtui"
+alias p="cd /home/tor/prog"
 
 
 export PATH=$PATH:/home/tor/.cache/cargo/bin
