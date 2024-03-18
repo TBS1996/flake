@@ -1,30 +1,33 @@
 [main]
 dpi-aware=yes
 
-
 # -*- conf -*-
-# Solarized light
+# theme: Tempus Day
+# author: Protesilaos Stavrou (https://protesilaos.com)
+# description: Light theme with warm colours (WCAG AA compliant)
 
-[cursor]
-color=fdf6e3 586e75
+#[cursor]
+#color = f8f2e5 464340
 
 [colors]
-background=              fdf6e3
-foreground=              657b83
-regular0=                eee8d5
-regular1=                dc322f
-regular2=                859900
-regular3=                b58900
-regular4=                268bd2
-regular5=                d33682
-regular6=                2aa198
-regular7=                073642
-bright0=                 cb4b16
-bright1=                 fdf6e3
-bright2=                 93a1a1
-bright3=                 839496
-bright4=                 657b83
-bright5=                 6c71c4
-bright6=                 586e75
-bright7=                 002b36
+foreground = 464340
+background = f8f2e5
+regular0 = 464340
+regular1 = c81000
+regular2 = 107410
+regular3 = 806000
+regular4 = 385dc4
+regular5 = b63052
+regular6 = 007070
+regular7 = e7e3d7
+bright0 = 68607d
+bright1 = b24000
+bright2 = 427040
+bright3 = 6f6600
+bright4 = 0f64c4
+bright5 = 8050a7
+bright6 = 336c87
+bright7 = f8f2e5
+# selection-foreground = 68607d
+# selection-background = e7e3d7
 
