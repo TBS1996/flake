@@ -49,6 +49,9 @@
       vim.api.nvim_set_keymap('n', '<leader>S', ':horizontal resize +8<CR>', { noremap = true, silent = true })
 
 
+      vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>lua RunCargoInFloatingTerminal()<CR>', {noremap = true, silent = true})
+
+
 
       -- Orients the cursor correctly after pressing enter within curly braces.
       vim.api.nvim_create_autocmd("FileType", {
@@ -69,51 +72,49 @@
 
 
 
-function RunCargoInFloatingTerminal()
-  local current_file = vim.fn.expand('%:p:h') -- Get the directory of the current file
-  local cargo_toml_path = vim.fn.findfile("Cargo.toml", current_file .. ";") -- Search upwards for Cargo.toml
+      function RunCargoInFloatingTerminal()
+	local current_file = vim.fn.expand('%:p:h') -- Get the directory of the current file
+	local cargo_toml_path = vim.fn.findfile("Cargo.toml", current_file .. ";") -- Search upwards for Cargo.toml
 
-  if cargo_toml_path == "" then
-    print("Cargo.toml not found. Are you inside a Rust project?")
-    return
-  end
+	if cargo_toml_path == "" then
+	  print("Cargo.toml not found. Are you inside a Rust project?")
+	  return
+	end
 
-  local project_root = vim.fn.fnamemodify(cargo_toml_path, ':h') -- Get the directory of Cargo.toml
+	local project_root = vim.fn.fnamemodify(cargo_toml_path, ':h') -- Get the directory of Cargo.toml
 
-  local buf = vim.api.nvim_create_buf(false, true) -- create a new buffer for the terminal
-  local width = vim.api.nvim_get_option("columns")
-  local height = vim.api.nvim_get_option("lines")
+	local buf = vim.api.nvim_create_buf(false, true) -- create a new buffer for the terminal
+	local width = vim.api.nvim_get_option("columns")
+	local height = vim.api.nvim_get_option("lines")
 
-  -- Calculate floating window size
-  local win_height = math.ceil(height * 0.9) -- adjust to your liking
-  local win_width = math.ceil(width * 0.9) -- adjust to your liking
-  local row = math.ceil((height - win_height) / 2)
-  local col = math.ceil((width - win_width) / 2)
+	-- Calculate floating window size
+	local win_height = math.ceil(height * 0.9) -- adjust to your liking
+	local win_width = math.ceil(width * 0.9) -- adjust to your liking
+	local row = math.ceil((height - win_height) / 2)
+	local col = math.ceil((width - win_width) / 2)
 
-  local opts = {
-    style = "minimal",
-    relative = "editor",
-    width = win_width,
-    height = win_height,
-    row = row,
-    col = col,
-    border = "rounded",
-  }
+	local opts = {
+	  style = "minimal",
+	  relative = "editor",
+	  width = win_width,
+	  height = win_height,
+	  row = row,
+	  col = col,
+	  border = "rounded",
+	}
 
-  local win = vim.api.nvim_open_win(buf, true, opts)
+	local win = vim.api.nvim_open_win(buf, true, opts)
 
-  -- Run 'cargo run' in the terminal within the project root and save the job ID
-  local job_id = vim.fn.termopen("cargo run", {cwd = project_root})
+	-- Run 'cargo run' in the terminal within the project root and save the job ID
+	local job_id = vim.fn.termopen("cargo run", {cwd = project_root})
 
-  -- Key mapping to close the terminal window and kill the process
-  vim.api.nvim_buf_set_keymap(buf, 't', 'q', '<C-\\><C-n><cmd>call nvim_win_close('..win..', v:true) | call jobstop('..job_id..')<CR>', {noremap = true, silent = true})
+	-- Key mapping to close the terminal window and kill the process
+	vim.api.nvim_buf_set_keymap(buf, 't', 'q', '<C-\\><C-n><cmd>call nvim_win_close('..win..', v:true) | call jobstop('..job_id..')<CR>', {noremap = true, silent = true})
 
-  -- Automatically enter insert mode (optional)
-  vim.api.nvim_command('startinsert')
-end
+	-- Automatically enter insert mode (optional)
+	vim.api.nvim_command('startinsert')
+      end
 
--- Bind to a key
-vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>lua RunCargoInFloatingTerminal()<CR>', {noremap = true, silent = true})
 
 
 
