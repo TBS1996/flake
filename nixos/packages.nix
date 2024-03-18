@@ -56,6 +56,7 @@ with pkgs; [
   xdg-utils
   go
   openssl
+  pkg-config
 
 
 ]
