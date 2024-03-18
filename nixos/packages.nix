@@ -24,7 +24,7 @@ with pkgs; [
   youtube-dl
   mpv
   neofetch
-  htop
+  btop
   bat
   bashmount
   ncdu
