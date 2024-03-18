@@ -48,7 +48,7 @@
       vim.api.nvim_set_keymap('n', '<leader>W', ':horizontal resize -8<CR>', { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>S', ':horizontal resize +8<CR>', { noremap = true, silent = true })
 
-      vim.api.nvim_set_keymap('n', '<leader>cr', '<cmd>lua RunCargoRunInProjectRoot()<CR>', {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>lua RunCargoRunInProjectRoot()<CR>', {noremap = true, silent = true})
 
 
       -- Orients the cursor correctly after pressing enter within curly braces.
