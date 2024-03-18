@@ -24,7 +24,8 @@
       cmp-cmdline.enable = true;
     };
 
-    colorschemes.dracula.enable = true;
+    #colorschemes.dracula.enable = true;
+    colorschemes.vscode.enable = true;
 
     options = {
       number = true;
