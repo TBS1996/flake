@@ -25,7 +25,7 @@
     };
 
     #colorschemes.dracula.enable = true;
-    colorschemes.melange.enable = true;
+    colorschemes.catppuccin.enable = true;
 
     options = {
       number = true;

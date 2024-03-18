@@ -47,6 +47,7 @@
 
             home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;
             home.file.".config/newsboat/urls".source = ./dotfiles/newsboat/urls;
+            home.file.".config/foot/foot.ini".source = ./dotfiles/foot/config;
             home.file.".config/sway/config".source = ./dotfiles/sway/config;
             home.file.".config/zsh/.zshrc".source = ./dotfiles/zsh/config;
             home.file.".config/aerc/binds.conf".source = ./dotfiles/aerc/binds.conf;
