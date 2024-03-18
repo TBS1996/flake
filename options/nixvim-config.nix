@@ -25,15 +25,7 @@
     };
 
 
-colorschemes.gruvbox = {
-  enable = false;
-  settings = {
-    #background = "light"; # Set Gruvbox to light mode
-    # Add any additional settings or overrides here
-  };
-};
-
-
+    colorschemes.one.enable=true;
 
     options = {
       number = true;
@@ -126,19 +118,19 @@ colorschemes.gruvbox = {
       end
 
 
-local actions = require('telescope.actions')
-require('telescope').setup{
-  defaults = {
-    mappings = {
-      i = {
-        ["<Tab>"] = actions.select_default + actions.center
-      },
-      n = {
-        ["<Tab>"] = actions.select_default + actions.center
-      },
-    },
-  }
-}
+    local actions = require('telescope.actions')
+    require('telescope').setup{
+      defaults = {
+	mappings = {
+	  i = {
+	    ["<Tab>"] = actions.select_default + actions.center
+	  },
+	  n = {
+	    ["<Tab>"] = actions.select_default + actions.center
+	  },
+	},
+      }
+    }
 
 
 
