@@ -44,7 +44,6 @@
 	      enable = true;
 	    };
 
-	    programs.waybar.enable = true;
 
 
             home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;
