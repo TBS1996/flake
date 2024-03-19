@@ -27,10 +27,12 @@
             imports = [
               nixvim.homeManagerModules.nixvim
 	      ./options/nixvim-config.nix
-	      #./options/foo.nix
-	      #./options/bar.nix
 	      ./options/firefox-config.nix
             ];
+
+	    services.syncthing = {
+	      enable = true;
+	    };
 
             programs.git = {
               enable = true;
