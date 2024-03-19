@@ -45,6 +45,9 @@ with pkgs; [
   yazi
   wl-clipboard
   fish
+  syncthing
+  castget
+  calcurse
 
 
   #bg
