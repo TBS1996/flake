@@ -54,6 +54,8 @@
 
       vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>lua RunCargoInFloatingTerminal("cargo run")<CR>', {noremap = true, silent = true})
       vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>lua RunCargoInFloatingTerminal("cargo build")<CR>', {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<leader>fr', '<cmd>lua vim.lsp.buf.references()<CR>', {noremap = true, silent = true})
+
 
 
 
