@@ -8,6 +8,7 @@ with pkgs; [
   gurk-rs
   zathura
   calibre
+  gpodder
 
   #cli
   cool-retro-term
