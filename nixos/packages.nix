@@ -49,6 +49,8 @@ with pkgs; [
   syncthing
   castget
   calcurse
+  grim
+  slurp
 
 
   #bg
