@@ -7,6 +7,7 @@ with pkgs; [
   tor-browser
   gurk-rs
   zathura
+  calibre
 
   #cli
   cool-retro-term
