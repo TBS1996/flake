@@ -220,11 +220,11 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 
 
 bindsym $mod+b exec firefox
-bindsym $mod+m exec swaylock
+bindsym $mod+q exec swaylock
 bindsym $mod+w exec whatsapp-for-linux
 bindsym $mod+t exec telegram-desktop
-bindsym $mod+l exec workspace next
-bindsym $mod+h exec workspace prev
+bindsym $mod+m exec workspace next
+bindsym $mod+n exec workspace prev
 
 # Take a screenshot of the entire screen
 bindsym Print exec grim ~/screenshots/screenshot-$(date +%Y-%m-%d-%H%M%S).png
