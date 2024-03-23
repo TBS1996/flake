@@ -82,7 +82,7 @@ alias nb="newsboat -r"
 alias y="yazi"
 alias f="cd /home/tor/flake"
 alias p="cd /home/tor/prog"
-alias n="cd /home/tor/velv/"
+alias n="cd /home/tor/velv/ && nvim main.md"
 alias nt="nmtui"
 alias cc="calcurse"
 
