@@ -52,6 +52,7 @@ with pkgs; [
   calcurse
   grim
   slurp
+  monero-cli
 
 
   #bg
