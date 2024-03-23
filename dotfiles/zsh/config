@@ -84,6 +84,7 @@ alias f="cd /home/tor/flake"
 alias p="cd /home/tor/prog"
 alias n="cd /home/tor/velv/"
 alias nt="nmtui"
+alias cc="calcurse"
 
 
 export PATH=$PATH:/home/tor/.cache/cargo/bin
