@@ -85,6 +85,7 @@ alias p="cd /home/tor/prog"
 alias n="cd /home/tor/velv/ && nvim main.md"
 alias nt="nmtui"
 alias cc="calcurse"
+alias nsn="nix-shell shell.nix"
 
 
 export PATH=$PATH:/home/tor/.cache/cargo/bin
