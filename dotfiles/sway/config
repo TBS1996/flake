@@ -230,6 +230,7 @@ bindsym $mod+n exec workspace prev
 bindsym Print exec grim ~/screenshots/screenshot-$(date +%Y-%m-%d-%H%M%S).png
 # Take a screenshot of a selected area
 bindsym Shift+Print exec grim -g "$(slurp)" ~/screenshots/screenshot-$(date +%Y-%m-%d-%H%M%S).png
+bindsym $mod+Shift+Enter exec foot --class floating_terminal, exec swaymsg '[app_id="floating_terminal"] floating enable; resize set width 90 ppt height 90 ppt; move position center'
 
 
 
