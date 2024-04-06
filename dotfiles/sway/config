@@ -147,7 +147,7 @@ input type:keyboard {
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    #bindsym $mod+b splith
+    bindsym $mod+h splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
@@ -219,12 +219,12 @@ bindsym XF86MonBrightnessUp exec brightnessctl s +10%
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 
 
-bindsym $mod+b exec firefox
+bindsym $mod+b exec "swaymsg 'workspace number 2'; swaymsg exec firefox"
+bindsym $mod+w exec "swaymsg 'workspace number 4'; swaymsg exec whatsapp-for-linux"
+bindsym $mod+t exec "swaymsg 'workspace number 4'; swaymsg exec telegram-desktop"
 bindsym $mod+q exec swaylock
-bindsym $mod+w exec whatsapp-for-linux
-bindsym $mod+t exec telegram-desktop
-bindsym $mod+m exec workspace next
-bindsym $mod+n exec workspace prev
+bindsym $mod+m exec "swaymsg workspace next"
+bindsym $mod+n exec "swaymsg workspace prev"
 
 # Take a screenshot of the entire screen
 bindsym Print exec grim ~/screenshots/screenshot-$(date +%Y-%m-%d-%H%M%S).png
