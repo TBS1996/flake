@@ -9,6 +9,7 @@ with pkgs; [
   zathura
   calibre
   gpodder
+  element-desktop
 
   #cli
   cool-retro-term
