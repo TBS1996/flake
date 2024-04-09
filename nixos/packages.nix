@@ -5,13 +5,15 @@ with pkgs; [
   tdesktop
   whatsapp-for-linux
   tor-browser
-  gurk-rs
   zathura
   calibre
-  gpodder
   element-desktop
+  kdenlive
+  obs-studio
+  
 
   #cli
+  gurk-rs
   cool-retro-term
   ripgrep
   zellij
