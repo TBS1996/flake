@@ -56,6 +56,7 @@ with pkgs; [
   grim
   slurp
   monero-cli
+  zip
 
 
   #bg
