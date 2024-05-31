@@ -13,6 +13,7 @@ with pkgs; [
   
 
   #cli
+  alacritty
   gurk-rs
   cool-retro-term
   ripgrep
