@@ -55,6 +55,7 @@ with pkgs; [
   openssl
   pkg-config
   rustc
+  gcc
 
 
 ]
