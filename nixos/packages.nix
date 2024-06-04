@@ -3,14 +3,14 @@
 with pkgs; [
   firefox
   tdesktop
-#  whatsapp-for-linux
-#  tor-browser
-#  zathura
-#  calibre
-#  element-desktop
-#  kdenlive
-#  obs-studio
-#  gimp
+  whatsapp-for-linux
+  tor-browser
+  zathura
+  calibre
+  element-desktop
+  kdenlive
+  obs-studio
+  gimp
   
 
   #cli
@@ -24,8 +24,8 @@ with pkgs; [
   cron
   wdisplays
 #  mpv
-#  neofetch
-#  btop
+  neofetch
+  btop
   bat
   bashmount
   ncdu
@@ -35,26 +35,26 @@ with pkgs; [
   dmenu
   git
   acpi
-#  cargo
+  cargo
 #  pamixer
   aerc
   yazi
   wl-clipboard
   fish
-#  syncthing
+  syncthing
   zip
 
 
   #bg
-#  rustup
-#  rust-analyzer
-#  rustfmt
-#  lldb
+  rustup
+  rust-analyzer
+  rustfmt
+  lldb
   swaylock
   xdg-utils
   openssl
   pkg-config
-#  rustc
+  rustc
 
 
 ]
