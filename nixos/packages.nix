@@ -17,15 +17,15 @@ with pkgs; [
   alacritty
   ripgrep
   tree
-  mpd
-  ncmpcpp
+#  mpd
+#  ncmpcpp
   python3
   feh
   cron
   wdisplays
-  mpv
-  neofetch
-  btop
+#  mpv
+#  neofetch
+#  btop
   bat
   bashmount
   ncdu
@@ -35,26 +35,26 @@ with pkgs; [
   dmenu
   git
   acpi
-  cargo
-  pamixer
+#  cargo
+#  pamixer
   aerc
   yazi
   wl-clipboard
   fish
-  syncthing
+#  syncthing
   zip
 
 
   #bg
-  rustup
-  rust-analyzer
-  rustfmt
-  lldb
+#  rustup
+#  rust-analyzer
+#  rustfmt
+#  lldb
   swaylock
   xdg-utils
   openssl
   pkg-config
-  rustc
+#  rustc
 
 
 ]
