@@ -10,6 +10,7 @@ with pkgs; [
   element-desktop
   kdenlive
   obs-studio
+  gimp
   
 
   #cli
