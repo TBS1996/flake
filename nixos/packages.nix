@@ -3,24 +3,19 @@
 with pkgs; [
   firefox
   tdesktop
-  whatsapp-for-linux
-  tor-browser
-  zathura
-  calibre
-  element-desktop
-  kdenlive
-  obs-studio
-  gimp
+#  whatsapp-for-linux
+#  tor-browser
+#  zathura
+#  calibre
+#  element-desktop
+#  kdenlive
+#  obs-studio
+#  gimp
   
 
   #cli
   alacritty
-  gurk-rs
-  cool-retro-term
   ripgrep
-  zellij
-  dropbox-cli
-  cowsay
   tree
   mpd
   ncmpcpp
@@ -28,7 +23,6 @@ with pkgs; [
   feh
   cron
   wdisplays
-  youtube-dl
   mpv
   neofetch
   btop
@@ -37,27 +31,17 @@ with pkgs; [
   ncdu
   fzf
   newsboat
-  gcc
-  cmake
   github-cli
   dmenu
   git
-  wlsunset
-  brightnessctl
   acpi
   cargo
   pamixer
   aerc
-  bitwarden-cli
   yazi
   wl-clipboard
   fish
   syncthing
-  castget
-  calcurse
-  grim
-  slurp
-  monero-cli
   zip
 
 
@@ -68,7 +52,6 @@ with pkgs; [
   lldb
   swaylock
   xdg-utils
-  go
   openssl
   pkg-config
   rustc
