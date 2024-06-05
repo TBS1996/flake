@@ -56,6 +56,7 @@ with pkgs; [
   pkg-config
   rustc
   gcc
+  slurp
 
 
 ]
