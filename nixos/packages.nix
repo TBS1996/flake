@@ -36,13 +36,14 @@ with pkgs; [
   git
   acpi
   cargo
-#  pamixer
+  pamixer
   aerc
   yazi
   wl-clipboard
   fish
   syncthing
   zip
+  brightnessctl
 
 
   #bg
