@@ -76,6 +76,7 @@ alias pg='ping google.com'
 alias cpy='wl-copy <'
 alias gap='git add . && git commit -m "wip" && git push'
 alias gac='git add . && git commit -m "wip"'
+alias gcb='git checkout -b'
 alias gcm='git checkout main'
 alias scl='systemctl'
 alias z="zellij"
