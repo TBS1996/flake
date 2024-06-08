@@ -79,6 +79,7 @@ alias gac='git add . && git commit -m "wip"'
 alias gcb='git checkout -b'
 alias gcm='git checkout main'
 alias gb='git branch'
+alias gp='git pull'
 
 alias grn='cd /home/tor/flake && nix flake update; git add .; git commit -m "rebuilding"; git push; sudo nixos-rebuild switch --flake .#sys; swaymsg reload; source dotfiles/zsh/config && cd -'
 alias pg='ping google.com'
