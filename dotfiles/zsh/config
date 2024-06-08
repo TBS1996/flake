@@ -71,13 +71,18 @@ bindkey '^e' edit-command-line
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
-alias grn='cd /home/tor/flake && nix flake update; git add .; git commit -m "rebuilding"; git push; sudo nixos-rebuild switch --flake .#sys; swaymsg reload; source dotfiles/zsh/config && cd -'
-alias pg='ping google.com'
-alias cpy='wl-copy <'
+
+# git stuff
+
 alias gap='git add . && git commit -m "wip" && git push'
 alias gac='git add . && git commit -m "wip"'
 alias gcb='git checkout -b'
 alias gcm='git checkout main'
+alias gb='git branch'
+
+alias grn='cd /home/tor/flake && nix flake update; git add .; git commit -m "rebuilding"; git push; sudo nixos-rebuild switch --flake .#sys; swaymsg reload; source dotfiles/zsh/config && cd -'
+alias pg='ping google.com'
+alias cpy='wl-copy <'
 alias scl='systemctl'
 alias z="zellij"
 alias v="nvim"
