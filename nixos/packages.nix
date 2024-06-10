@@ -17,13 +17,13 @@ with pkgs; [
   alacritty
   ripgrep
   tree
-#  mpd
-#  ncmpcpp
+  mpd
+  ncmpcpp
   python3
   feh
   cron
   wdisplays
-#  mpv
+  mpv
   neofetch
   btop
   bat
@@ -44,6 +44,7 @@ with pkgs; [
   syncthing
   zip
   brightnessctl
+  brave
 
 
   #bg
