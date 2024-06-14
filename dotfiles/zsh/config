@@ -96,6 +96,7 @@ alias n="cd /home/tor/velv/ && nvim main.md"
 alias nt="nmtui"
 alias cc="calcurse"
 alias nsn="nix-shell shell.nix"
+alias treegit='git ls-tree -r --name-only HEAD | tree --fromfile'
 
 
 export PATH=$PATH:/home/tor/.cache/cargo/bin
