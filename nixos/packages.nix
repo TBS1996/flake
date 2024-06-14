@@ -11,6 +11,7 @@ with pkgs; [
   kdenlive
   obs-studio
   gimp
+  xfce.thunar
   
 
   #cli
