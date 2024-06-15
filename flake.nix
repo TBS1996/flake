@@ -1,57 +1,56 @@
 {
   inputs = {
-  #  nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs-fixes.url = "github:NixOS/nixpkgs/91a7822b04fe5e15f1604f9ca0fb81eff61b4143";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim,  ... }: {
+  outputs = { self, nixpkgs, home-manager, nixvim, nixpkgs-fixes, ... }: {
 
     nixosConfigurations.sys = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./nixos/configuration.nix
-	./systemd-services.nix
-	#./nixvim-config.nix
+        ./systemd-services.nix
+        #./nixvim-config.nix
         home-manager.nixosModules.home-manager
         ({ pkgs, ... }: {
 
           home-manager.users.tor = { pkgs, ... }: {
             home.stateVersion = "22.05";
 
-	    home.sessionVariables = {
+            home.sessionVariables = {
               PATH = "${pkgs.lib.makeBinPath [ "/home/tor/.cache/cargo/bin" ]}";
             };
 
             imports = [
               nixvim.homeManagerModules.nixvim
-	      ./options/nixvim-config.nix
-	      ./options/firefox-config.nix
+              ./options/nixvim-config.nix
+              ./options/firefox-config.nix
             ];
 
-	    services.syncthing = {
-	      enable = true;
-	    };
+            services.syncthing = {
+              enable = true;
+            };
 
-	    services.mpd = {
-	      enable = true;
-	      musicDirectory = "/path/to/music";
-	      extraConfig = ''
-		# must specify one or more outputs in order to play audio!
-		# (e.g. ALSA, PulseAudio, PipeWire), see next sections
-		audio_output {
-		  type "pulse"
-		  name "My PulseAudio" # this can be whatever you want
-		}
-	      '';
+            services.mpd = {
+              enable = true;
+              musicDirectory = "/path/to/music";
+              extraConfig = ''
+                # must specify one or more outputs in order to play audio!
+                # (e.g. ALSA, PulseAudio, PipeWire), see next sections
+                audio_output {
+                  type "pulse"
+                  name "My PulseAudio" # this can be whatever you want
+                }
+              '';
 
-	      # Optional:
-	      network.listenAddress = "any"; # if you want to allow non-localhost connections
-	     # startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
-	  };
-
+              # Optional:
+              network.listenAddress = "any"; # if you want to allow non-localhost connections
+             # startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
+            };
 
             programs.git = {
               enable = true;
@@ -59,11 +58,9 @@
               userEmail = "torberge@outlook.com";
             };
 
-	    programs.neomutt = {
-	      enable = true;
-	    };
-
-
+            programs.neomutt = {
+              enable = true;
+            };
 
             home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;
             home.file.".config/newsboat/urls".source = ./dotfiles/newsboat/urls;
@@ -76,5 +73,15 @@
         })
       ];
     };
+
+    # Define the overlay here at the outputs level where inputs are in scope
+    overlays = [
+      (final: prev: {
+        nodePackages = prev.nodePackages // {
+          inherit (nixpkgs-fixes.legacyPackages.${prev.system}.nodePackages) bash-language-server;
+        };
+      })
+    ];
   };
 }
+
