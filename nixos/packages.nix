@@ -12,6 +12,7 @@ with pkgs; [
   obs-studio
   gimp
   xfce.thunar
+  android-studio
   
 
   #cli

@@ -4,17 +4,15 @@
     home-manager.url = "github:nix-community/home-manager";
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
-    nixpkgs-fixes.url = "github:NixOS/nixpkgs/91a7822b04fe5e15f1604f9ca0fb81eff61b4143";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, nixpkgs-fixes, ... }: {
-
+  outputs = { self, nixpkgs, home-manager, nixvim, ... }: {
     nixosConfigurations.sys = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./nixos/configuration.nix
         ./systemd-services.nix
-        #./nixvim-config.nix
+        # ./nixvim-config.nix
         home-manager.nixosModules.home-manager
         ({ pkgs, ... }: {
 
@@ -49,7 +47,7 @@
 
               # Optional:
               network.listenAddress = "any"; # if you want to allow non-localhost connections
-             # startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
+              # startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
             };
 
             programs.git = {
@@ -73,15 +71,6 @@
         })
       ];
     };
-
-    # Define the overlay here at the outputs level where inputs are in scope
-    overlays = [
-      (final: prev: {
-        nodePackages = prev.nodePackages // {
-          inherit (nixpkgs-fixes.legacyPackages.${prev.system}.nodePackages) bash-language-server;
-        };
-      })
-    ];
   };
 }
 
