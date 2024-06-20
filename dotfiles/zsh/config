@@ -97,6 +97,7 @@ alias nt="nmtui"
 alias cc="calcurse"
 alias nsn="nix-shell shell.nix"
 alias treegit='git ls-tree -r --name-only HEAD | tree --fromfile'
+alias login='ssh root@95.179.226.104'
 
 
 export PATH=$PATH:/home/tor/.cache/cargo/bin
