@@ -26,7 +26,7 @@ with pkgs; [
   cron
   wdisplays
   mpv
-  neofetch
+  fastfetch
   btop
   bat
   bashmount
