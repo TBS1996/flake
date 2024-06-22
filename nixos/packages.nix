@@ -13,6 +13,7 @@ with pkgs; [
   gimp
   xfce.thunar
   android-studio
+  vscode
   
 
   #cli
