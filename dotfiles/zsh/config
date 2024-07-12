@@ -76,6 +76,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 alias gap='git add . && git commit -m "wip" && git push'
 alias gac='git add . && git commit -m "wip"'
+alias gc='git add . && git commit -m'
 alias gcb='git checkout -b'
 alias gcm='git checkout main'
 alias gb='git branch'
