@@ -16,7 +16,7 @@ with pkgs; [
   vscode
   neovim
 #  minecraft
-#  steam
+  steam
   
 
   #cli
