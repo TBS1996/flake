@@ -16,6 +16,7 @@
         home-manager.nixosModules.home-manager
         ({ pkgs, ... }: {
 
+	  nixpkgs.config.allowUnfree = true;
           home-manager.users.tor = { pkgs, ... }: {
             home.stateVersion = "24.05";
 
