@@ -15,8 +15,8 @@ with pkgs; [
   android-studio
   vscode
   neovim
-  minecraft
   steam
+  prismlauncher
   
 
   #cli
