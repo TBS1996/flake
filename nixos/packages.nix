@@ -15,7 +15,7 @@ with pkgs; [
   android-studio
   vscode
   neovim
-#  minecraft
+  minecraft
   steam
   
 
