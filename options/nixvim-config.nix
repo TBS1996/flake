@@ -33,6 +33,9 @@
       shiftwidth = 2;
     };
 
+    /*
+
+
     extraConfigLua = ''
       vim.g.mapleader = " "
       vim.api.nvim_set_keymap('n', '<leader>lg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
@@ -198,6 +201,8 @@
         }),
       })
     '';
+
+    */
   };
 }
 
