@@ -14,6 +14,8 @@ with pkgs; [
   xfce.thunar
   android-studio
   vscode
+  minecraft
+  steam
   
 
   #cli
