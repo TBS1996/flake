@@ -17,6 +17,7 @@ with pkgs; [
   neovim
   steam
   prismlauncher
+  jdk8
   
 
   #cli

@@ -4,16 +4,40 @@
   imports =
     [
       ./hardware-configuration.nix
-      #<home-manager/nixos>
+      # <home-manager/nixos>
     ];
 
   environment.systemPackages = with pkgs; [
+    # Add any system packages you need here
   ] ++ (import ./packages.nix { inherit pkgs; });
 
+  # GPU and OpenGL Configuration
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      vaapiIntel        # VA-API support for Intel GPUs
+      libva             # Video Acceleration library
+      libvdpau-va-gl    # VDPAU (Video Decode and Presentation API for Unix) with VA-API on OpenGL
+      mesa.drivers      # Mesa drivers for OpenGL
+    ];
+  };
 
+  services.xserver = {
+    enable = true;
+    layout = "us";
+    xkbOptions = "terminate:ctrl_alt_bksp";
+    videoDrivers = [ "intel" ];
 
+    # Additional X11 configuration for Intel GPUs
+    deviceSection = ''
+      Option "TearFree" "true"
+      Option "DRI" "3"
+    '';
+  };
 
-
+  # Bluetooth settings
   hardware.bluetooth = {
     enable = true;
   };
@@ -26,7 +50,6 @@
   ];
 
   services.blueman.enable = true;
-
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -58,7 +81,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
-  # Enable sound with pipewire.
+  # Enable sound with PipeWire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -73,7 +96,6 @@
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
   # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.05"; # Did you read the comment?
 }
+
