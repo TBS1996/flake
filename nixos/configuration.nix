@@ -11,31 +11,6 @@
     # Add any system packages you need here
   ] ++ (import ./packages.nix { inherit pkgs; });
 
-  # GPU and OpenGL Configuration
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-    extraPackages = with pkgs; [
-      vaapiIntel        # VA-API support for Intel GPUs
-      libva             # Video Acceleration library
-      libvdpau-va-gl    # VDPAU (Video Decode and Presentation API for Unix) with VA-API on OpenGL
-      mesa.drivers      # Mesa drivers for OpenGL
-    ];
-  };
-
-  services.xserver = {
-    enable = true;
-    layout = "us";
-    xkbOptions = "terminate:ctrl_alt_bksp";
-    videoDrivers = [ "intel" ];
-
-    # Additional X11 configuration for Intel GPUs
-    deviceSection = ''
-      Option "TearFree" "true"
-      Option "DRI" "3"
-    '';
-  };
 
   # Bluetooth settings
   hardware.bluetooth = {

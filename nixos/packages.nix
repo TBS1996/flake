@@ -18,6 +18,7 @@ with pkgs; [
   steam
   prismlauncher
   jdk8
+  atlauncher
   
 
   #cli
