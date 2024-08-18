@@ -2,8 +2,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     home-manager.url = "github:nix-community/home-manager";
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    #nixvim.url = "github:nix-community/nixvim";
+    #nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, nixvim, ... }: {
@@ -18,7 +18,7 @@
 
           # Import nixvim module
           imports = [
-            nixvim.homeManagerModules.nixvim
+     #       nixvim.homeManagerModules.nixvim
             ./options/firefox-config.nix
           ];
 
@@ -30,7 +30,7 @@
             };
 
             programs.nixvim = {
-              enable = true;
+              enable = false;
             };
 
             services.syncthing = {
