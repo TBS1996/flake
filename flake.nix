@@ -6,13 +6,12 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: {
+  outputs = { self, nixpkgs, home-manager, nixvim, ... }: {
     nixosConfigurations.sys = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./nixos/configuration.nix
         ./systemd-services.nix
-        ./options/nixvim-config.nix
         home-manager.nixosModules.home-manager
         ({ pkgs, nixvim, ... }: {
 
@@ -25,10 +24,13 @@
             };
 
             imports = [
-             nixvim.homeManagerModules.nixvim
-            #  ./options/nixvim-config.nix
+              nixvim.homeManagerModules.nixvim
               ./options/firefox-config.nix
             ];
+
+            programs.nixvim = {
+              enable = true;
+            };
 
             services.syncthing = {
               enable = true;
@@ -37,9 +39,7 @@
             services.mpd = {
               enable = true;
               musicDirectory = "/path/to/music";
-              # Optional:
               network.listenAddress = "any"; # if you want to allow non-localhost connections
-              # startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
             };
 
             programs.git = {
