@@ -26,7 +26,7 @@
 
             imports = [
              nixvim.homeManagerModules.nixvim
-              ./options/nixvim-config.nix
+         #     ./options/nixvim-config.nix
               ./options/firefox-config.nix
             ];
 
@@ -37,15 +37,6 @@
             services.mpd = {
               enable = true;
               musicDirectory = "/path/to/music";
-              extraConfig = ''
-                # must specify one or more outputs in order to play audio!
-                # (e.g. ALSA, PulseAudio, PipeWire), see next sections
-                audio_output {
-                  type "pulse"
-                  name "My PulseAudio" # this can be whatever you want
-                }
-              '';
-
               # Optional:
               network.listenAddress = "any"; # if you want to allow non-localhost connections
               # startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
