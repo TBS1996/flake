@@ -57,6 +57,9 @@
             home.file.".config/zsh/.zshrc".source = ./dotfiles/zsh/config;
             home.file.".config/aerc/binds.conf".source = ./dotfiles/aerc/binds.conf;
             home.file.".config/aerc/aerc.conf".source = ./dotfiles/aerc/aerc.conf;
+            home.file.".config/nvim/init.lua".source = ./dotfiles/nvim/init.lua;
+            home.file.".config/nvim/lua/keymaps.lua".source = ./dotfiles/nvim/keymaps.lua;
+            home.file.".config/nvim/lua/plugins.lua".source = ./dotfiles/nvim/plugins.lua;
           };
         })
       ];
