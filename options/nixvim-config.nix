@@ -2,6 +2,7 @@
 
 
 {
+    /*
   programs.nixvim = {
     enable = true;
 
@@ -33,7 +34,6 @@
       shiftwidth = 2;
     };
 
-    /*
 
 
     extraConfigLua = ''
