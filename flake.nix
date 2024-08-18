@@ -13,20 +13,21 @@
         ./nixos/configuration.nix
         ./systemd-services.nix
         home-manager.nixosModules.home-manager
-        ({ pkgs, nixvim, ... }: {
+        ({ pkgs, ... }: {
+          nixpkgs.config.allowUnfree = true;
 
-	  nixpkgs.config.allowUnfree = true;
+          # Import nixvim module
+          imports = [
+            nixvim.homeManagerModules.nixvim
+            ./options/firefox-config.nix
+          ];
+
           home-manager.users.tor = { pkgs, ... }: {
             home.stateVersion = "24.05";
 
             home.sessionVariables = {
               PATH = "${pkgs.lib.makeBinPath [ "/home/tor/.cache/cargo/bin" ]}";
             };
-
-            imports = [
-              nixvim.homeManagerModules.nixvim
-              ./options/firefox-config.nix
-            ];
 
             programs.nixvim = {
               enable = true;
@@ -39,7 +40,7 @@
             services.mpd = {
               enable = true;
               musicDirectory = "/path/to/music";
-              network.listenAddress = "any"; # if you want to allow non-localhost connections
+              network.listenAddress = "any";
             };
 
             programs.git = {
