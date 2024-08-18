@@ -2,8 +2,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     home-manager.url = "github:nix-community/home-manager";
-   # nixvim.url = "github:nix-community/nixvim";
-  #  nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }: {
@@ -12,7 +12,7 @@
       modules = [
         ./nixos/configuration.nix
         ./systemd-services.nix
-        # ./nixvim-config.nix
+        ./nixvim-config.nix
         home-manager.nixosModules.home-manager
         ({ pkgs, ... }: {
 
@@ -25,8 +25,8 @@
             };
 
             imports = [
-            # nixvim.homeManagerModules.nixvim
-            #  ./options/nixvim-config.nix
+             nixvim.homeManagerModules.nixvim
+              ./options/nixvim-config.nix
               ./options/firefox-config.nix
             ];
 
