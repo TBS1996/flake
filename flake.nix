@@ -60,6 +60,7 @@
             home.file.".config/nvim/init.lua".source = ./dotfiles/nvim/init.lua;
             home.file.".config/nvim/lua/keymaps.lua".source = ./dotfiles/nvim/keymaps.lua;
             home.file.".config/nvim/lua/plugins.lua".source = ./dotfiles/nvim/plugins.lua;
+            home.file.".config/nvim/lua/rust.lua".source = ./dotfiles/nvim/rust.lua;
           };
         })
       ];
