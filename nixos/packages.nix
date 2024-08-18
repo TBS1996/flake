@@ -14,12 +14,11 @@ with pkgs; [
   xfce.thunar
   android-studio
   vscode
-  #neovim
+  neovim
   steam
   prismlauncher
   jdk8
   atlauncher
-  nixvim
   
 
   #cli
