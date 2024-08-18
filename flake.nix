@@ -29,9 +29,6 @@
               PATH = "${pkgs.lib.makeBinPath [ "/home/tor/.cache/cargo/bin" ]}";
             };
 
-            programs.nixvim = {
-              enable = false;
-            };
 
             services.syncthing = {
               enable = true;

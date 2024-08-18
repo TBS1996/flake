@@ -22,7 +22,6 @@ with pkgs; [
   
 
   #cli
-  nixvim
   alacritty
   ripgrep
   tree
