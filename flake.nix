@@ -14,7 +14,7 @@
         ./systemd-services.nix
         ./nixvim-config.nix
         home-manager.nixosModules.home-manager
-        ({ pkgs, ... }: {
+        ({ pkgs, nixvim, ... }: {
 
 	  nixpkgs.config.allowUnfree = true;
           home-manager.users.tor = { pkgs, ... }: {
