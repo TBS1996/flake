@@ -21,5 +21,6 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp'              -- LSP source for nvim-cmp
   use 'nvim-lua/plenary.nvim'             -- Common utilities
   use 'jose-elias-alvarez/null-ls.nvim'   -- Linter and formatter integration
+  use 'gruvbox-community/gruvbox'         -- Gruvbox color scheme
 end)
 
