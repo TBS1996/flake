@@ -2,8 +2,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";  
     home-manager.url = "github:nix-community/home-manager";
-    #nixvim.url = "github:nix-community/nixvim";
-    #nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }: {
@@ -16,9 +14,7 @@
         ({ pkgs, ... }: {
           nixpkgs.config.allowUnfree = true;
 
-          # Import nixvim module
           imports = [
-     #       nixvim.homeManagerModules.nixvim
             ./options/firefox-config.nix
           ];
 
@@ -29,14 +25,12 @@
               PATH = "${pkgs.lib.makeBinPath [ "/home/tor/.cache/cargo/bin" ]}";
             };
 
-
             services.syncthing = {
               enable = true;
             };
 
             services.mpd = {
               enable = true;
-              musicDirectory = "/path/to/music";
               network.listenAddress = "any";
             };
 
