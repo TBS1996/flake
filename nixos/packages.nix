@@ -19,6 +19,7 @@ with pkgs; [
   prismlauncher
   jdk8
   atlauncher
+  zed
   
 
   #cli
