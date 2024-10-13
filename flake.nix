@@ -29,10 +29,6 @@
               enable = true;
             };
 
-            services.mpd = {
-              enable = true;
-              network.listenAddress = "any";
-            };
 
             programs.git = {
               enable = true;
@@ -55,6 +51,7 @@
             home.file.".config/nvim/lua/keymaps.lua".source = ./dotfiles/nvim/keymaps.lua;
             home.file.".config/nvim/lua/plugins.lua".source = ./dotfiles/nvim/plugins.lua;
             home.file.".config/nvim/lua/rust.lua".source = ./dotfiles/nvim/rust.lua;
+            home.file.".config/zed/settings.json".source = ./dotfiles/zed/config;
           };
         })
       ];
