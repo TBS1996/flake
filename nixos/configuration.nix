@@ -1,15 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  imports = [ ./hardware-configuration.nix ];
 
   environment.systemPackages = with pkgs; [
   ] ++ (import ./packages.nix { inherit pkgs; });
-
-
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -28,13 +23,13 @@
     ZDOTDIR = "/home/tor/.config/zsh";
     CARGO_HOME = "/home/tor/.cache/cargo/";
     EDITOR = "nvim";
-    MESA_VK_DEVICE_SELECT = "auto"; # Automatically choose the right device.
+    MESA_VK_DEVICE_SELECT = "auto";  # Automatically select the right GPU
   };
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   time.timeZone = "Europe/Oslo";
-  i18n.defaultLocale = "en_US.utf8";
+  i18n.defaultLocale = "en_US.UTF-8";
 
   programs.zsh.enable = true;
   programs.sway.enable = true;
@@ -43,9 +38,9 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    extraPackages = [ pkgs.mesa pkgs.vulkan-icd-loader ]; # Enable mesa and Vulkan loader
+    extraPackages = [ pkgs.mesa ];  # Enable mesa driver for Vulkan support
   };
 
   security.rtkit.enable = true;
@@ -59,5 +54,4 @@
 
   system.stateVersion = "22.05"; # Did you read the comment?
 }
-
 
