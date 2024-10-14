@@ -69,5 +69,6 @@ with pkgs; [
   vulkan-loader  # Make sure this is available in the current channel
   vulkan-tools
   mesa
+  intel-media-driver
 ]
 
