@@ -57,9 +57,6 @@
   # Enable sound with PipeWire.
   hardware.pulseaudio.enable = false;
 
-  hardware.graphics = {
-    extraPackages = [ pkgs.vulkan-loader pkgs.vulkan-tools ];  # Adds Vulkan support
-  };
 
   hardware = {
     graphics = {
