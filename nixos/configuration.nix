@@ -4,18 +4,12 @@
   imports =
     [
       ./hardware-configuration.nix
-      # <home-manager/nixos>
     ];
 
   environment.systemPackages = with pkgs; [
-    # Add any system packages you need here
   ] ++ (import ./packages.nix { inherit pkgs; });
 
 
-  # Bluetooth settings
-  hardware.bluetooth = {
-    enable = true;
-  };
 
   # Workaround until this hits unstable:
   # https://github.com/NixOS/nixpkgs/issues/113628
@@ -55,8 +49,37 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
+
+  hardware.bluetooth = {
+    enable = true;
+  };
+
   # Enable sound with PipeWire.
   hardware.pulseaudio.enable = false;
+
+  hardware.graphics = {
+    extraPackages = [ pkgs.vulkan-loader pkgs.vulkan-tools ];  # Adds Vulkan support
+  };
+
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+      extraPackages = with pkgs; [
+        vaapiVdpau
+        libvdpau-va-gl
+        vulkan-loader   
+        vulkan-tools   
+      ];
+      extraPackages32 = with pkgs.pkgsi686Linux; [
+        vaapiVdpau
+        libvdpau-va-gl
+      ];
+    };
+  };
+
+
+
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -65,9 +88,6 @@
     pulse.enable = true;
   };
 
-  hardware.graphics = {
-    extraPackages = [ pkgs.vulkan-loader pkgs.vulkan-tools ];  # Adds Vulkan support
-  };
 
   services.xserver.videoDrivers = [ "intel" "amdgpu" ];  # Adjust if using Nvidia
 
