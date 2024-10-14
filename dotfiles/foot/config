@@ -1,5 +1,4 @@
 [main]
-dpi=96
 
 # -*- conf -*-
 # theme: Tempus Day
@@ -8,6 +7,9 @@ dpi=96
 
 #[cursor]
 #color = f8f2e5 464340
+
+
+font=monospace:size=16
 
 [colors]
 foreground = 464340

@@ -53,7 +53,6 @@ with pkgs; [
   syncthing
   zip
   brightnessctl
-  brave
 
 
   #bg
@@ -68,8 +67,6 @@ with pkgs; [
   rustc
   gcc
   slurp
-
-
 ]
 
 
