@@ -67,8 +67,6 @@
 
   # Vulkan and video drivers for GPU support
   hardware.opengl = {
-    driSupport = true;
-    driSupport32Bit = true;  # If you need 32-bit Vulkan support
     extraPackages = [ pkgs.vulkan-loader pkgs.vulkan-tools ];  # Adds Vulkan support
   };
 
