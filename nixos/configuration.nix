@@ -61,21 +61,22 @@
 
 
   hardware = {
-    graphics = {
-      enable = true;
-      enable32Bit = true;
-      extraPackages = with pkgs; [
-        vaapiVdpau
-        libvdpau-va-gl
-        vulkan-loader   
-        vulkan-tools   
-      ];
-      extraPackages32 = with pkgs.pkgsi686Linux; [
-        vaapiVdpau
-        libvdpau-va-gl
-      ];
-    };
+  graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      vulkan-loader
+      vulkan-tools
+      mesa                # Includes both OpenGL and Vulkan drivers
+      intel-media-driver  # Intel-specific driver for video acceleration
+    ];
+    extraPackages32 = with pkgs.pkgsi686Linux; [
+      vaapiVdpau
+      libvdpau-va-gl
+    ];
   };
+};
+
 
 
 
