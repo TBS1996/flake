@@ -67,6 +67,8 @@ with pkgs; [
   rustc
   gcc
   slurp
+  vulkan-loader
+  vulkan-tools
 ]
 
 
