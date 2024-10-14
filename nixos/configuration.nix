@@ -36,6 +36,8 @@
   environment.variables.ZDOTDIR = "/home/tor/.config/zsh";
   environment.variables.CARGO_HOME = "/home/tor/.cache/cargo/";
   environment.variables.EDITOR = "nvim";
+  environment.variables.MESA_VK_DEVICE_SELECT = "intel";
+
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
@@ -86,14 +88,6 @@
   };
 
 
-  services.xserver.videoDrivers = [ "intel" "amdgpu" ];  # Adjust if using Nvidia
-
-
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
   system.stateVersion = "22.05"; # Did you read the comment?
 }
 

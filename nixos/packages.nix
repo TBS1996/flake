@@ -69,6 +69,8 @@ with pkgs; [
   slurp
   vulkan-loader
   vulkan-tools
+  mesa
+  mesa-vulkan-drivers
 ]
 
 
