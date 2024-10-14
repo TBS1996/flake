@@ -65,16 +65,13 @@
     pulse.enable = true;
   };
 
-  # Vulkan and video drivers for GPU support
-  hardware.opengl = {
+  hardware.graphics = {
     extraPackages = [ pkgs.vulkan-loader pkgs.vulkan-tools ];  # Adds Vulkan support
   };
 
-  # Specify your video driver here. Adjust depending on your hardware:
-  # For Intel and AMD:
   services.xserver.videoDrivers = [ "intel" "amdgpu" ];  # Adjust if using Nvidia
-  # For Nvidia (if you have an Nvidia GPU):
-  # services.xserver.videoDrivers = [ "nvidia" ];
+
+
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
