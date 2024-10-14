@@ -11,16 +11,7 @@
 
 
 
-  # Workaround until this hits unstable:
-  # https://github.com/NixOS/nixpkgs/issues/113628
-  systemd.services.bluetooth.serviceConfig.ExecStart = [
-    ""
-    "${pkgs.bluez}/libexec/bluetooth/bluetoothd -f /etc/bluetooth/main.conf"
-  ];
-
-  services.blueman.enable = true;
-
-  # Bootloader.
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
@@ -33,11 +24,12 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  environment.variables.ZDOTDIR = "/home/tor/.config/zsh";
-  environment.variables.CARGO_HOME = "/home/tor/.cache/cargo/";
-  environment.variables.EDITOR = "nvim";
-  environment.variables.MESA_VK_DEVICE_SELECT = "intel";
-
+  environment.variables = {
+    ZDOTDIR = "/home/tor/.config/zsh";
+    CARGO_HOME = "/home/tor/.cache/cargo/";
+    EDITOR = "nvim";
+    MESA_VK_DEVICE_SELECT = "auto"; # Automatically choose the right device.
+  };
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
@@ -51,24 +43,13 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
-
-
-hardware = {
-    opengl = {
-
-      ## amdvlk: an open-source Vulkan driver from AMD
-      extraPackages = [ pkgs.amdvlk ];
-    };
-    pulseaudio.enable = false;  
-};
-
-
-
-
-
-
+  hardware.opengl = {
+    enable = true;
+    extraPackages = [ pkgs.mesa pkgs.vulkan-icd-loader ]; # Enable mesa and Vulkan loader
+  };
 
   security.rtkit.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -76,7 +57,7 @@ hardware = {
     pulse.enable = true;
   };
 
-
   system.stateVersion = "22.05"; # Did you read the comment?
 }
+
 
