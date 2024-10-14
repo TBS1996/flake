@@ -52,30 +52,26 @@
   nixpkgs.config.allowUnfree = true;
 
 
-  hardware.bluetooth = {
-    enable = true;
-  };
-
-  # Enable sound with PipeWire.
-  hardware.pulseaudio.enable = false;
-
-
-  hardware = {
-  graphics = {
-    enable = true;
-    enable32Bit = true;
-    extraPackages = with pkgs; [
+environment = {
+    systemPackages = with pkgs; [
       vulkan-loader
-      vulkan-tools
-      mesa                # Includes both OpenGL and Vulkan drivers
-      intel-media-driver  # Intel-specific driver for video acceleration
-    ];
-    extraPackages32 = with pkgs.pkgsi686Linux; [
-      vaapiVdpau
-      libvdpau-va-gl
     ];
   };
+
+hardware = {
+    opengl = {
+      driSupport = true;
+      driSupport32Bit = true;
+
+      ## amdvlk: an open-source Vulkan driver from AMD
+      extraPackages = [ pkgs.amdvlk ];
+      extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+    };
+    pulseaudio.enable = false;  };
 };
+
+
+
 
 
 
