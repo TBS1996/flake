@@ -62,7 +62,7 @@ hardware = {
       extraPackages = [ pkgs.amdvlk ];
       extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
     };
-    pulseaudio.enable = false;  };
+    pulseaudio.enable = false;  
 };
 
 
