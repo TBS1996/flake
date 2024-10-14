@@ -49,7 +49,6 @@
   i18n.defaultLocale = "en_US.utf8";
 
   programs.zsh.enable = true;
-
   programs.sway.enable = true;
 
   services.printing.enable = true;
@@ -57,7 +56,6 @@
   nixpkgs.config.allowUnfree = true;
 
   # Enable sound with PipeWire.
-#  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -66,6 +64,19 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+
+  # Vulkan and video drivers for GPU support
+  hardware.opengl = {
+    driSupport = true;
+    driSupport32Bit = true;  # If you need 32-bit Vulkan support
+    extraPackages = [ pkgs.vulkan-loader pkgs.vulkan-tools ];  # Adds Vulkan support
+  };
+
+  # Specify your video driver here. Adjust depending on your hardware:
+  # For Intel and AMD:
+  services.xserver.videoDrivers = [ "intel" "amdgpu" ];  # Adjust if using Nvidia
+  # For Nvidia (if you have an Nvidia GPU):
+  # services.xserver.videoDrivers = [ "nvidia" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
