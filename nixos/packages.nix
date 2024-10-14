@@ -13,13 +13,9 @@ with pkgs; [
   obs-studio
   gimp
   xfce.thunar
-  android-studio
   vscode
   neovim
   steam
-  prismlauncher
-  jdk8
-  atlauncher
   zed-editor
   
   # CLI apps
@@ -66,7 +62,7 @@ with pkgs; [
   rustc
   gcc
   slurp
-  vulkan-loader  # Make sure this is available in the current channel
+  vulkan-loader  
   vulkan-tools
   mesa
   intel-media-driver
