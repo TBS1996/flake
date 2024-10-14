@@ -70,7 +70,6 @@ with pkgs; [
   vulkan-loader
   vulkan-tools
   mesa
-  mesa-vulkan-drivers
 ]
 
 
