@@ -11,6 +11,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
   boot.supportedFilesystems = [ "ntfs" ];
+  boot.kernelParams = ["acpi_backlight=video"];
 
   users.users.tor = {
     isNormalUser = true;
@@ -23,7 +24,6 @@
     ZDOTDIR = "/home/tor/.config/zsh";
     CARGO_HOME = "/home/tor/.cache/cargo/";
     EDITOR = "nvim";
-    MESA_VK_DEVICE_SELECT = "auto";  # Automatically select the right GPU
   };
 
   networking.hostName = "nixos";
