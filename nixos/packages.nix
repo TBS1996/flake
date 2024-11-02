@@ -49,7 +49,6 @@ with pkgs; [
   syncthing
   zip
   brightnessctl
-  dioxus-cli
   
   # Background utilities
   rustup
