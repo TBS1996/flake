@@ -17,6 +17,7 @@ with pkgs; [
   neovim
   steam
   zed-editor
+  slack
   
   # CLI apps
   alacritty
