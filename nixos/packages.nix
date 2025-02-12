@@ -18,6 +18,7 @@ with pkgs; [
   steam
   zed-editor
   slack
+  intellij
   
   # CLI apps
   alacritty
