@@ -18,7 +18,7 @@ with pkgs; [
   steam
   zed-editor
   slack
-  intellij
+  jetbrains.idea-community
   
   # CLI apps
   alacritty
