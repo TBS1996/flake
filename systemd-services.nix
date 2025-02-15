@@ -3,12 +3,12 @@
 {
 
 
- systemd.user.services.clone-velv = {
+  systemd.user.services.clone-velv = {
     Unit = {
       Description = "Ensure velv repo is cloned and up-to-date";
       After = [ "network.target" ];
     };
-    ServiceConfig = {  # <-- FIXED: Use ServiceConfig instead of Service
+    ServiceConfig = {
       Type = "oneshot";
       ExecStart = "${pkgs.bash}/bin/bash -c '
         target=\"$HOME/velv\"
@@ -21,6 +21,7 @@
       RemainAfterExit = true;
     };
   };
+
 
 
   systemd.services.commitNotes = {
