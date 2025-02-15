@@ -1,19 +1,22 @@
 { pkgs, ... }:
 
 {
+
   systemd.user.services.clone-velv = {
     description = "Ensure velv repo is cloned and up-to-date";
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "${pkgs.bash}/bin/bash -c '
-        target=\"$HOME/velv\"
+      ExecStart = "${pkgs.bash}/bin/bash -c ' 
+        target=\"$HOME/velv\";
         if [ -d \"$target/.git\" ]; then
-          git -C \"$target\" pull
+          git -C \"$target\" pull;
         else
-          git clone https://github.com/tbS1996/velv \"$target\"
+          git clone https://github.com/tbS1996/velv \"$target\";
         fi
       '";
       RemainAfterExit = true;
+      StandardOutput = "journal";
+      StandardError = "journal";
     };
   };
 
