@@ -4,6 +4,7 @@
 
   systemd.user.services.clone-velv = {
     description = "Ensure velv repo is cloned and up-to-date";
+    wantedBy = [ "default.target" ]; 
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "/home/tor/flake/scripts/clone_velv.sh";

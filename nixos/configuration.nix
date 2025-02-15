@@ -20,6 +20,14 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
+  # ✅ Run clone-velv.service on rebuild
+  system.activationScripts.cloneVelv = {
+    text = ''
+      sudo -u tor systemctl --user start clone-velv.service
+    '';
+    deps = [ "users" ];  
+  };
+
   environment.variables = {
     ZDOTDIR = "/home/tor/.config/zsh";
     CARGO_HOME = "/home/tor/.cache/cargo/";
