@@ -7,6 +7,7 @@
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "/home/tor/flake/scripts/clone_velv.sh";
+      Environment = "PATH=${pkgs.lib.makeBinPath [ pkgs.git pkgs.coreutils ]}";
       RemainAfterExit = true;
     };
   };
