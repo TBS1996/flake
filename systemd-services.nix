@@ -20,7 +20,6 @@
       '";
       RemainAfterExit = true;
     };
-    Install = { WantedBy = [ "default.target" ]; };
   };
 
 
