@@ -19,6 +19,7 @@ with pkgs; [
   zed-editor
   slack
   jetbrains.idea-community
+  obsidian
   
   # CLI apps
   alacritty
