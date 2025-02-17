@@ -21,12 +21,6 @@
 
 	  services.gammastep = {
 	    enable = true;
-	    settings = {
-	      temperature.day = 5500;
-	      temperature.night = 3000;
-	      dusk-time = "20:00";
-	      dawn-time = "07:00";
-	    };
 	  };
 
 
