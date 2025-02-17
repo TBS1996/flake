@@ -19,9 +19,7 @@
             ./options/firefox-config.nix
           ];
 
-	  services.gammastep = {
-	    enable = true;
-	  };
+	  environment.systemPackages = with pkgs; [ gammastep ];
 
 
           home-manager.users.tor = { pkgs, ... }: {
