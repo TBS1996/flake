@@ -32,11 +32,6 @@
 
 	    programs.gammastep = {
 		  enable = true;
-		  tray = true; # Optional system tray icon
-		  temperature.day = 5500; # Adjust for preference
-		  temperature.night = 3000;
-		  dusk-time = "20:00"; # Start shift at 8 PM
-		  dawn-time = "07:00"; # End shift at 7 AM
 		};
 
 
