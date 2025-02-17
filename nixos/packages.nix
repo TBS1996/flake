@@ -69,5 +69,7 @@ with pkgs; [
   vulkan-tools
   mesa
   intel-media-driver
+  direnv
+  nix-direnv
 ]
 
