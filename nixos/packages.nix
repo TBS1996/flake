@@ -15,8 +15,6 @@ with pkgs; [
   xfce.thunar
   vscode
   neovim
-  steam
-  zed-editor
   slack
   jetbrains.idea-community
   obsidian
