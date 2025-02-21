@@ -1,0 +1,24 @@
+{
+    "layer": "top",
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["clock"],
+    "modules-right": ["sway/language", "battery", "network", "pulseaudio"],
+
+    "sway/language": {
+        "format": "{}",
+        "tooltip": false
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format": "{:%H:%M}"
+    },
+    "network": {
+        "format-wifi": "  {essid} {signalStrength}%",
+        "format-ethernet": " {ipaddr}",
+        "format-disconnected": " No Internet"
+    }
+}
+

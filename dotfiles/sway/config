@@ -63,7 +63,6 @@ input type:keyboard {
     xkb_options grp:alt_shift_toggle
 }
 
-
 ### Key bindings
 #
 # Basics:

@@ -51,6 +51,7 @@
             home.file.".config/zsh/.zshrc".source = ./dotfiles/zsh/config;
             home.file.".config/aerc/binds.conf".source = ./dotfiles/aerc/binds.conf;
             home.file.".config/aerc/aerc.conf".source = ./dotfiles/aerc/aerc.conf;
+            home.file.".config/waybar/config".source = ./dotfiles/waybar/config;
           };
         })
       ];
