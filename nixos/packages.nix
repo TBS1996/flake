@@ -18,6 +18,7 @@ with pkgs; [
   slack
   jetbrains.idea-community
   obsidian
+  sqlitebrowser
   
   # CLI apps
   alacritty
