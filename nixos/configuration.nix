@@ -11,7 +11,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
   boot.supportedFilesystems = [ "ntfs" ];
-  boot.kernelParams = ["acpi_backlight=video"];
+  boot.kernelParams = [ "acpi_backlight=vendor" ];
+
 
   users.users.tor = {
     isNormalUser = true;
