@@ -102,7 +102,7 @@ alias nsn="nix-shell shell.nix"
 alias treegit='git ls-tree -r --name-only HEAD | tree --fromfile'
 alias i='wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+'
 alias u='wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-'  
-alias flakefix='f && rm -r etc/libcar/target && rm -r etc/excar/target'  
+alias flakefix='f && rm -r etc/libcar/target ; rm -r etc/excar/target'  
 
 
 export PATH=$PATH:/home/tor/.cache/cargo/bin
