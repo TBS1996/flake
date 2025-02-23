@@ -25,10 +25,6 @@
           home-manager.users.tor = { pkgs, ... }: {
             home.stateVersion = "24.11";
 
-            home.sessionVariables = {
-              PATH = "${pkgs.lib.makeBinPath [ "/home/tor/.cache/cargo/bin" ]}";
-            };
-
             services.syncthing = {
               enable = true;
             };

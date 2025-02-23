@@ -42,7 +42,6 @@ with pkgs; [
   dmenu
   git
   acpi
-  cargo
   pamixer
   aerc
   yazi
@@ -53,15 +52,11 @@ with pkgs; [
   brightnessctl
   
   # Background utilities
-  rustup
-  rust-analyzer
-  rustfmt
   lldb
   swaylock
   xdg-utils
   openssl
   pkg-config
-  rustc
   gcc
   slurp
   vulkan-loader  
