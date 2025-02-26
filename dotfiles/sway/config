@@ -212,10 +212,13 @@ bindsym XF86AudioLowerVolume exec pamixer -d 5
 bindsym XF86AudioMute exec pamixer -t
 
 # Increase screen brightness
-bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+#bindsym XF86MonBrightnessUp exec brightnessctl s +10%
 
 # Decrease screen brightness
-bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+#bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+
+bindsym XF86MonBrightnessUp exec ${pkgs.light}/bin/light -A 5;
+bindsym XF86MonBrightnessDown exec ${pkgs.light}/bin/light -U 5;
 
 
 bindsym $mod+b exec "swaymsg 'workspace number 2'; swaymsg exec firefox"

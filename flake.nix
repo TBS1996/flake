@@ -35,6 +35,8 @@
               userEmail = "torberge@outlook.com";
             };
 
+	    programs.light.enable = true;
+
             programs.neomutt = {
               enable = true;
             };
