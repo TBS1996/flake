@@ -9,8 +9,6 @@ with pkgs; [
   zathura
   calibre
   element-desktop
-  kdenlive
-  obs-studio
   gimp
   xfce.thunar
   vscode
