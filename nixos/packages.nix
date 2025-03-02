@@ -6,9 +6,7 @@ with pkgs; [
   tdesktop
   whatsapp-for-linux
   tor-browser
-  zathura
   calibre
-  element-desktop
   gimp
   xfce.thunar
   vscode
