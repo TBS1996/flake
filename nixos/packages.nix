@@ -12,7 +12,7 @@ with pkgs; [
   vscode
   neovim
   slack
-  jetbrains.idea-community
+  #jetbrains.idea-community
   obsidian
   sqlitebrowser
   
