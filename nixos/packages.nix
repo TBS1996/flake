@@ -14,6 +14,7 @@ with pkgs; [
   obsidian
   sqlitebrowser
   neovim
+  helix
   
   # CLI apps
   alacritty
