@@ -21,15 +21,19 @@
 
 	  environment.systemPackages = with pkgs; [ gammastep ];
 
-	  programs.nixvim.enable = true;
-
-
           home-manager.users.tor = { pkgs, ... }: {
             home.stateVersion = "24.11";
 
             services.syncthing = {
               enable = true;
             };
+
+	      programs.nixvim = {
+		    enable = true;
+
+		    colorschemes.catppuccin.enable = true;
+		    plugins.lualine.enable = true;
+		  };
 
             programs.git = {
               enable = true;
