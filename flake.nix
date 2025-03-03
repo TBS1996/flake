@@ -17,7 +17,6 @@
 
           imports = [
             ./options/firefox-config.nix
-            ./options/helix-config.nix
           ];
 
 	  environment.systemPackages = with pkgs; [ gammastep ];
