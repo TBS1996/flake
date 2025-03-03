@@ -28,6 +28,9 @@
             services.syncthing = {
               enable = true;
             };
+	      programs.nixvim = {
+		    #plugins.lightline.enable = true;
+		  };
 
             programs.git = {
               enable = true;

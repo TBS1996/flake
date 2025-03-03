@@ -10,9 +10,7 @@ with pkgs; [
   gimp
   xfce.thunar
   vscode
-  neovim
   slack
-  #jetbrains.idea-community
   obsidian
   sqlitebrowser
   
