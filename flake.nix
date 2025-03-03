@@ -21,6 +21,8 @@
 
 	  environment.systemPackages = with pkgs; [ gammastep ];
 
+	  programs.nixvim.enable = true;
+
 
           home-manager.users.tor = { pkgs, ... }: {
             home.stateVersion = "24.11";

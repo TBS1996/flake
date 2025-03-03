@@ -13,7 +13,7 @@ with pkgs; [
   slack
   obsidian
   sqlitebrowser
-  nixvim
+  neovim
   
   # CLI apps
   alacritty
