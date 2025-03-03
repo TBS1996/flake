@@ -28,8 +28,16 @@
             services.syncthing = {
               enable = true;
             };
+
+            services.syncthing = {
+              enable = true;
+            };
+
 	      programs.nixvim = {
-	      enable = true;
+		    enable = true;
+
+		    colorschemes.catppuccin.enable = true;
+		    plugins.lualine.enable = true;
 		  };
 
             programs.git = {
