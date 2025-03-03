@@ -17,6 +17,7 @@
 
           imports = [
             ./options/firefox-config.nix
+            ./options/helix-config.nix
           ];
 
 	  environment.systemPackages = with pkgs; [ gammastep ];
@@ -27,36 +28,6 @@
             services.syncthing = {
               enable = true;
             };
-
-	      programs.nixvim = {
-    enable = true;
-
-    colorschemes.catppuccin.enable = true;
-    plugins.lualine.enable = true;
-  };
-
-	    programs.helix = {
-  enable = true;
-  settings = {
-    theme = "autumn_night_transparent";
-    editor.cursor-shape = {
-      normal = "block";
-      insert = "bar";
-      select = "underline";
-    };
-  };
-  languages.language = [{
-    name = "nix";
-    auto-format = true;
-    formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
-  }];
-  themes = {
-    autumn_night_transparent = {
-      "inherits" = "autumn_night";
-      "ui.background" = { };
-    };
-  };
-};
 
             programs.git = {
               enable = true;
