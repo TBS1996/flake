@@ -15,7 +15,7 @@ with pkgs; [
   sqlitebrowser
   neovim
   helix
-  lights
+  light
   
   # CLI apps
   alacritty
