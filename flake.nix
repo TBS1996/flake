@@ -29,7 +29,7 @@
               enable = true;
             };
 	      programs.nixvim = {
-		    #plugins.lightline.enable = true;
+	      enable = true;
 		  };
 
             programs.git = {
