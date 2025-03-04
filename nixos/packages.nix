@@ -40,7 +40,6 @@ with pkgs; [
   git
   acpi
   pamixer
-  aerc
   yazi
   wl-clipboard
   fish
