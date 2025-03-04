@@ -34,12 +34,6 @@
               userEmail = "torberge@outlook.com";
             };
 
-	    #programs.light.enable = true;
-
-            programs.neomutt = {
-              enable = true;
-            };
-
             home.file.".config/zed/settings.json".source = ./dotfiles/zed/config;
             home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;
             home.file.".config/newsboat/urls".source = ./dotfiles/newsboat/urls;
