@@ -15,10 +15,8 @@ with pkgs; [
   sqlitebrowser
   neovim
   helix
-  light
   
   # CLI apps
-  alacritty
   ripgrep
   tree
   mpd
