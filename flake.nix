@@ -30,11 +30,10 @@
 
 	programs.git = {
 	  enable = true;
-	  config = {
-	    user.name = "tor";
-	    user.email = "tor@example.com";
-	  };
+	  userName = "tor!!";
+	  userEmail = "tor@example.com";
 	};
+
 
 
             home.file.".config/zed/settings.json".source = ./dotfiles/zed/config;
