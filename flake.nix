@@ -11,7 +11,6 @@
       modules = [
         ./nixos/configuration.nix
         ./systemd-services.nix
-        ./vars.nix
         home-manager.nixosModules.home-manager
         ({ pkgs, ... }: {
           nixpkgs.config.allowUnfree = true;
