@@ -29,13 +29,14 @@
               enable = true;
             };
 
-            programs.git = {
-              enable = true;
-	        config = {
-		    user.name = "tor";
-		    user.email = "tor@example.com";
-		  };
-            };
+programs.git = {
+  enable = true;
+  config = {
+    user.name = "tor";
+    user.email = "tor@example.com";
+  };
+};
+
 
             home.file.".config/zed/settings.json".source = ./dotfiles/zed/config;
             home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;
