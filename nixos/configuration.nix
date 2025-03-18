@@ -14,14 +14,16 @@
   boot.kernelParams = [ "acpi_backlight=vendor" ];
 
 
-  users.users.tor = {
+  let vars = import ../vars.nix;
+  in {
+  users.users.${vars.username} = {
     isNormalUser = true;
     description = "Tor";
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
   };
+  }
 
-  # ✅ Run clone-velv.service on rebuild
   system.activationScripts.cloneVelv = {
     text = ''
       sudo -u tor systemctl --user start clone-velv.service

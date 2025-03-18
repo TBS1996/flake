@@ -1,5 +1,6 @@
 {
-  git_name = "Tor!";
+  username = "tor";
+  git_name = "Tor";
   git_email = "torberge@outlook.com";
 }
 
