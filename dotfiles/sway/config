@@ -264,3 +264,7 @@ bar {
 }
 
 include /etc/sway/config.d/*
+
+assign [app_id="firefox"] 2
+assign [app_id="slack"] 4
+assign [app_id="code"] 3
