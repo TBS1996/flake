@@ -1,28 +1,27 @@
-{ config, pkgs, ... }:
-
-{
+let
+  vars = import ../vars.nix;
+in {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [ ./hardware-configuration.nix ];
 
   environment.systemPackages = with pkgs; [
   ] ++ (import ./packages.nix { inherit pkgs; });
 
-  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
   boot.supportedFilesystems = [ "ntfs" ];
   boot.kernelParams = [ "acpi_backlight=vendor" ];
 
-
-  let vars = import ../vars.nix;
-  in {
   users.users.${vars.username} = {
     isNormalUser = true;
     description = "Tor";
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
   };
-  }
 
   system.activationScripts.cloneVelv = {
     text = ''
@@ -51,7 +50,7 @@
 
   hardware.graphics = {
     enable = true;
-    extraPackages = [ pkgs.mesa ];  # Enable mesa driver for Vulkan support
+    extraPackages = [ pkgs.mesa ];
   };
 
   security.rtkit.enable = true;
@@ -63,6 +62,6 @@
     pulse.enable = true;
   };
 
-  system.stateVersion = "22.05"; # Did you read the comment?
+  system.stateVersion = "22.05";
 }
 
