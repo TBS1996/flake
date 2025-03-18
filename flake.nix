@@ -17,6 +17,7 @@
 
           imports = [
             ./options/firefox-config.nix
+            ./vars.nix
           ];
 
 	  environment.systemPackages = with pkgs; [ gammastep ];
@@ -30,8 +31,8 @@
 
 	programs.git = {
 	  enable = true;
-	  userName = "tor!!";
-	  userEmail = "tor@example.com";
+	  userName = vars.git_name;
+	  userEmail = vars.git_email;
 	};
 
 
