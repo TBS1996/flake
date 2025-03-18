@@ -35,7 +35,6 @@ with pkgs; [
   newsboat
   github-cli
   dmenu
-  git
   acpi
   pamixer
   yazi
