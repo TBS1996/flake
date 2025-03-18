@@ -18,6 +18,7 @@ with pkgs; [
   
   # CLI apps
   ripgrep
+  git
   tree
   mpd
   ncmpcpp
