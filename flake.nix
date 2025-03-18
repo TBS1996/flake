@@ -11,6 +11,7 @@
       modules = [
         ./nixos/configuration.nix
         ./systemd-services.nix
+        ./vars.nix
         home-manager.nixosModules.home-manager
         ({ pkgs, ... }: {
           nixpkgs.config.allowUnfree = true;
@@ -30,8 +31,10 @@
 
             programs.git = {
               enable = true;
-              userName = "tor";
-              userEmail = "torberge@outlook.com";
+	        config = {
+		    user.name = "tor";
+		    user.email = "tor@example.com";
+		  };
             };
 
             home.file.".config/zed/settings.json".source = ./dotfiles/zed/config;
