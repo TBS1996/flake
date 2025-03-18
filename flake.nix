@@ -5,6 +5,9 @@
 
   };
 
+  let vars = import ./vars.nix;
+
+  in {
   outputs = { self, nixpkgs, home-manager, ... }: {
     nixosConfigurations.sys = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -52,4 +55,6 @@
     };
   };
 }
+}
+
 
