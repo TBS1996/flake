@@ -227,7 +227,13 @@ bindsym $mod+t exec "swaymsg 'workspace number 4'; swaymsg exec telegram-desktop
 bindsym $mod+q exec swaylock
 bindsym $mod+m exec "swaymsg workspace next"
 bindsym $mod+n exec "swaymsg workspace prev"
-bindsym $mod+Shift+o exec 'swaymsg output eDP-1 toggle'
+
+# Disable laptop screen (eDP-1)
+bindsym $mod+Shift+d exec 'swaymsg output eDP-1 disable'
+
+# Enable laptop screen (eDP-1)
+bindsym $mod+Shift+e exec 'swaymsg output eDP-1 enable'
+
 
 # Take a screenshot of the entire screen
 bindsym Print exec grim ~/screenshots/screenshot-$(date +%Y-%m-%d-%H%M%S).png
