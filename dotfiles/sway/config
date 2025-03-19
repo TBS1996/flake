@@ -227,6 +227,7 @@ bindsym $mod+t exec "swaymsg 'workspace number 4'; swaymsg exec telegram-desktop
 bindsym $mod+q exec swaylock
 bindsym $mod+m exec "swaymsg workspace next"
 bindsym $mod+n exec "swaymsg workspace prev"
+bindsym $mod+Shift+o exec 'swaymsg output eDP-1 toggle'
 
 # Take a screenshot of the entire screen
 bindsym Print exec grim ~/screenshots/screenshot-$(date +%Y-%m-%d-%H%M%S).png
@@ -264,8 +265,3 @@ bar {
 }
 
 include /etc/sway/config.d/*
-
-assign [app_id="firefox"] 2
-assign [app_id="slack"] 4
-assign [app_id="code"] 3
-assign [app_id="obsidian"] 5
