@@ -84,7 +84,7 @@ input type:keyboard {
     floating_modifier $mod normal
 
     # Reload the configuration file
-    bindsym $mod+Shift+c reload
+    #bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
     #bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -227,8 +227,8 @@ bindsym $mod+t exec "swaymsg 'workspace number 4'; swaymsg exec telegram-desktop
 bindsym $mod+q exec swaylock
 bindsym $mod+m exec "swaymsg workspace next"
 bindsym $mod+n exec "swaymsg workspace prev"
-bindsym $mod+c exec firefox https://mail.google.com/mail/u/1/#inbox
-bindsym $mod+b+t exec firefox https://tasks.google.com/tasks/
+bindsym $mod+Shift+c exec firefox https://mail.google.com/mail/u/1/#inbox
+bindsym $mod+Shift+t exec firefox https://tasks.google.com/tasks/
 bindsym $mod+Shift+d exec 'swaymsg output eDP-1 disable'
 bindsym $mod+Shift+e exec 'swaymsg output eDP-1 enable'
 
