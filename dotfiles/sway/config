@@ -227,11 +227,8 @@ bindsym $mod+t exec "swaymsg 'workspace number 4'; swaymsg exec telegram-desktop
 bindsym $mod+q exec swaylock
 bindsym $mod+m exec "swaymsg workspace next"
 bindsym $mod+n exec "swaymsg workspace prev"
-
-# Disable laptop screen (eDP-1)
+bindsym $mod+c exec firefox https://mail.google.com/mail/u/1/#inbox
 bindsym $mod+Shift+d exec 'swaymsg output eDP-1 disable'
-
-# Enable laptop screen (eDP-1)
 bindsym $mod+Shift+e exec 'swaymsg output eDP-1 enable'
 
 
