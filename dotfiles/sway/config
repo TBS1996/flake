@@ -228,6 +228,7 @@ bindsym $mod+q exec swaylock
 bindsym $mod+m exec "swaymsg workspace next"
 bindsym $mod+n exec "swaymsg workspace prev"
 bindsym $mod+c exec firefox https://mail.google.com/mail/u/1/#inbox
+bindsym $mod+b+t exec firefox https://tasks.google.com/tasks/
 bindsym $mod+Shift+d exec 'swaymsg output eDP-1 disable'
 bindsym $mod+Shift+e exec 'swaymsg output eDP-1 enable'
 
