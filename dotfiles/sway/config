@@ -229,15 +229,15 @@ bindsym $mod+m exec "swaymsg workspace next"
 bindsym $mod+n exec "swaymsg workspace prev"
 bindsym $mod+Shift+c exec firefox https://mail.google.com/mail/u/1/#inbox
 bindsym $mod+Shift+t exec firefox https://tasks.google.com/tasks/
+bindsym $mod+Shift+a exec firefox https://cognitedata.atlassian.net
+bindsym $mod+Shift+k exec firefox https://cognitedata.atlassian.net/jira/software/c/projects/AUTH/boards/940
+bindsym $mod+Shift+p exec firefox https://grafana.cogheim.net/d/UfKr9MAGk/gandalf
 bindsym $mod+Shift+d exec 'swaymsg output eDP-1 disable'
 bindsym $mod+Shift+e exec 'swaymsg output eDP-1 enable'
 
+bindsym Print exec mkdir -p ~/screenshots && grim ~/screenshots/screenshot-$(date +%Y-%m-%d-%H%M%S).png
+bindsym Shift+Print exec mkdir -p ~/screenshots && grim -g "$(slurp)" ~/screenshots/screenshot-$(date +%Y-%m-%d-%H%M%S).png
 
-# Take a screenshot of the entire screen
-bindsym Print exec grim ~/screenshots/screenshot-$(date +%Y-%m-%d-%H%M%S).png
-# Take a screenshot of a selected area
-bindsym Shift+Print exec grim -g "$(slurp)" ~/screenshots/screenshot-$(date +%Y-%m-%d-%H%M%S).png
-#bindsym $mod+b exec foot --class floating_terminal, exec swaymsg '[app_id="floating_terminal"] floating enable; resize set width 90 ppt height 90 ppt; move position center'
 
 
 
