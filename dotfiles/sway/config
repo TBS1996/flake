@@ -230,7 +230,7 @@ bindsym $mod+n exec "swaymsg workspace prev"
 bindsym $mod+Shift+c exec firefox https://mail.google.com/mail/u/1/#inbox
 bindsym $mod+Shift+t exec firefox https://tasks.google.com/tasks/
 bindsym $mod+Shift+a exec firefox https://cognitedata.atlassian.net
-bindsym $mod+Shift+k exec firefox https://cognitedata.atlassian.net/jira/software/c/projects/AUTH/boards/940
+bindsym $mod+Shift+b exec firefox https://cognitedata.atlassian.net/jira/software/c/projects/AUTH/boards/940
 bindsym $mod+Shift+p exec firefox https://grafana.cogheim.net/d/UfKr9MAGk/gandalf
 bindsym $mod+Shift+d exec 'swaymsg output eDP-1 disable'
 bindsym $mod+Shift+e exec 'swaymsg output eDP-1 enable'
