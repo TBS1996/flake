@@ -200,6 +200,7 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
 bindsym $mod+r mode "resize"
 
 # Increase volume
@@ -239,15 +240,10 @@ bindsym Print exec mkdir -p ~/screenshots && grim ~/screenshots/screenshot-$(dat
 bindsym Shift+Print exec mkdir -p ~/screenshots && grim -g "$(slurp)" ~/screenshots/screenshot-$(date +%Y-%m-%d-%H%M%S).png
 
 
-
-
-
 input * {
     repeat_rate 60
     repeat_delay 175
 }
-
-
 
 
 #
