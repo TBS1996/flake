@@ -15,6 +15,7 @@ with pkgs; [
   sqlitebrowser
   neovim
   helix
+  cowsay
   
   # CLI apps
   ripgrep
