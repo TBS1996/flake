@@ -235,6 +235,8 @@ bindsym $mod+Shift+b exec firefox https://cognitedata.atlassian.net/jira/softwar
 bindsym $mod+Shift+p exec firefox https://grafana.cogheim.net/d/UfKr9MAGk/gandalf
 bindsym $mod+Shift+d exec 'swaymsg output eDP-1 disable'
 bindsym $mod+Shift+e exec 'swaymsg output eDP-1 enable'
+bindsym $mod+p exec foot bash -c 'cd ~/prog/timeplan && nix develop --command python main.py'
+
 
 bindsym Print exec mkdir -p ~/screenshots && grim ~/screenshots/screenshot-$(date +%Y-%m-%d-%H%M%S).png
 bindsym Shift+Print exec mkdir -p ~/screenshots && grim -g "$(slurp)" ~/screenshots/screenshot-$(date +%Y-%m-%d-%H%M%S).png
