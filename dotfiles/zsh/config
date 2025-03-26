@@ -107,6 +107,7 @@ alias i='wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+'
 alias u='wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-'  
 alias flakefix='f && rm -r etc/libcar/target ; rm -r etc/excar/target'  
 alias totfmt='cargo fmt && git add --all && git commit -m fmt && cargo fix && git add --all && git commit -m fix'
+alias plan="cd ~/prog/timeplan && nix develop && python main.py"
 
 
 export PATH=$PATH:/home/tor/.cache/cargo/bin
