@@ -60,6 +60,5 @@ with pkgs; [
   intel-media-driver
   direnv
   nix-direnv
-  mako
 ]
 
