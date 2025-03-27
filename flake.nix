@@ -37,16 +37,16 @@
               };
 
 	      programs.mako = {
-  enable = true;
-  defaultTimeout = 5000;
-  backgroundColor = "#1e1e2e";
-  textColor = "#cdd6f4";
-  borderColor = "#89b4fa";
-  borderSize = 2;
-  padding = "10";
-  font = "JetBrainsMono 10";
-};
-
+		  enable = true;
+		  anchor =top-left;
+		  defaultTimeout = 5000;
+		  backgroundColor = "#1e1e2e";
+		  textColor = "#cdd6f4";
+		  borderColor = "#89b4fa";
+		  borderSize = 2;
+		  padding = "10";
+		  font = "JetBrainsMono 10";
+		};
 
               home.file.".config/zed/settings.json".source = ./dotfiles/zed/config;
               home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;

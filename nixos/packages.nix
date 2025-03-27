@@ -18,6 +18,7 @@ with pkgs; [
   cowsay
   
   # CLI apps
+  libnotify
   ripgrep
   git
   tree
