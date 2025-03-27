@@ -38,7 +38,7 @@
 
 	      programs.mako = {
 		  enable = true;
-		  anchor =top-left;
+		  anchor = "top-left";
 		  defaultTimeout = 5000;
 		  backgroundColor = "#1e1e2e";
 		  textColor = "#cdd6f4";
