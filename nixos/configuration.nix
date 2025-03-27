@@ -44,18 +44,6 @@ in {
   programs.zsh.enable = true;
   programs.sway.enable = true;
 
-  programs.mako = {
-    enable = true;
-    defaultTimeout = 5000; # in milliseconds
-    backgroundColor = "#1e1e2e";
-    textColor = "#cdd6f4";
-    borderColor = "#89b4fa";
-    borderSize = 2;
-    padding = "10";
-    font = "JetBrainsMono 10";
-  };
-
-
   services.printing.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
