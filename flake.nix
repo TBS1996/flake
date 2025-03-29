@@ -36,7 +36,7 @@
                 userEmail = vars.git_email;
               };
 
-	      programs.mako = {
+	      services.mako = {
 		  enable = true;
 		  anchor = "top-left";
 		  defaultTimeout = 5000;
@@ -54,6 +54,11 @@
 		      infrastructure = {
 			path = "/home/tor/prog/infrastructure";
 			uri = "https://github.com/cognitedata/infrastructure.git";
+			interval = 0; 
+		      };
+		      speki = {
+			path = "/home/tor/prog/speki";
+			uri = "https://github.com/tbs1996/speki.git";
 			interval = 0; 
 		      };
 		      talecast = {
