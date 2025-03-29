@@ -48,6 +48,22 @@
 		  font = "JetBrainsMono 10";
 		};
 
+		  services.git-sync = {
+		    enable = true;
+		    repositories = {
+		      infrastructure = {
+			path = "${config.home.homeDirectory}/prog/infrastructure";
+			uri = "https://github.com/cognitedata/infrastructure.git";
+			interval = 0; 
+		      };
+		      talecast = {
+			path = "${config.home.homeDirectory}/prog/talecast";
+			uri = "https://github.com/tbs1996/talecast.git";
+			interval = 0; 
+		      };
+		    };
+		  };
+
               home.file.".config/zed/settings.json".source = ./dotfiles/zed/config;
               home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;
               home.file.".config/newsboat/urls".source = ./dotfiles/newsboat/urls;
