@@ -52,12 +52,12 @@
 		    enable = true;
 		    repositories = {
 		      infrastructure = {
-			path = "${config.home.homeDirectory}/prog/infrastructure";
+			path = "/home/tor/prog/infrastructure";
 			uri = "https://github.com/cognitedata/infrastructure.git";
 			interval = 0; 
 		      };
 		      talecast = {
-			path = "${config.home.homeDirectory}/prog/talecast";
+			path = "/home/tor/prog/talecast";
 			uri = "https://github.com/tbs1996/talecast.git";
 			interval = 0; 
 		      };
