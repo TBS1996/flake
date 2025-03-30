@@ -4,7 +4,7 @@ with pkgs; [
   # GUI apps
   firefox
   tdesktop
-  whatsapp-for-linux
+  whatsie
   tor-browser
   calibre
   gimp
