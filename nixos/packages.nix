@@ -46,7 +46,7 @@ with pkgs; [
   syncthing
   zip
   brightnessctl
-  gurk
+  gurk-rs
   
   # Background utilities
   lldb
