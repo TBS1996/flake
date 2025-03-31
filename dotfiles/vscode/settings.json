@@ -1,0 +1,24 @@
+{
+  "workbench.colorTheme": "Quiet Light",
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "git.openRepositoryInParentFolders": "never",
+  "rust-analyzer.trace.server": "verbose",
+  "rust-analyzer.trace.extension": true,
+  "rust-analyzer.formatting.command": "rustfmt",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "args": [
+        "-c",
+        "nix develop .# --command bash"
+      ]
+    }
+  },
+  "vim.smartRelativeLine": true,
+  "editor.formatOnSave": true,
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "workbench.settings.applyToAllProfiles": []
+}
