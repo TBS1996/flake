@@ -16,6 +16,7 @@ with pkgs; [
   cowsay
 
   # CLI apps
+  nchat
   libnotify
   ripgrep
   git
