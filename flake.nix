@@ -72,14 +72,11 @@
 		    };
 		  };
 
-              home.file.".config/zed/settings.json".source = ./dotfiles/zed/config;
               home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;
               home.file.".config/newsboat/urls".source = ./dotfiles/newsboat/urls;
               home.file.".config/foot/foot.ini".source = ./dotfiles/foot/config;
               home.file.".config/sway/config".source = ./dotfiles/sway/config;
               home.file.".config/zsh/.zshrc".source = ./dotfiles/zsh/config;
-              home.file.".config/aerc/binds.conf".source = ./dotfiles/aerc/binds.conf;
-              home.file.".config/aerc/aerc.conf".source = ./dotfiles/aerc/aerc.conf;
               home.file.".config/waybar/config".source = ./dotfiles/waybar/config;
               home.file.".cargo/config.toml".source = ./dotfiles/cargo/config;
               home.file.".config/Code/User/settings.json".source = ./dotfiles/vscode/settings.json;
@@ -89,4 +86,3 @@
       };
     };
 }
-
