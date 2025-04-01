@@ -1,0 +1,28 @@
+theme {
+  // Background and foreground
+  bg "#0d0d0d"
+  fg "#d0d0d0"
+
+  // Borders
+  black "#333333"
+  red "#ff5f5f"
+  green "#5fff87"
+  yellow "#ffff87"
+  blue "#5fafff"
+  magenta "#af5fff"
+  cyan "#5fffff"
+  white "#eeeeee"
+
+  // Bright variants (can be the same or different)
+  bright_black "#444444"
+  bright_red "#ff8787"
+  bright_green "#87ffaf"
+  bright_yellow "#ffffaf"
+  bright_blue "#87cdff"
+  bright_magenta "#cd87ff"
+  bright_cyan "#87ffff"
+  bright_white "#ffffff"
+}
+
+default_shell "zsh"  // optional: change to your preferred shell
+layout "default"     // optional: use the default layout
