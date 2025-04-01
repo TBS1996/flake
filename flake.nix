@@ -7,9 +7,9 @@
   outputs = { self, nixpkgs, home-manager, ... }:
     let vars = import ./vars.nix;
     in {
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
       nixosConfigurations.sys = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        formatter = nixpkgs.alejandra;
         modules = [
           ./nixos/configuration.nix
           ./systemd-services.nix
