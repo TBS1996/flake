@@ -31,6 +31,25 @@ in
       deps = ["users"];
     };
 
+    console.colors = [
+      "000000" # black
+      "ff5555" # red
+      "50fa7b" # green
+      "f1fa8c" # yellow
+      "bd93f9" # blue (better than the default!)
+      "ff79c6" # magenta
+      "8be9fd" # cyan
+      "bbbbbb" # white
+      "44475a" # bright black
+      "ff6e6e" # bright red
+      "69ff94" # bright green
+      "ffffa5" # bright yellow
+      "d6acff" # bright blue
+      "ff92df" # bright magenta
+      "a4ffff" # bright cyan
+      "ffffff" # bright white
+    ];
+
     environment.variables = {
       ZDOTDIR = "/home/tor/.config/zsh";
       CARGO_HOME = "/home/tor/.cache/cargo/";
@@ -45,7 +64,7 @@ in
     programs.zsh.enable = true;
     programs.sway.enable = true;
 
-    services.printing.enable = true;
+    services.printing.enable = false;
     nix.settings.experimental-features = ["nix-command" "flakes"];
     nixpkgs.config.allowUnfree = true;
 
