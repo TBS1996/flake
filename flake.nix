@@ -19,12 +19,14 @@
 
             imports = [
               ./options/firefox-config.nix
-              ./options/helix-config.nix
             ];
 
             environment.systemPackages = with pkgs; [ gammastep ];
 
             home-manager.users.tor = { pkgs, ... }: {
+	      imports = [
+    ./options/helix-config.nix
+  ];
               home.stateVersion = "24.11";
 
               services.syncthing = {
