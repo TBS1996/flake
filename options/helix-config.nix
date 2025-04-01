@@ -13,14 +13,8 @@
       {
         name = "nix";
         auto-format = true;
-        formatter.command = "${pkgs.nixfmt-classic}/bin/nixfmt";
+        formatter.command = "${pkgs.alejandra}/bin/alejandra";
       }
     ];
-    themes = {
-      autumn_night_transparent = {
-        inherits = "autumn_night";
-        "ui.background" = {};
-      };
-    };
   };
 }

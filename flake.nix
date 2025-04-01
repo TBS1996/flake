@@ -22,7 +22,7 @@
         ({pkgs, ...}: {
           nixpkgs.config.allowUnfree = true;
 
-          imports = [./options/firefox-config.nix];
+          imports = [./options/firefox-coig.nix];
 
           environment.systemPackages = with pkgs; [gammastep];
 
