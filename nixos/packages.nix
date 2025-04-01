@@ -24,7 +24,6 @@ with pkgs; [
   tree
   mpd
   ncmpcpp
-  python3
   feh
   cron
   wdisplays
@@ -47,6 +46,7 @@ with pkgs; [
   zip
   brightnessctl
   gurk-rs
+  zellij
   
   # Background utilities
   lldb
