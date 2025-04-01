@@ -77,7 +77,9 @@
             };
 
             home.file.".config/zellij/config.kdl".source =
-              ./dotfiles/zellij;
+              ./dotfiles/zellij/config;
+            home.file.".config/zellij/layouts/chat.kdl".source =
+              ./dotfiles/zellij/chat;
             home.file.".config/newsboat/config".source =
               ./dotfiles/newsboat/config;
             home.file.".config/newsboat/urls".source =

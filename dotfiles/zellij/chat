@@ -1,0 +1,7 @@
+layout {
+  tab name="chat" {
+    pane command="nchat"
+    pane command="gurk"
+  }
+}
+
