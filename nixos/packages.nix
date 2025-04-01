@@ -1,5 +1,4 @@
 { pkgs }:
-
 with pkgs; [
   # GUI apps
   firefox
@@ -13,10 +12,9 @@ with pkgs; [
   slack
   obsidian
   sqlitebrowser
-  neovim
   helix
   cowsay
-  
+
   # CLI apps
   libnotify
   ripgrep
@@ -47,7 +45,7 @@ with pkgs; [
   brightnessctl
   gurk-rs
   zellij
-  
+
   # Background utilities
   lldb
   swaylock
@@ -56,11 +54,10 @@ with pkgs; [
   pkg-config
   gcc
   slurp
-  vulkan-loader  
+  vulkan-loader
   vulkan-tools
   mesa
   intel-media-driver
   direnv
   nix-direnv
 ]
-

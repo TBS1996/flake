@@ -1,14 +1,11 @@
-{ pkgs, ... }:
-
-{
-
+{pkgs, ...}: {
   systemd.user.services.clone-velv = {
     description = "Ensure velv repo is cloned and up-to-date";
-    wantedBy = [ "default.target" ]; 
+    wantedBy = ["default.target"];
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "/home/tor/flake/scripts/clone_velv.sh";
-      Environment = "PATH=${pkgs.lib.makeBinPath [ pkgs.git pkgs.coreutils ]}";
+      Environment = "PATH=${pkgs.lib.makeBinPath [pkgs.git pkgs.coreutils]}";
       RemainAfterExit = true;
     };
   };
@@ -18,14 +15,14 @@
     serviceConfig = {
       ExecStart = "/home/tor/flake/scripts/commit_notes.sh";
       Type = "oneshot";
-      User = "tor"; 
-      Environment = "PATH=${pkgs.lib.makeBinPath [ pkgs.git pkgs.coreutils ]}";
+      User = "tor";
+      Environment = "PATH=${pkgs.lib.makeBinPath [pkgs.git pkgs.coreutils]}";
     };
   };
 
-  systemd.timers.commitNotes = { 
+  systemd.timers.commitNotes = {
     description = "Timer for notes backup";
-    wantedBy = [ "timers.target" ];
+    wantedBy = ["timers.target"];
     timerConfig = {
       OnCalendar = "hourly";
       Persistent = true;
@@ -37,18 +34,17 @@
     serviceConfig = {
       ExecStart = "/home/tor/flake/scripts/podsync.sh";
       Type = "oneshot";
-      User = "tor"; 
-      Environment = "PATH=${pkgs.lib.makeBinPath [ pkgs.git pkgs.coreutils ]}";
+      User = "tor";
+      Environment = "PATH=${pkgs.lib.makeBinPath [pkgs.git pkgs.coreutils]}";
     };
   };
 
-  systemd.timers.podSync = { 
+  systemd.timers.podSync = {
     description = "syncing my podcasts";
-    wantedBy = [ "timers.target" ];
+    wantedBy = ["timers.target"];
     timerConfig = {
       OnCalendar = "hourly";
       Persistent = true;
     };
   };
 }
-
