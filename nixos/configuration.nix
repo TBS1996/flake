@@ -15,7 +15,11 @@ in
     boot.loader.efi.canTouchEfiVariables = true;
     boot.loader.efi.efiSysMountPoint = "/boot";
     boot.supportedFilesystems = ["ntfs"];
-    boot.kernelParams = ["acpi_backlight=vendor"];
+    boot.kernelParams = [
+      "acpi_backlight=vendor"
+      "kbdrate.rate=60"
+      "kbdrate.delay=175"
+    ];
 
     users.users.${vars.username} = {
       isNormalUser = true;
