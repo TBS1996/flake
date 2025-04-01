@@ -25,8 +25,8 @@
 
             home-manager.users.tor = { pkgs, ... }: {
 	      imports = [
-    ./options/helix-config.nix
-  ];
+		    ./options/helix-config.nix
+	  ];
               home.stateVersion = "24.11";
 
               services.syncthing = {

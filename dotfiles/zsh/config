@@ -83,6 +83,7 @@ alias gb='git branch'
 alias gp='git pull'
 
 alias grn='cd /home/tor/flake && nix flake update; git add .; git commit -m "rebuilding"; git push; sudo nixos-rebuild switch --flake .#sys; swaymsg reload; source dotfiles/zsh/config && cd -'
+alias grl='cd /home/tor/flake && sudo nixos-rebuild switch --flake .#sys; swaymsg reload; source dotfiles/zsh/config && cd -'
 alias pg='ping google.com'
 alias cpy='wl-copy <'
 alias scl='systemctl'
