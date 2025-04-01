@@ -9,7 +9,7 @@
     in {
       nixosConfigurations.sys = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        formatter = with pkgs; [ alejandra ];
+        formatter = nixpkgs.alejandra;
         modules = [
           ./nixos/configuration.nix
           ./systemd-services.nix
