@@ -38,6 +38,11 @@
               userEmail = vars.git_email;
             };
 
+            programs.yazi = {
+              enable = true;
+              settings = {manager = {editor = "hx";};};
+            };
+
             services.mako = {
               enable = true;
               anchor = "top-left";
