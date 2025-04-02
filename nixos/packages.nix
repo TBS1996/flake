@@ -16,6 +16,7 @@ with pkgs; [
   cowsay
 
   # CLI apps
+  chatgpt-cli
   nchat
   libnotify
   ripgrep
