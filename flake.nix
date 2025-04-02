@@ -26,6 +26,16 @@
 
           environment.systemPackages = with pkgs; [gammastep];
 
+          programs.foot = {
+            enable = true;
+            theme = "onehalf-dark";
+            settings = {
+              main = {
+                font = "FreeMono:size=16";
+              };
+            };
+          };
+
           home-manager.users.tor = {pkgs, ...}: {
             imports = [./options/helix-config.nix];
             home.stateVersion = "24.11";
@@ -59,7 +69,7 @@
               enable = true;
               repositories = {
                 infrastructure = {
-                  path = "/home/tor/prog/infrastructure";
+                  path = "${vars.prog_folder}/infrastructure";
                   uri = "https://github.com/cognitedata/infrastructure.git";
                   interval = 0;
                 };
@@ -76,6 +86,8 @@
               };
             };
 
+            home.file.".config/nchat/key.conf".source =
+              ./dotfiles/nchat/key.conf;
             home.file.".config/zellij/config.kdl".source =
               ./dotfiles/zellij/config;
             home.file.".config/zellij/layouts/chat.kdl".source =
@@ -84,7 +96,6 @@
               ./dotfiles/newsboat/config;
             home.file.".config/newsboat/urls".source =
               ./dotfiles/newsboat/urls;
-            home.file.".config/foot/foot.ini".source = ./dotfiles/foot/config;
             home.file.".config/sway/config".source = ./dotfiles/sway/config;
             home.file.".config/zsh/.zshrc".source = ./dotfiles/zsh/config;
             home.file.".config/waybar/config".source =

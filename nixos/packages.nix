@@ -16,6 +16,8 @@ with pkgs; [
   cowsay
 
   # CLI apps
+  termusic
+  shell-gpt
   chatgpt-cli
   nchat
   libnotify
