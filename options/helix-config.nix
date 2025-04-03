@@ -3,10 +3,13 @@
     enable = true;
     settings = {
       theme = "onedark";
-      editor.cursor-shape = {
-        normal = "block";
-        insert = "bar";
-        select = "underline";
+      editor = {
+        soft-wrap.enable = true;
+        cursor-shape = {
+          normal = "block";
+          insert = "bar";
+          select = "underline";
+        };
       };
     };
     languages.language = [
