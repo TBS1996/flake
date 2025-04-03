@@ -26,6 +26,7 @@
 
           environment.systemPackages = with pkgs; [gammastep];
 
+          virtualisation.docker.enable = true;
           programs.foot = {
             enable = true;
             theme = "onehalf-dark";

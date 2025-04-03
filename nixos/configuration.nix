@@ -25,7 +25,7 @@ in
       isNormalUser = true;
       description = "Tor";
       shell = pkgs.zsh;
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = ["networkmanager" "wheel" "docker"];
     };
 
     system.activationScripts.cloneVelv = {
