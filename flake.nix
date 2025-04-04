@@ -2,12 +2,15 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
+    helix.url = "github:helix-editor/helix";
+    helix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    helix,
     ...
   }: let
     vars = import ./vars.nix;
@@ -38,7 +41,9 @@
           };
 
           home-manager.users.tor = {pkgs, ...}: {
-            imports = [./options/helix-config.nix];
+            imports = [
+              (import ./options/helix-config.nix {inherit pkgs helix;})
+            ];
             home.stateVersion = "24.11";
 
             services.syncthing = {enable = true;};

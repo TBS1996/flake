@@ -16,6 +16,7 @@ with pkgs; [
   cowsay
 
   # CLI apps
+  lf
   termusic
   shell-gpt
   chatgpt-cli
