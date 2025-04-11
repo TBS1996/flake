@@ -10,13 +10,9 @@
     settings = {
       theme = "onedark";
 
-      keys.normal = {
-        C-q = [":new" ":insert-output ~/.local/bin/yazi-pick" "split_selection_on_newline" "goto_file" "goto_last_modification" "goto_last_modified_file" ":buffer-close!" ":theme nord" ":theme default"];
-
-        C-f = [":new" ":insert-output ~/.local/bin/lf-pick" "split_selection_on_newline" "goto_file" "goto_last_modification" "goto_last_modified_file" ":buffer-close!" ":theme nord" ":theme default"];
-      };
       editor = {
         soft-wrap.enable = true;
+        line-number = "relative";
         cursor-shape = {
           normal = "block";
           insert = "bar";

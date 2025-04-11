@@ -15,11 +15,20 @@ in
     boot.loader.efi.canTouchEfiVariables = true;
     boot.loader.efi.efiSysMountPoint = "/boot";
     boot.supportedFilesystems = ["ntfs"];
+    boot.kernelModules = ["binder_linux" "ashmem_linux"];
     boot.kernelParams = [
       "acpi_backlight=vendor"
       "kbdrate.rate=60"
       "kbdrate.delay=175"
+      "androidboot.hardware=waydroid"
     ];
+
+    systemd.extraConfig = ''
+      DefaultDeviceTimeoutSec=180s
+    '';
+
+    virtualisation.lxc.enable = true;
+    virtualisation.lxc.lxcfs.enable = true;
 
     users.users.${vars.username} = {
       isNormalUser = true;

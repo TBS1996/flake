@@ -1,6 +1,9 @@
 {pkgs, ...}: {
   programs.firefox = {
     enable = true;
+    preferences = {
+      "browser.download.useDownloadDir" = false;
+    };
     policies = {
       ExtensionSettings = {
         # uBlock Origin:
