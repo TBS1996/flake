@@ -30,7 +30,7 @@ in {
       bg = blue;
     };
     "ui.selection.primary" = {modifiers = ["reversed"];};
-    "comment" = {fg = gray;};
+    "comment" = {fg = red;};
     "ui.statusline" = {
       fg = white;
       bg = dark-gray;
