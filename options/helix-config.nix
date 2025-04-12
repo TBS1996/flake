@@ -2,13 +2,17 @@
   pkgs,
   helix,
   ...
-}: {
+}: let
+  helixTheme = import ./mytheme.nix;
+in {
   programs.helix = {
     enable = true;
     package = helix.packages.${pkgs.system}.helix;
 
+    themes = helixTheme;
+
     settings = {
-      theme = "onedark";
+      theme = "mytheme";
 
       editor = {
         soft-wrap.enable = true;
