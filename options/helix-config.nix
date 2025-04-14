@@ -14,6 +14,17 @@ in {
     settings = {
       theme = "mytheme";
 
+      keys = {
+        normal = {
+          "C-s" = ":wq";
+          "C-q" = ":q!";
+        };
+        insert = {
+          "C-s" = ":wq";
+          "C-q" = ":q!";
+        };
+      };
+
       editor = {
         soft-wrap.enable = true;
         line-number = "relative";

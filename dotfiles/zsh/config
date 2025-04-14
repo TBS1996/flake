@@ -81,9 +81,33 @@ alias gcb='git checkout -b'
 alias gcm='git checkout main'
 alias gb='git branch'
 alias gp='git pull'
+alias gam='git add --all && git commit --amend --no-edit'
+
+# nix stuff
 
 alias grn='cd /home/tor/flake && nix fmt; nix flake update; git add .; git commit -m "rebuilding"; git push; sudo nixos-rebuild switch --flake .#sys; swaymsg reload; source dotfiles/zsh/config && cd -'
 alias grl='cd /home/tor/flake && nix fmt; sudo nixos-rebuild switch --flake .#sys; swaymsg reload; source dotfiles/zsh/config && cd -'
+alias grp='cd /home/tor/flake && sudo nixos-rebuild switch --flake .#sys; swaymsg reload; source dotfiles/zsh/config && cd -'
+alias nd="nix develop"
+alias flakefix='f && rm -r etc/libcar/target ; rm -r etc/excar/target'  
+
+# work stuff
+alias ndt="cd ~/myflakes/terraform && nix develop"
+alias ndc="cd ~/myflakes && nix develop .#rust"
+alias infra="cd ~/prog/infrastructure"
+alias tf="cd ~/prog/terraform"
+alias lts="cd ~/prog/local-test-services"
+
+# rust stuff
+alias cerr="cargo build --quiet --message-format=short 2>&1 | grep -v warning"
+
+# cd shortcuts
+alias f="cd /home/tor/flake"
+alias p="cd /home/tor/prog"
+alias s="cd /home/tor/prog/speki"
+alias c="cd /home/tor/.config"
+alias n="cd /home/tor/velv/ && hx main.md"
+
 alias pg='ping google.com'
 alias cpy='wl-copy <'
 alias scl='systemctl'
@@ -91,31 +115,17 @@ alias z="zellij"
 alias nb="newsboat -r"
 alias y="yazi"
 alias amend="git add --all && git commit --amend --no-edit"
-alias f="cd /home/tor/flake"
-alias p="cd /home/tor/prog"
-alias s="cd /home/tor/prog/speki"
-alias c="cd /home/tor/.config"
-alias n="cd /home/tor/velv/ && hx main.md"
 alias nt="nmtui"
-alias nd="nix develop"
-alias ndc="cd ~/myflakes && nix develop .#rust"
 alias cc="calcurse"
 alias work="p && cd infrastructure/services/turbofish && ndc && code ."
-alias nsn="nix-shell shell.nix"
 alias treegit='git ls-tree -r --name-only HEAD | tree --fromfile'
 alias i='wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+'
 alias u='wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-'  
-alias flakefix='f && rm -r etc/libcar/target ; rm -r etc/excar/target'  
 alias totfmt='cargo fmt && git add --all && git commit -m fmt && cargo fix && git add --all && git commit -m fix'
 alias plan="cd ~/prog/timeplan && nix develop && python main.py"
 alias chat="zellij --layout chat"
 alias webcam="mpv av://v4l2:/dev/video0"
 
-# work stuff
-alias ndt="cd ~/myflakes/terraform && nix develop"
-alias infra="cd ~/prog/infrastructure"
-alias tf="cd ~/prog/terraform"
-alias lts="cd ~/prog/local-test-services"
 
 
 export PATH=$PATH:/home/tor/.cache/cargo/bin

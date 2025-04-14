@@ -12,7 +12,8 @@ let
   magenta = "#d3869b";
   cyan = "#8ec07c";
 in {
-  base16 = {
+  mytheme = {
+    "ui.background" = cyan;
     "ui.menu" = transparent;
     "ui.menu.selected" = {modifiers = ["reversed"];};
     "ui.linenr" = {

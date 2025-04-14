@@ -56,7 +56,12 @@
 
             programs.yazi = {
               enable = true;
-              settings = {manager = {editor = "hx";};};
+              settings = {
+                manager = {
+                  editor = "hx";
+                  ratio = [1 1 2];
+                };
+              };
             };
 
             services.mako = {
