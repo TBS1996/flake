@@ -46,6 +46,8 @@ output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_19
 
 exec mako
 
+exec swaybg -i /home/tor/Pictures/hessa.jpg -m fill
+
 ### Input configuration
 #
 # Example configuration:
@@ -238,6 +240,7 @@ bindsym $mod+Shift+p exec firefox https://grafana.cogheim.net/d/UfKr9MAGk/gandal
 bindsym $mod+Shift+d exec 'swaymsg output eDP-1 disable'
 bindsym $mod+Shift+e exec 'swaymsg output eDP-1 enable'
 bindsym $mod+Mod1+o exec obsidian
+bindsym $mod+Mod1+l exec pavucontrol
 
 
 bindsym Print exec mkdir -p ~/screenshots && grim ~/screenshots/screenshot-$(date +%Y-%m-%d-%H%M%S).png

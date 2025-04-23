@@ -119,6 +119,7 @@ alias nt="nmtui"
 alias cc="calcurse"
 alias work="p && cd infrastructure/services/turbofish && ndc && code ."
 alias treegit='git ls-tree -r --name-only HEAD | tree --fromfile'
+alias tg='treegit'
 alias i='wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+'
 alias u='wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-'  
 alias totfmt='cargo fmt && git add --all && git commit -m fmt && cargo fix && git add --all && git commit -m fix'

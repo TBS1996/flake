@@ -3,7 +3,6 @@ with pkgs; [
   # GUI apps
   firefox
   tdesktop
-  whatsie
   tor-browser
   calibre
   gimp
@@ -14,6 +13,8 @@ with pkgs; [
   sqlitebrowser
   helix
   cowsay
+  pavucontrol
+  swaybg
 
   # CLI apps
   lf

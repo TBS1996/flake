@@ -12,7 +12,7 @@ in {
     themes = helixTheme;
 
     settings = {
-      theme = "mytheme";
+      theme = "solarized_light";
 
       keys = {
         normal = {
