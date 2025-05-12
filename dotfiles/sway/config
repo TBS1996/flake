@@ -46,7 +46,7 @@ output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_19
 
 exec mako
 
-exec swaybg -i /home/tor/Pictures/hessa.jpg -m fill
+exec swaybg -i /home/tor/flake/etc/xp.jpg -m fill
 
 ### Input configuration
 #
@@ -232,7 +232,7 @@ bindsym $mod+t exec "swaymsg 'workspace number 4'; swaymsg exec telegram-desktop
 bindsym $mod+q exec swaylock
 bindsym $mod+m exec "swaymsg workspace next"
 bindsym $mod+n exec "swaymsg workspace prev"
-bindsym $mod+Shift+c exec firefox https://mail.google.com/mail/u/1/#inbox
+bindsym $mod+Shift+c exec firefox https://mail.google.com/mail/u/0/#inbox
 bindsym $mod+Shift+t exec firefox https://tasks.google.com/tasks/
 bindsym $mod+Shift+a exec firefox https://cognitedata.atlassian.net
 bindsym $mod+Shift+b exec firefox https://cognitedata.atlassian.net/jira/software/c/projects/AUTH/boards/940
