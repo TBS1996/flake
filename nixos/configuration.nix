@@ -75,7 +75,6 @@ in
     i18n.defaultLocale = "en_US.UTF-8";
 
     programs.zsh.enable = true;
-    programs.sway.enable = true;
 
     services.printing.enable = false;
     nix.settings.experimental-features = ["nix-command" "flakes"];
