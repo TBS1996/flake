@@ -25,6 +25,7 @@ with pkgs; [
   libnotify
   ripgrep
   git
+  jujutsu
   tree
   mpd
   ncmpcpp
