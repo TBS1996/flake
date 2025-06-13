@@ -228,7 +228,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 
 bindsym $mod+b exec "swaymsg 'workspace number 2'; swaymsg exec firefox"
 bindsym $mod+w exec "swaymsg 'workspace number 4'; swaymsg exec whatsapp-for-linux"
-bindsym $mod+t exec "swaymsg 'workspace number 4'; swaymsg exec telegram-desktop"
+bindsym $mod+t exec foot helix ~/todo
 bindsym $mod+q exec swaylock
 bindsym $mod+m exec "swaymsg workspace next"
 bindsym $mod+n exec "swaymsg workspace prev"
