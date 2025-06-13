@@ -22,6 +22,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 
 for_window [app_id="helix-float"] floating enable
+for_window [app_id="dagplan"] floating enable
 
 ### Output configuration
 #
@@ -232,6 +233,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 bindsym $mod+b exec "swaymsg 'workspace number 2'; swaymsg exec firefox"
 bindsym $mod+w exec "swaymsg 'workspace number 4'; swaymsg exec whatsapp-for-linux"
 bindsym $mod+t exec ~/flake/scripts/float_todo.sh
+bindsym $mod+y exec ~/flake/scripts/float_plan.sh
 bindsym $mod+q exec swaylock
 bindsym $mod+m exec "swaymsg workspace next"
 bindsym $mod+n exec "swaymsg workspace prev"
