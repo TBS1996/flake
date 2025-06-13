@@ -20,6 +20,9 @@ set $term foot
 # on the original workspace that the command was run on.
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
+
+for_window [app_id="helix-float"] floating enable
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
@@ -228,7 +231,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 
 bindsym $mod+b exec "swaymsg 'workspace number 2'; swaymsg exec firefox"
 bindsym $mod+w exec "swaymsg 'workspace number 4'; swaymsg exec whatsapp-for-linux"
-bindsym $mod+t exec foot helix ~/todo
+bindsym $mod+t exec ~/flake/scripts/float_todo.sh
 bindsym $mod+q exec swaylock
 bindsym $mod+m exec "swaymsg workspace next"
 bindsym $mod+n exec "swaymsg workspace prev"
