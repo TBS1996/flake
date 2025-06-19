@@ -71,6 +71,8 @@
             font = "JetBrainsMono 10";
           };
 
+          home.file.".gitconfig".source = ./dotfiles/gitconfig;
+          home.file.".gitconfig-cognite".source = ./dotfiles/gitconfig-cognite;
           home.file.".config/nchat/ui.conf".source = ./dotfiles/nchat/ui.conf;
           home.file.".config/nchat/key.conf".source = ./dotfiles/nchat/key.conf;
           home.file.".config/zellij/config.kdl".source = ./dotfiles/zellij/config;
