@@ -27,7 +27,6 @@ with pkgs; [
   git
   jujutsu
   tree
-  mpd
   ncmpcpp
   feh
   cron
