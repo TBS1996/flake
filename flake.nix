@@ -4,6 +4,7 @@
     home-manager.url = "github:nix-community/home-manager/master";
     helix.url = "github:helix-editor/helix";
     helix.inputs.nixpkgs.follows = "nixpkgs";
+    selvit.url = "github:tbs1996/selvit-cli";
   };
 
   outputs = {
@@ -11,6 +12,7 @@
     nixpkgs,
     home-manager,
     helix,
+    selvit,
     ...
   }: let
     vars = import ./vars.nix;
@@ -42,6 +44,9 @@
             (import ./options/helix-config.nix {inherit pkgs helix;})
           ];
           home.stateVersion = "24.11";
+          home.packages = [
+            selvit.packages.${pkgs.system}.default
+          ];
 
           services.syncthing.enable = true;
 
@@ -72,6 +77,9 @@
           };
 
           home.file.".gitconfig".source = ./dotfiles/gitconfig;
+          home.file.".local/bin/sv" = {
+            source = "${selvit.packages.${pkgs.system}.default}/bin/selvit";
+          };
           home.file.".gitconfig-cognite".source = ./dotfiles/gitconfig-cognite;
           home.file.".config/nchat/ui.conf".source = ./dotfiles/nchat/ui.conf;
           home.file.".config/nchat/key.conf".source = ./dotfiles/nchat/key.conf;

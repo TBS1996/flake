@@ -132,3 +132,4 @@ alias webcam="mpv av://v4l2:/dev/video0"
 
 
 export PATH=$PATH:/home/tor/.cache/cargo/bin
+export PATH="$HOME/.local/bin:$PATH"
