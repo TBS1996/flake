@@ -5,6 +5,7 @@
     helix.url = "github:helix-editor/helix";
     helix.inputs.nixpkgs.follows = "nixpkgs";
     selvit.url = "github:tbs1996/selvit-cli";
+    taptest.url = "github:tbs1996/taptest";
   };
 
   outputs = {
@@ -13,6 +14,7 @@
     home-manager,
     helix,
     selvit,
+    taptest,
     ...
   }: let
     vars = import ./vars.nix;
@@ -46,6 +48,7 @@
           home.stateVersion = "24.11";
           home.packages = [
             selvit.packages.${pkgs.system}.default
+            taptest.packages.${pkgs.system}.default
           ];
 
           services.syncthing.enable = true;
