@@ -6,6 +6,7 @@
     helix.inputs.nixpkgs.follows = "nixpkgs";
     selvit.url = "github:tbs1996/selvit-cli";
     taptest.url = "github:tbs1996/taptest";
+    speki.url = "github:tbs1996/spekispace";
   };
 
   outputs = {
@@ -15,6 +16,7 @@
     helix,
     selvit,
     taptest,
+    speki,
     ...
   }: let
     vars = import ./vars.nix;
@@ -49,6 +51,7 @@
           home.packages = [
             selvit.packages.${pkgs.system}.default
             taptest.packages.${pkgs.system}.default
+            speki.packages.${pkgs.system}.default
           ];
 
           services.syncthing.enable = true;
