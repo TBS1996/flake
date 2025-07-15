@@ -47,4 +47,22 @@
       Persistent = true;
     };
   };
+
+  systemd.user.services.cutInternet = {
+    description = "Temporarily disable internet at night";
+    serviceConfig = {
+      ExecStart = "/home/tor/flake/scripts/cut_net.sh";
+      Type = "oneshot";
+      Environment = "PATH=${pkgs.lib.makeBinPath [pkgs.networkmanager pkgs.coreutils]}";
+    };
+  };
+
+  systemd.user.timers.cutInternet = {
+    description = "Run internet disabling script hourly";
+    wantedBy = ["timers.target"];
+    timerConfig = {
+      OnCalendar = "*:0/10";
+      Persistent = true;
+    };
+  };
 }

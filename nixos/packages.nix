@@ -5,7 +5,6 @@ with pkgs; [
   tdesktop
   tor-browser
   calibre
-  gimp
   xfce.thunar
   vscode
   slack
