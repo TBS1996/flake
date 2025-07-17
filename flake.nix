@@ -7,6 +7,8 @@
     selvit.url = "github:tbs1996/selvit-cli";
     taptest.url = "github:tbs1996/taptest";
     speki.url = "github:tbs1996/spekispace";
+    dagplan.url = "github:tbs1996/dagplan";
+    tordo.url = "github:tbs1996/tordo";
   };
 
   outputs = {
@@ -17,6 +19,8 @@
     selvit,
     taptest,
     speki,
+    dagplan,
+    tordo,
     ...
   }: let
     vars = import ./vars.nix;
@@ -52,6 +56,8 @@
             selvit.packages.${pkgs.system}.default
             taptest.packages.${pkgs.system}.default
             speki.packages.${pkgs.system}.default
+            dagplan.packages.${pkgs.system}.default
+            tordo.packages.${pkgs.system}.default
           ];
 
           services.syncthing.enable = true;

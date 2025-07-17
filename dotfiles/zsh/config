@@ -107,7 +107,8 @@ alias p="cd /home/tor/prog"
 alias s="cd /home/tor/prog/speki"
 alias c="cd /home/tor/.config"
 alias n="cd /home/tor/velv/ && hx main.md"
-alias dp="/home/tor/prog/dagplan/target/debug/dayplan"
+alias dp="dagplan"
+alias td="tordo"
 
 alias pg='ping google.com'
 alias xexit='pkill -KILL -u $USER'
