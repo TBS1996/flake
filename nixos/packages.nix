@@ -15,6 +15,9 @@ with pkgs; [
   pavucontrol
   swaybg
 
+  virtualbox
+  virtualboxExtpack
+
   # CLI apps
   lf
   termusic

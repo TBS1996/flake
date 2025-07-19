@@ -23,6 +23,9 @@ in
       "androidboot.hardware=waydroid"
     ];
 
+    virtualisation.virtualbox.host.enable = true;
+    users.extraGroups.vboxusers.members = ["tor"];
+
     systemd.extraConfig = ''
       DefaultDeviceTimeoutSec=180s
     '';
