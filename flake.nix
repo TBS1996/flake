@@ -58,6 +58,8 @@
             speki.packages.${pkgs.system}.default
             dagplan.packages.${pkgs.system}.default
             tordo.packages.${pkgs.system}.default
+            pkgs.nerd-fonts.fira-code
+            pkgs.nerd-fonts.symbols-only
           ];
 
           services.syncthing.enable = true;

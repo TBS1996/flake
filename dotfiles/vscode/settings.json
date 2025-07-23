@@ -20,5 +20,13 @@
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
+
+  // rust-analyzer memory optimization
+  "rust-analyzer.procMacro.enable": false,
+  "rust-analyzer.cargo.unsetTest": true,
+  "rust-analyzer.cargo.allFeatures": false,
+  "rust-analyzer.files.watcher": "client",
+  "rust-analyzer.diagnostics.enable": true,
+
   "workbench.settings.applyToAllProfiles": []
 }

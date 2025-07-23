@@ -16,9 +16,9 @@ with pkgs; [
   swaybg
 
   virtualbox
-  virtualboxExtpack
 
   # CLI apps
+  kitty
   lf
   termusic
   shell-gpt
