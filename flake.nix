@@ -60,6 +60,7 @@
             tordo.packages.${pkgs.system}.default
             pkgs.nerd-fonts.fira-code
             pkgs.nerd-fonts.symbols-only
+            pkgs.waybar
           ];
 
           services.syncthing.enable = true;

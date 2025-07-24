@@ -1,8 +1,8 @@
 {
     "layer": "top",
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["clock"],
-    "modules-right": ["sway/language", "battery", "network", "pulseaudio"],
+    "modules-center": ["custom/task"],
+    "modules-right": ["clock", "sway/language", "battery", "network", "pulseaudio"],
 
     "sway/language": {
         "format": "{}",
@@ -14,6 +14,12 @@
     },
     "clock": {
         "format": "{:%H:%M}"
+    },
+    "custom/task": {
+        "exec": "cat ~/.current_task 2>/dev/null || echo 'No task'",
+        "interval": 1,
+        "format": "📝 {}",
+        "tooltip": false
     },
     "network": {
         "format-wifi": "  {essid} {signalStrength}%",
