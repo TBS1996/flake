@@ -104,7 +104,7 @@
           home.file.".config/newsboat/urls".source = ./dotfiles/newsboat/urls;
           home.file.".config/sway/config".source = ./dotfiles/sway/config;
           home.file.".config/zsh/.zshrc".source = ./dotfiles/zsh/config;
-          home.file.".config/waybar/config".source = ./dotfiles/waybar/config;
+          home.file.".config/waybar/config".source = ./dotfiles/waybar;
           home.file.".cargo/config.toml".source = ./dotfiles/cargo/config;
           home.file.".config/Code/User/settings.json".source = ./dotfiles/vscode/settings.json;
           home.file.".xinitrc" = {
