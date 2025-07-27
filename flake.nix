@@ -95,17 +95,20 @@
             plugins = {
               lsp.enable = true;
               treesitter.enable = true;
-              lsp.servers.rust-analyzer.enable = true;
               lsp-format.enable = true;
               lsp-format.formatOnSave = true;
 
               cmp.enable = true;
-              cmp_lsp.enable = true;
               luasnip.enable = true;
               telescope.enable = true;
               lualine.enable = true;
               which-key.enable = true;
             };
+
+            # LSP server config
+            extraConfigLua = ''
+              require("lspconfig").rust_analyzer.setup({})
+            '';
 
             extraPlugins = with pkgs.vimPlugins; [
               cmp-buffer
@@ -113,7 +116,10 @@
               cmp-nvim-lsp
               cmp-nvim-lua
               cmp_luasnip
+              tokyonight-nvim
             ];
+
+            colorscheme = "tokyonight";
 
             keymaps = [
               {
@@ -129,8 +135,6 @@
                 options.desc = "Live grep";
               }
             ];
-
-            colorschemes.tokyonight.enable = true;
           };
 
           services.mako = {
