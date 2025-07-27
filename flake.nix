@@ -102,11 +102,34 @@
               telescope.enable = true;
               lualine.enable = true;
               which-key.enable = true;
+              chadtree.enable = true;
             };
 
             # LSP server config
             extraConfigLua = ''
-              require("lspconfig").rust_analyzer.setup({})
+              vim.o.updatetime = 300
+
+              vim.g.mapleader = " "
+
+              vim.api.nvim_create_autocmd("CursorHold", {
+                callback = function()
+                  vim.diagnostic.open_float(nil, {
+                    focusable = false,
+                    close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+                    border = "rounded",
+                    source = "always",
+                    prefix = " ",
+                  })
+                end,
+              })
+
+              require("lspconfig").rust_analyzer.setup({
+                settings = {
+                  ["rust-analyzer"] = {
+                    rustcSource = "disable",
+                  },
+                },
+              })
             '';
 
             extraPlugins = with pkgs.vimPlugins; [
@@ -132,6 +155,24 @@
                 key = "<leader>fg";
                 action = "<cmd>Telescope live_grep<cr>";
                 options.desc = "Live grep";
+              }
+              {
+                mode = "n";
+                key = "<C-r>";
+                action = "<cmd>CHADopen<cr>";
+                options.desc = "Toggle CHADTree";
+              }
+              {
+                mode = "n";
+                key = "gd";
+                action = "<cmd>lua vim.lsp.buf.declaration()<cr>";
+                options.desc = "Go to declaration";
+              }
+              {
+                mode = "n";
+                key = "<leader>ca";
+                action = "<cmd>lua vim.lsp.buf.code_action()<cr>";
+                options.desc = "LSP code action (quick fix)";
               }
             ];
           };
