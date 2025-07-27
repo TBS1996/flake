@@ -1,8 +1,3 @@
 [main]
-font=JetBrainsMono:size=11
+font=Iosevka:size=11
 dpi-aware=yes
-bold-text-in-bright=yes
-
-[colors]
-foreground=dadada
-background=1e1e2e
