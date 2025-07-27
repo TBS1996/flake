@@ -198,6 +198,12 @@
                 action = "<cmd>lua vim.lsp.buf.code_action()<cr>";
                 options.desc = "LSP code action (quick fix)";
               }
+              {
+                mode = "n";
+                key = "gr";
+                action = "<cmd>lua vim.lsp.buf.references()<cr>";
+                options.desc = "Show references";
+              }
             ];
           };
 
