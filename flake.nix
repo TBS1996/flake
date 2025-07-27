@@ -90,11 +90,8 @@
 
           programs.nixvim = {
             enable = true;
-
-            # Optional: Set Neovim as default editor
             defaultEditor = true;
 
-            # LSP + treesitter + formatting for Rust
             plugins = {
               lsp.enable = true;
               treesitter.enable = true;
@@ -104,19 +101,20 @@
 
               cmp.enable = true;
               cmp_lsp.enable = true;
-              cmp_path.enable = true;
-              cmp_buffer.enable = true;
-              cmp_nvim_lsp.enable = true;
-              cmp_nvim_lua.enable = true;
               luasnip.enable = true;
-              cmp_luasnip.enable = true;
-
               telescope.enable = true;
               lualine.enable = true;
               which-key.enable = true;
             };
 
-            # Keymap for convenience
+            extraPlugins = with pkgs.vimPlugins; [
+              cmp-buffer
+              cmp-path
+              cmp-nvim-lsp
+              cmp-nvim-lua
+              cmp_luasnip
+            ];
+
             keymaps = [
               {
                 mode = "n";
@@ -132,11 +130,8 @@
               }
             ];
 
-            # Set a theme (optional)
             colorschemes.tokyonight.enable = true;
           };
-
-          # programs.rust-analyzer.enable = true;
 
           services.mako = {
             enable = true;
