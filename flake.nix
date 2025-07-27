@@ -116,23 +116,6 @@
               which-key.enable = true;
             };
 
-            # Auto-completion
-            plugins.cmp.enable = true;
-            plugins.cmp-lsp.enable = true;
-            plugins.cmp-path.enable = true;
-            plugins.cmp-buffer.enable = true;
-            plugins.cmp-nvim-lsp.enable = true;
-            plugins.cmp-nvim-lua.enable = true;
-
-            # Snippets (optional but nice)
-            plugins.luasnip.enable = true;
-            plugins.cmp_luasnip.enable = true;
-
-            # Useful extras
-            plugins.telescope.enable = true;
-            plugins.lualine.enable = true;
-            plugins.which-key.enable = true;
-
             # Keymap for convenience
             keymaps = [
               {
