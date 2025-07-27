@@ -96,7 +96,6 @@
               lsp.enable = true;
               treesitter.enable = true;
               lsp-format.enable = true;
-              lsp-format.formatOnSave = true;
 
               cmp.enable = true;
               luasnip.enable = true;
