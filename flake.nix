@@ -56,15 +56,20 @@
             nixvim.homeManagerModules.nixvim
           ];
           home.stateVersion = "24.11";
-          home.packages = [
+          home.packages = with pkgs; [
             selvit.packages.${pkgs.system}.default
             taptest.packages.${pkgs.system}.default
             speki.packages.${pkgs.system}.default
             dagplan.packages.${pkgs.system}.default
             tordo.packages.${pkgs.system}.default
-            pkgs.nerd-fonts.fira-code
-            pkgs.nerd-fonts.symbols-only
-            pkgs.waybar
+            rust-analyzer
+            rustc
+            cargo
+            clippy
+            rustfmt
+            nerd-fonts.fira-code
+            nerd-fonts.symbols-only
+            waybar
           ];
 
           services.syncthing.enable = true;
@@ -93,7 +98,7 @@
             plugins = {
               lsp.enable = true;
               treesitter.enable = true;
-              lsp.servers.rust-analyzer.enable = true;
+              # lsp.servers.rust-analyzer.enable = true;
               lsp-format.enable = true;
               lsp-format.formatOnSave = true;
             };
@@ -135,7 +140,7 @@
             colorschemes.tokyonight.enable = true;
           };
 
-          programs.rust-analyzer.enable = true;
+          # programs.rust-analyzer.enable = true;
 
           services.mako = {
             enable = true;
