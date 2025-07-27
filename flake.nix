@@ -102,8 +102,8 @@
           home.file.".config/zellij/layouts/chat.kdl".source = ./dotfiles/zellij/chat;
           home.file.".config/newsboat/config".source = ./dotfiles/newsboat/config;
           home.file.".config/newsboat/urls".source = ./dotfiles/newsboat/urls;
-          home.file.".config/sway/config".source = ./dotfiles/sway/config;
-          home.file.".config/zsh/.zshrc".source = ./dotfiles/zsh/config;
+          home.file.".config/sway/config".source = ./dotfiles/sway;
+          home.file.".config/zsh/.zshrc".source = ./dotfiles/zsh;
           home.file.".config/waybar/config".source = ./dotfiles/waybar;
           home.file.".cargo/config.toml".source = ./dotfiles/cargo/config;
           home.file.".config/Code/User/settings.json".source = ./dotfiles/vscode/settings.json;
