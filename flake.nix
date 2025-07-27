@@ -98,9 +98,22 @@
             plugins = {
               lsp.enable = true;
               treesitter.enable = true;
-              # lsp.servers.rust-analyzer.enable = true;
+              lsp.servers.rust-analyzer.enable = true;
               lsp-format.enable = true;
               lsp-format.formatOnSave = true;
+
+              cmp.enable = true;
+              cmp_lsp.enable = true;
+              cmp_path.enable = true;
+              cmp_buffer.enable = true;
+              cmp_nvim_lsp.enable = true;
+              cmp_nvim_lua.enable = true;
+              luasnip.enable = true;
+              cmp_luasnip.enable = true;
+
+              telescope.enable = true;
+              lualine.enable = true;
+              which-key.enable = true;
             };
 
             # Auto-completion
