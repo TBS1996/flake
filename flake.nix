@@ -107,10 +107,10 @@
 
             # LSP server config
             extraConfigLua = ''
-              vim.o.updatetime = 300
-
               vim.g.mapleader = " "
 
+              -- Diagnostic popup on CursorHold
+              vim.o.updatetime = 300
               vim.api.nvim_create_autocmd("CursorHold", {
                 callback = function()
                   vim.diagnostic.open_float(nil, {
@@ -126,7 +126,8 @@
               require("lspconfig").rust_analyzer.setup({
                 settings = {
                   ["rust-analyzer"] = {
-                    rustcSource = "disable",
+                    cargo = { sysroot = { enable = false } },
+                    diagnostics = { enable = true },
                   },
                 },
               })
