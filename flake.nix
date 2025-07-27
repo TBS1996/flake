@@ -9,6 +9,8 @@
     speki.url = "github:tbs1996/spekispace";
     dagplan.url = "github:tbs1996/dagplan";
     tordo.url = "github:tbs1996/tordo";
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -21,6 +23,7 @@
     speki,
     dagplan,
     tordo,
+    nixvim,
     ...
   }: let
     vars = import ./vars.nix;
@@ -50,6 +53,7 @@
         home-manager.users.tor = {pkgs, ...}: {
           imports = [
             (import ./options/helix-config.nix {inherit pkgs helix;})
+            nixvim.homeManagerModules.nixvim
           ];
           home.stateVersion = "24.11";
           home.packages = [
@@ -78,6 +82,60 @@
               ratio = [1 1 2];
             };
           };
+
+          programs.nixvim = {
+            enable = true;
+
+            # Optional: Set Neovim as default editor
+            defaultEditor = true;
+
+            # LSP + treesitter + formatting for Rust
+            plugins = {
+              lsp.enable = true;
+              treesitter.enable = true;
+              lsp.servers.rust-analyzer.enable = true;
+              lsp-format.enable = true;
+              lsp-format.formatOnSave = true;
+            };
+
+            # Auto-completion
+            plugins.cmp.enable = true;
+            plugins.cmp-lsp.enable = true;
+            plugins.cmp-path.enable = true;
+            plugins.cmp-buffer.enable = true;
+            plugins.cmp-nvim-lsp.enable = true;
+            plugins.cmp-nvim-lua.enable = true;
+
+            # Snippets (optional but nice)
+            plugins.luasnip.enable = true;
+            plugins.cmp_luasnip.enable = true;
+
+            # Useful extras
+            plugins.telescope.enable = true;
+            plugins.lualine.enable = true;
+            plugins.which-key.enable = true;
+
+            # Keymap for convenience
+            keymaps = [
+              {
+                mode = "n";
+                key = "<leader>ff";
+                action = "<cmd>Telescope find_files<cr>";
+                options.desc = "Find files";
+              }
+              {
+                mode = "n";
+                key = "<leader>fg";
+                action = "<cmd>Telescope live_grep<cr>";
+                options.desc = "Live grep";
+              }
+            ];
+
+            # Set a theme (optional)
+            colorschemes.tokyonight.enable = true;
+          };
+
+          programs.rust-analyzer.enable = true;
 
           services.mako = {
             enable = true;
