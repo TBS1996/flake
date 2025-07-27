@@ -18,7 +18,7 @@ with pkgs; [
   virtualbox
 
   # CLI apps
-  kitty
+  alacritty
   lf
   termusic
   shell-gpt
