@@ -85,9 +85,9 @@ alias gam='git add --all && git commit --amend --no-edit'
 
 # nix stuff
 
-alias grn='cd /home/tor/flake && nix fmt; nix flake update; git add .; git commit -m "rebuilding"; git push; sudo nixos-rebuild switch --flake .#sys; swaymsg reload; source dotfiles/zsh/config && cd -'
-alias grl='cd /home/tor/flake && nix fmt; sudo nixos-rebuild switch --flake .#sys; swaymsg reload; source dotfiles/zsh/config && cd -'
-alias grp='cd /home/tor/flake && sudo nixos-rebuild switch --flake .#sys; swaymsg reload; source dotfiles/zsh/config && cd -'
+alias grn='cd /home/tor/flake && nix fmt; nix flake update; git add .; git commit -m "rebuilding"; git push; sudo nixos-rebuild switch --flake .#sys; swaymsg reload; source dotfiles/zsh && cd -'
+alias grl='cd /home/tor/flake && nix fmt; sudo nixos-rebuild switch --flake .#sys; swaymsg reload; source dotfiles/zsh && cd -'
+alias grp='cd /home/tor/flake && sudo nixos-rebuild switch --flake .#sys; swaymsg reload; source dotfiles/zsh && cd -'
 alias nd="nix develop"
 alias flakefix='f && rm -r etc/libcar/target ; rm -r etc/excar/target'  
 
