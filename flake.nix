@@ -96,6 +96,7 @@
               lsp.enable = true;
               treesitter.enable = true;
               lsp-format.enable = true;
+              web-devicons.enable = true;
 
               cmp.enable = true;
               luasnip.enable = true;
