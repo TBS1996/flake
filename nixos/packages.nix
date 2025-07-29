@@ -29,7 +29,6 @@ with pkgs; [
   git
   jujutsu
   tree
-  ncmpcpp
   feh
   cron
   wdisplays
