@@ -209,14 +209,14 @@
 
           services.mako = {
             enable = true;
-            anchor = "top-left";
-            defaultTimeout = 10000;
-            backgroundColor = "#1e1e2e";
-            textColor = "#cdd6f4";
-            borderColor = "#89b4fa";
-            borderSize = 2;
-            padding = "10";
-            font = "JetBrainsMono 10";
+            settings.anchor = "top-left";
+            settings.defaultTimeout = 10000;
+            settings.backgroundColor = "#1e1e2e";
+            settings.textColor = "#cdd6f4";
+            settings.borderColor = "#89b4fa";
+            settings.borderSize = 2;
+            settings.padding = "10";
+            settings.font = "JetBrainsMono 10";
           };
 
           home.file.".gitconfig".source = ./dotfiles/gitconfig;
