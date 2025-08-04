@@ -53,7 +53,7 @@
         home-manager.users.tor = {pkgs, ...}: {
           imports = [
             (import ./options/helix-config.nix {inherit pkgs helix;})
-            nixvim.homeManagerModules.nixvim
+            nixvim.homeModules.nixvim
           ];
           home.stateVersion = "24.11";
           home.packages = with pkgs; [
