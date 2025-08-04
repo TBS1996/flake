@@ -26,9 +26,9 @@ in
     virtualisation.virtualbox.host.enable = true;
     users.extraGroups.vboxusers.members = ["tor"];
 
-    systemd.extraConfig = ''
-      DefaultDeviceTimeoutSec=180s
-    '';
+    systemd.settings.Manager = {
+      DefaultDeviceTimeoutSec = "180s";
+    };
 
     virtualisation.lxc.enable = true;
     virtualisation.lxc.lxcfs.enable = true;

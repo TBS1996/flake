@@ -14,6 +14,7 @@ with pkgs; [
   cowsay
   pavucontrol
   swaybg
+  postman
 
   virtualbox
 
