@@ -212,7 +212,7 @@
             enable = true;
             settings.anchor = "top-left";
             settings.defaultTimeout = 10000;
-            settings.backgroundColor = "#1e1e2e";
+            #settings.backgroundColor = "#1e1e2e";
             settings.textColor = "#cdd6f4";
             settings.borderColor = "#89b4fa";
             settings.borderSize = 2;
