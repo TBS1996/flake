@@ -1,1 +1,2 @@
-my key = my val
+clippy=/home/tor/cognite/infrastructure/scripts/ci/lint.sh //services/turbofish/gandalf-auth:gandalf-auth
+
