@@ -84,18 +84,16 @@ def flakefix [] {
   rm -r etc/excar/target
 }
 
-# work
-def ndt [] { cd ~/myflakes/terraform; nix develop }
-def infra [] { cd ~/prog/infrastructure }
-def tf [] { cd ~/prog/terraform }
-def lts [] { cd ~/prog/local-test-services }
+def --env ndt [] { cd ~/myflakes/terraform; nix develop }
+def --env infra [] { cd ~/prog/infrastructure }
+def --env tf [] { cd ~/prog/terraform }
+def --env lts [] { cd ~/prog/local-test-services }
 
-# cd shortcuts
-def f [] { cd /home/tor/flake }
-def p [] { cd /home/tor/prog }
-def s [] { cd /home/tor/prog/speki }
-def c [] { cd /home/tor/.config }
-def n [] { cd /home/tor/velv; hx main.md }
+def --env f [] { cd /home/tor/flake }
+def --env p [] { cd /home/tor/prog }
+def --env s [] { cd /home/tor/prog/speki }
+def --env c [] { cd /home/tor/.config }
+def --env n [] { cd /home/tor/velv; hx main.md }
 
 # misc
 def xexit [] { pkill -KILL -u $env.USER }
