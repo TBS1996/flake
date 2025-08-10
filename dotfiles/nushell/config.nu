@@ -138,8 +138,8 @@ $env.config = ($env.config | default {} | merge {
     #{ name: open-editor mode: [emacs, vi_insert, vi_normal] modifier: ctrl key: "e" event: { send: OpenEditor } }
 
     # Ctrl-o: run lfcd
-    { name: lfcd mode: [emacs, vi_insert, vi_normal] modifier: ctrl key: "o"
-      event: { send: ExecuteHostCommand, cmd: "lfcd" } }
+ #   { name: lfcd mode: [emacs, vi_insert, vi_normal] modifier: ctrl key: "o"
+  #    event: { send: ExecuteHostCommand, cmd: "lfcd" } }
   ]
 })
 
