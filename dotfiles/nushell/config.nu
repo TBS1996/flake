@@ -36,7 +36,6 @@ def grn [] {
   ^git push
   ^sudo nixos-rebuild switch --flake .#sys
   ^swaymsg reload
-  source dotfiles/zsh
   cd -
 }
 def grl [] {
@@ -44,14 +43,12 @@ def grl [] {
   ^nix fmt
   ^sudo nixos-rebuild switch --flake .#sys
   ^swaymsg reload
-  source dotfiles/zsh
   cd -
 }
 def grp [] {
   cd ~/flake
   ^sudo nixos-rebuild switch --flake .#sys
   ^swaymsg reload
-  source ./dotfiles/zsh
 }
 
 def cerr [] { ^cargo build --quiet --message-format=short | lines | where ($it !~ 'warning') | str join (char nl) }
@@ -67,37 +64,60 @@ def chat [] { ^zellij --layout chat }
 def webcam [] { ^mpv av://v4l2:/dev/video0 }
 
 # ===== Aliases (single-command shorthands) =====
-alias nd = ^nix develop
-alias flakefix = { f; ^rm -r etc/libcar/target; ^rm -r etc/excar/target }
+alias nd = nix develop
+alias ndc = nix develop .#rust
+alias kv = /home/tor/flake/scripts/kvmenu.sh
+alias pg = ping google.com
+alias scl = systemctl
+alias z = zellij
+alias nb = newsboat -r
+alias y = yazi
+alias nt = nmtui
+alias cc = calcurse
+alias dp = dagplan
+alias td = tordo
+
+# ===== Defs (multi-command or block-style) =====
+def flakefix [] {
+  f
+  rm -r etc/libcar/target
+  rm -r etc/excar/target
+}
 
 # work
-alias ndt = { cd ~/myflakes/terraform; ^nix develop }
-alias ndc = { cd ~/myflakes; ^nix develop .#rust }
-alias infra = { cd ~/prog/infrastructure }
-alias tf = { cd ~/prog/terraform }
-alias lts = { cd ~/prog/local-test-services }
+def ndt [] { cd ~/myflakes/terraform; nix develop }
+def infra [] { cd ~/prog/infrastructure }
+def tf [] { cd ~/prog/terraform }
+def lts [] { cd ~/prog/local-test-services }
 
 # cd shortcuts
-alias f = { cd /home/tor/flake }
-alias p = { cd /home/tor/prog }
-alias s = { cd /home/tor/prog/speki }
-alias c = { cd /home/tor/.config }
-alias n = { cd /home/tor/velv; ^hx main.md }
-alias dp = { ^dagplan }
-alias td = { ^tordo }
+def f [] { cd /home/tor/flake }
+def p [] { cd /home/tor/prog }
+def s [] { cd /home/tor/prog/speki }
+def c [] { cd /home/tor/.config }
+def n [] { cd /home/tor/velv; hx main.md }
 
 # misc
-alias kv = { ^/home/tor/flake/scripts/kvmenu.sh }
-alias pg = { ^ping google.com }
-alias xexit = { ^pkill -KILL -u $env.USER }
-alias cpy = { ^wl-copy < }
-alias scl = { ^systemctl }
-alias z = { ^zellij }
-alias nb = { ^newsboat -r }
-alias y = { ^yazi }
-alias nt = { ^nmtui }
-alias cc = { ^calcurse }
-alias work = { p; cd infrastructure/services/turbofish; ndc; ^code . }
+def xexit [] { pkill -KILL -u $env.USER }
+
+# copy: works with a file OR piped input
+#   cpy some.txt
+#   cat some.txt | cpy
+def cpy [file?: path] {
+  if $file != null {
+    open $file | ^wl-copy
+  } else {
+    $in | ^wl-copy
+  }
+}
+
+def work [...args] {
+  p
+  cd infrastructure/services/turbofish
+  ndc
+  code . ...$args
+}
+
 
 # ===== Shell UI / behavior =====
 $env.PROMPT_COMMAND = { create_prompt }
@@ -135,6 +155,3 @@ $env.config = ($env.config | default {} | merge {
   ]
 })
 
-# Optionally source extra Nu scripts if you create them
-if ('~/.config/shortcutrc.nu' | path expand | path exists) { source ~/.config/shortcutrc.nu }
-if ('~/.config/aliasrc.nu'    | path expand | path exists) { source ~/.config/aliasrc.nu }
