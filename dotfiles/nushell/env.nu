@@ -9,4 +9,4 @@ $env.PATH = ($env.PATH
 )
 
 # Optional: editor for Ctrl-e behavior
-if ($env.EDITOR | is-empty) { $env.EDITOR = "nvim" }
+if ($env.EDITOR? | is-empty) { $env.EDITOR = "nvim" }

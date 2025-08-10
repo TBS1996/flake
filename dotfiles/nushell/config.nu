@@ -131,7 +131,6 @@ $env.config = ($env.config | default {} | merge {
   history: {
     max_size: 10000
     file_format: "plaintext"
-    file_path: "~/.cache/nushell/history.txt"
     sync_on_enter: true
   }
   completions: {
