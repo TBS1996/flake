@@ -36,7 +36,7 @@ in
     users.users.${vars.username} = {
       isNormalUser = true;
       description = "Tor";
-      shell = pkgs.zsh;
+      shell = pkgs.nushell;
       extraGroups = ["networkmanager" "wheel" "docker"];
     };
 

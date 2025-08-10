@@ -236,6 +236,7 @@
           home.file.".config/foot/foot.ini".source = ./dotfiles/foot;
           home.file.".config/waybar/config".source = ./dotfiles/waybar;
           home.file.".cargo/config.toml".source = ./dotfiles/cargo/config;
+          home.file.".config/nushell/config.nu".source = ./dotfiles/nushell;
           home.file.".config/Code/User/settings.json".source = ./dotfiles/vscode/settings.json;
           home.file.".xinitrc" = {
             source = ./dotfiles/xinit;

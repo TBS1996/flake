@@ -15,10 +15,12 @@ with pkgs; [
   pavucontrol
   swaybg
   postman
+  zed-editor
 
   virtualbox
 
   # CLI apps
+  nushell
   alacritty
   lf
   termusic
