@@ -84,6 +84,10 @@ def flakefix [] {
   rm -r etc/excar/target
 }
 
+def lst [] {
+  ls -la | update target { str truncate -c 20 }
+}
+
 def --env ndt [] { cd ~/myflakes/terraform; nix develop }
 def --env infra [] { cd ~/prog/infrastructure }
 def --env tf [] { cd ~/prog/terraform }
