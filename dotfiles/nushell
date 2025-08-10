@@ -1,4 +1,0 @@
-$env.config = ($env.config? | default {})
-$env.config = ($env.config | merge {
-  show_banner: false
-})
