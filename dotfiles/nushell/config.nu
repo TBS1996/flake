@@ -119,11 +119,6 @@ def work [...args] {
 }
 
 
-# ===== Shell UI / behavior =====
-$env.PROMPT_COMMAND = { create_prompt }
-$env.PROMPT_INDICATOR = { " " }
-$env.PROMPT_MULTILINE_INDICATOR = { "… " }
-
 # Disable welcome banner + set history & completion & vi mode + keybinds
 $env.config = ($env.config | default {} | merge {
   show_banner: false
@@ -139,12 +134,6 @@ $env.config = ($env.config | default {} | merge {
     external: { enable: true }
   }
   keybindings: [
-    # Vim-like movement in menus
-    { name: menu-left  mode: [emacs, vi_insert, vi_normal] key: "h" event: { send: menu_left  } }
-    { name: menu-up    mode: [emacs, vi_insert, vi_normal] key: "k" event: { send: menu_up    } }
-    { name: menu-right mode: [emacs, vi_insert, vi_normal] key: "l" event: { send: menu_right } }
-    { name: menu-down  mode: [emacs, vi_insert, vi_normal] key: "j" event: { send: menu_down  } }
-
     # Ctrl-e: edit current command in $EDITOR
     { name: open-editor mode: [emacs, vi_insert, vi_normal] modifier: ctrl key: "e" event: { send: OpenEditor } }
 
