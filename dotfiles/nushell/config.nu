@@ -85,7 +85,7 @@ def flakefix [] {
 }
 
 def lst [] {
-  ls -la | update target { str truncate -c 20 }
+  ls -la | update target { str substring 0..20 }
 }
 
 def --env ndt [] { cd ~/myflakes/terraform; nix develop }
