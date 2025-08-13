@@ -18,6 +18,7 @@ with pkgs; [
   zed-editor
   gedit
   virtualbox
+  runelite
 
   # CLI apps
   nushell
