@@ -145,3 +145,10 @@ $env.config = ($env.config | default {} | merge {
   ]
 })
 
+$env.config.completions.external = {
+    enable: true
+    completer: {|spans|
+        let token = ($spans | last | default "")
+        ls -d ($token)* | where type == dir | get name
+    }
+}

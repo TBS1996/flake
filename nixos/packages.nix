@@ -16,7 +16,7 @@ with pkgs; [
   swaybg
   postman
   zed-editor
-
+  gedit
   virtualbox
 
   # CLI apps
