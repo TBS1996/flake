@@ -19,6 +19,7 @@ with pkgs; [
   gedit
   virtualbox
   runelite
+  code-cursor
 
   # CLI apps
   nushell
