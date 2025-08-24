@@ -18,8 +18,8 @@ with pkgs; [
   zed-editor
   gedit
   virtualbox
-  runelite
   code-cursor
+  bolt-launcher
 
   # CLI apps
   nushell
