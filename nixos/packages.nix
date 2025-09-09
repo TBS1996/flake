@@ -20,6 +20,7 @@ with pkgs; [
   virtualbox
   code-cursor
   bolt-launcher
+  gramps
 
   # CLI apps
   nushell
